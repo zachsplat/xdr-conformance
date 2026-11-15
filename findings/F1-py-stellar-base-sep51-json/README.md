@@ -9,8 +9,8 @@ The conformance runner decoded 112,278 pubnet transaction envelopes and 44,057 r
 | shape | rs-stellar-xdr, py-stellar-xdr, js-stellar-sdk | py-stellar-base 17.0.1 | inputs affected in the sample | py-stellar-base reads the SEP-51 form back |
 |---|---|---|---|---|
 | `TransactionResult` arms from `txSUCCESS`, `txFAILED`, `txFEE_BUMP_INNER_SUCCESS`, `txFEE_BUMP_INNER_FAILED` (and `opINNER`) | `tx_success`, `op_inner` | `txsuccess`, `opinner` | every result meta (44,057 of 44,057) | not tested |
-| `ClawbackOp.from` | `"from"` | `"from_"` (the Python keyword escape leaks into JSON) | 35 envelopes | no: `KeyError: 'from_'` |
-| `AllowTrustOp.asset` (`AssetCode` union) | `"FIL"` | `{"credit_alphanum4": "FIL"}` | 16 envelopes | no: `ValueError: Expected a single-key object for AssetCode` |
+| `ClawbackOp.from` | `"from"` | `"from_"` (the Python keyword escape leaks into JSON) | 35 operations in 17 envelopes | no: `KeyError: 'from_'` |
+| `AllowTrustOp.asset` (`AssetCode` union) | `"FIL"` | `{"credit_alphanum4": "FIL"}` | 64 operations in 16 envelopes (all 16 also hold a clawback) | no: `ValueError: Expected a single-key object for AssetCode` |
 | `ContractEvent.contract_id` (`ContractID`) | `"C..."` strkey | 64-char hex | every meta with contract events | not tested |
 
 Byte round-trips and transaction hashes agree in all four implementations; only the JSON differs.
@@ -28,4 +28,4 @@ python repro.py ../../corpus
 
 Title: `to_json()` differs from SEP-51 (and from stellar-xdr) for result codes, ClawbackOp.from, AssetCode and ContractEvent.contract_id
 
-Body: the table above, the four ledger and transaction references from `../../corpus/manifest.json`, and `repro.py`. Note that #1268 would fix all four if it lands, so the issue mainly records the behavior of 17.0.1 for anyone storing its JSON.
+Body: the table above, the four ledger and transaction references from `../../corpus/manifest.json`, and `repro.py`. Following the maintainer's request in #1264, say that the new `stellar-xdr` package (0.2.0) writes all four shapes correctly, so the problem is only in `stellar_sdk`. Note that #1268 would fix all four if it lands, so the issue mainly records the behavior of 17.0.1 for anyone storing its JSON.

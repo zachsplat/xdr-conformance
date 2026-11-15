@@ -2,6 +2,8 @@
  "reference": "rust",
  "compared": [
   "pyxdr",
+  "js",
+  "go",
   "sdk"
  ],
  "total_requests": 44057,

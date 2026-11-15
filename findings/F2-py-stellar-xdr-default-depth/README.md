@@ -4,7 +4,7 @@ Status on 2026-11-15: not filed (lightsail-network/py-stellar-xdr has no outside
 
 ## What happens
 
-`TransactionEnvelope.from_xdr_bytes()` and `to_json_value()` default to `max_depth=200`. A Soroban transaction whose authorization tree is nested 199 levels raises `XdrDepthError`. stellar-core 30.0.0 admits it.
+`TransactionEnvelope.from_xdr_bytes()` and `to_json_value()` default to `max_depth=200`. A Soroban transaction whose authorization tree is nested 199 levels raises `XdrDepthError`. stellar-core 30.0.0's XDR checks admit it. (Admission here means the XDR decode and depth checks only; the test envelopes are mutated, so their signatures are not valid and they were not submitted to a network.)
 
 stellar-core has two decoders on the submission path. xdrpp decodes the envelope (that is what `stellar-core print-xdr` runs), and from protocol 28 `validateXDRForProtocol` re-parses it with rs-stellar-xdr at depth 1000 (`src/transactions/TransactionUtils.cpp`, `can_parse_transaction` in `src/rust/src/soroban_proto_any.rs`, v30.0.0 at 0e49751). The second check is the stricter one, so the "admission" column below is rs-stellar-xdr 30.0.0 at depth 1000. js-stellar-sdk#1901 shows, with a standalone stellar-core, that an admitted deep transaction that then fails at apply stays in the ledger's transaction set.
 
