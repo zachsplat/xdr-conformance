@@ -20,7 +20,7 @@ FILETYPE = {"TransactionEnvelope": "tx", "TransactionResult": "result", "Transac
 def main():
     image = sys.argv[1]
     reqs = [json.loads(l) for l in sys.stdin if l.strip()]
-    with tempfile.TemporaryDirectory(dir=os.environ.get("TMPDIR", "/dev/shm")) as d:
+    with tempfile.TemporaryDirectory() as d:
         os.chmod(d, 0o777)
         script = ["#!/bin/sh"]
         for i, r in enumerate(reqs):

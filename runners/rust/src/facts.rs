@@ -43,10 +43,13 @@ fn decode(req: &Value) -> Value {
     };
     // Depth 500 unless XDRCONF_DEFAULTS=1; input length bounds every allocation.
     // XDRCONF_DEFAULTS=1 uses Limits::none(), what most callers pass.
+    // XDRCONF_DEPTH=1000 reproduces stellar-core's admission check from protocol 28
+    // (validateXDRForProtocol -> can_parse_transaction, depth 1000).
+    let depth = std::env::var("XDRCONF_DEPTH").ok().and_then(|d| d.parse().ok()).unwrap_or(500);
     let limits = if std::env::var("XDRCONF_DEFAULTS").as_deref() == Ok("1") {
         Limits::none()
     } else {
-        Limits { depth: 500, len: bytes.len() }
+        Limits { depth, len: bytes.len() }
     };
     let mut cur = Limited::new(std::io::Cursor::new(&bytes[..]), limits);
     let t = match Type::read_xdr_to_end(variant, &mut cur) {

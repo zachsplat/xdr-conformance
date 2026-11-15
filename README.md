@@ -26,7 +26,7 @@ This is the two-day proof behind an application to the Stellar Community Fund RF
 |---|---|
 | Ledger sample | 380 pubnet ledgers in five eras: 28,000,000 (protocol 12), 40,000,000 (18), 50,460,000 (20), 59,000,000 (23), 65,486,000 to 65,486,299 (29). Object hashes in `reports/raw/ledger-sample-sha256.txt` |
 | Inputs compared | 380 whole `LedgerCloseMetaBatch` files, 112,278 `TransactionEnvelope`s, 44,057 result metas |
-| Reference | stellar-core 30.0.0 (0e49751, the build pubnet runs today), `print-xdr` in `stellar/stellar-core:latest` |
+| Reference | stellar-core 30.0.0 (0e49751, the build pubnet runs today): `print-xdr` in `stellar/stellar-core:latest`, plus its protocol-28 admission parse (rs-stellar-xdr at depth 1000) for depth |
 | Implementations | rs-stellar-xdr 30.0.0, go-stellar-sdk v0.9.0 (xdr, network, txnbuild), js-stellar-sdk 17.4.0, py-stellar-base 17.0.1, py-stellar-xdr 0.2.0 |
 | Checks | decodes; re-encodes to the same bytes; transaction hash through each SDK's own model; SEP-51 XDR-JSON equal; Rust's SEP-51 JSON reads back to the same bytes |
 
@@ -62,24 +62,26 @@ js-stellar-sdk#1766: JS ordered liquidity-pool assets by issuer strkey text inst
 | non-zero padding after memo text | refuses | py-stellar-base accepts (filed by others: py-stellar-base#1262) |
 | optional flag = 2 | refuses | py-stellar-base accepts (py-stellar-base#1263) |
 | ScVal bool = 2 | accepts, reads TRUE | rs-stellar-xdr reads FALSE (rs-stellar-xdr#622, #629); Go, JS, py-stellar-xdr refuse; py-stellar-base reads True |
-| 200 nested ScVal vecs | accepts | rs-stellar-xdr at depth 500 and py-stellar-xdr refuse |
+| 200 nested ScVal vecs | accepts (and admits) | rs-stellar-xdr at depth 500 and py-stellar-xdr refuse |
 | empty signed-payload extra signer | decodes, then validation refuses | py-stellar-xdr refuses at decode (F3, minor) |
 | trailing bytes, 29-byte memo, unknown union arm, unknown asset type, 101 operations, count 0xFFFFFFFF with no data, envelope type SCP, 65-byte signed payload, 1000 nested vecs | refuses | none |
 | non-UTF-8 memo with a NUL, unsorted ScMap keys, symbol with invalid characters | accepts | none |
 
 ## Depth sweep
 
-`reports/depth-sweep.md`. Largest nesting each decoder accepts with its shipped defaults:
+`reports/depth-sweep.md`, in one real Soroban transaction. stellar-core decodes with xdrpp (`print-xdr`), then, from protocol 28, re-parses every submitted envelope with rs-stellar-xdr at depth 1000 (`validateXDRForProtocol`); the second check decides admission. Largest nesting each decoder accepts with its shipped defaults:
 
-| shape | stellar-core | rs-stellar-xdr `Limits::none()` | go-stellar-sdk | js-stellar-sdk | py-stellar-base | py-stellar-xdr |
-|---|---|---|---|---|---|---|
-| nested ScVal vecs in a contract argument | 496 | over 1,000 | 600 to 799 | 334 to 399 | 250 to 299 | 199 |
-| nested authorization sub-invocations | over 600 at decode; 493 admitted to a ledger per js-stellar-sdk#1901 | over 600 | over 600 | 494 to 499 | 494 to 499 | 198 |
+| shape | stellar-core admission | stellar-core print-xdr | rs-stellar-xdr `Limits::none()` | go-stellar-sdk | js-stellar-sdk | py-stellar-base | py-stellar-xdr |
+|---|---|---|---|---|---|---|---|
+| nested ScVal vecs in a contract argument | 246 | 496 | over 1,000 | 600 to 799 | 334 to 399 | 250 to 299 | **199** |
+| nested authorization sub-invocations | 490 | over 600 | over 600 | over 600 | 494 to 499 | 494 to 499 | **198** |
+
+Go and JS are looser than admission (already filed: go-stellar-sdk#6047, js-stellar-sdk#1908). py-stellar-xdr is stricter than admission, so it refuses transactions that can be in a ledger (F2).
 
 ## New findings (none filed by anyone as of 2026-11-15)
 
 - **F1** py-stellar-base 17.0.1 SEP-51 JSON: `txsuccess`/`opinner` for `tx_success`/`op_inner`, `from_` for `from`, `AssetCode` as an object, `ContractEvent.contract_id` as hex. Found on pubnet transactions.
-- **F2** py-stellar-xdr 0.2.0 default `max_depth=200` refuses authorization trees from 199 levels, which stellar-core decodes and (per js-stellar-sdk#1901) admits up to 493. It matters because py-stellar-base draft PR #1268 adopts py-stellar-xdr.
+- **F2** py-stellar-xdr 0.2.0 default `max_depth=200` refuses authorization trees from 199 levels and ScVal nesting from 200, which stellar-core admits (up to 490 and 246 in the tested transaction). It matters because py-stellar-base draft PR #1268 adopts py-stellar-xdr.
 - **F3** (minor) py-stellar-xdr refuses an empty signed-payload signer that core's decoder takes and core's validation then refuses.
 
 Already filed by others and reproduced here: rs-stellar-xdr#622 and #629, py-stellar-base#1262 and #1263, js-stellar-sdk#1901 and #1908, go-stellar-sdk#6047.
@@ -90,7 +92,7 @@ The Galexie lake stores meta for every sampled ledger, protocol 12 and 18 includ
 
 ## Limits
 
-No indexer replay yet (wallet-backend, stellar-etl); Java, Swift, Dart and PHP SDKs not run; hostile variants come from three base transactions; depth thresholds measured in one envelope context; core admission rules read from source and from js-stellar-sdk#1901, not exercised on a local network.
+No indexer replay yet (wallet-backend, stellar-etl); Java, Swift, Dart and PHP SDKs not run; hostile variants come from three base transactions; depth thresholds measured in one envelope context; core admission measured by running core's own admission parser settings (rs-stellar-xdr at depth 1000), not by submitting to a local network.
 
 ## Reproduce
 

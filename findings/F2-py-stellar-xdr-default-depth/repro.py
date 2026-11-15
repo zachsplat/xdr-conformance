@@ -9,7 +9,7 @@ n nested sub-invocations.
 """
 import stellar_xdr as X
 
-for n in (198, 199, 493):
+for n in (198, 199, 490, 491):
     raw = open(f"auth-tree-{n}.xdr", "rb").read()
     try:
         X.TransactionEnvelope.from_xdr_bytes(raw)

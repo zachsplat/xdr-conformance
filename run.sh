@@ -26,7 +26,7 @@ build)
   docker run --rm -u "$(id -u):$(id -g)" -e CARGO_HOME=/c -e CARGO_TARGET_DIR=/t -v "$WORK/cargo:/c" -v "$WORK/target:/t" -v "$ROOT/runners/rust:/src" -w /src rust:1.93-slim cargo build --release
   cp "$WORK/target/release/scan" "$WORK/target/release/facts" "$WORK/bin/"
   docker run --rm -u "$(id -u):$(id -g)" -e GOPATH=/g -e GOCACHE=/g/cache -e GOFLAGS=-mod=mod -v "$WORK/gopath:/g" -v "$ROOT/runners/go:/src" -v "$WORK/bin:/out" -w /src golang:1.25-alpine go build -o /out/xdrconf-go .
-  printf '#!/bin/sh\nexec docker run --rm -i -e XDRCONF_DEFAULTS=$1 -u %s -v %s:/w rust:1.93-slim /w/bin/facts\n' "$(id -u):$(id -g)" "$WORK" > "$WORK/bin/facts-wrapper"
+  printf '#!/bin/sh\nexec docker run --rm -i -e XDRCONF_DEFAULTS=$1 -e XDRCONF_DEPTH=${2:-500} -u %s -v %s:/w rust:1.93-slim /w/bin/facts\n' "$(id -u):$(id -g)" "$WORK" > "$WORK/bin/facts-wrapper"
   chmod +x "$WORK/bin/facts-wrapper"
   python3 -m venv "$WORK/venv" && "$WORK/venv/bin/pip" install -q stellar-sdk==17.0.1 stellar-xdr==0.2.0
   cp "$ROOT/sightings/package.json" "$WORK/js/" && (cd "$WORK/js" && npm install --silent)
@@ -74,7 +74,7 @@ depth)
   [ -f "$WORK/bases.json" ] || "$PY" -I "$ROOT/tools/pick_bases.py" "$WORK/scan/txs.jsonl" "$WORK/bases.json"
   "$PY" -I "$ROOT/sweeps/depth_sweep.py" "$WORK/bases.json" "$WORK/depth_req.jsonl"
   "$ROOT/sweeps/run_all_adapters.sh" "$WORK/depth_req.jsonl" "$WORK/depth"
-  python3 -I "$ROOT/sweeps/table.py" "$WORK/depth_req.jsonl" stellar-core=$WORK/depth/core.jsonl rs-stellar-xdr_none=$WORK/depth/rust_1.jsonl rs-stellar-xdr_depth500=$WORK/depth/rust_0.jsonl go-stellar-sdk=$WORK/depth/go.jsonl js-stellar-sdk=$WORK/depth/js.jsonl py-stellar-base=$WORK/depth/pysdk_1.jsonl py-stellar-xdr_default=$WORK/depth/pyxdr_1.jsonl > "$ROOT/reports/depth-sweep.md"
+  python3 -I "$ROOT/sweeps/table.py" "$WORK/depth_req.jsonl" stellar-core_admission=$WORK/depth/rust_admit.jsonl stellar-core_print-xdr=$WORK/depth/core.jsonl rs-stellar-xdr_none=$WORK/depth/rust_1.jsonl rs-stellar-xdr_depth500=$WORK/depth/rust_0.jsonl go-stellar-sdk=$WORK/depth/go.jsonl js-stellar-sdk=$WORK/depth/js.jsonl py-stellar-base=$WORK/depth/pysdk_1.jsonl py-stellar-xdr_default=$WORK/depth/pyxdr_1.jsonl > "$ROOT/reports/depth-sweep.md"
   ;;
 corpus)
   "$PY" -I "$ROOT/tools/pick_corpus.py" "$WORK/scan/txs.jsonl" "$WORK/scan/lcm" "$WORK/replay/rust_env.jsonl" "$ROOT/corpus" "$ROOT/corpus/extra/lp-issuers-strkey-vs-bytes-order.json"
