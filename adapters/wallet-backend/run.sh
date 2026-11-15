@@ -10,7 +10,8 @@
 #                                                      docker --network none); writes to $WORK/gen-out. GEN_CASES picks
 #                                                      cases (default trust,muxed,native-transfer)
 #
-# WORK (default /dev/shm/xdrc-wb) holds the clone, worktrees, module cache and ledgers. Delete it when done.
+# WORK (default /dev/shm/xdrc-wb) holds the clone, worktrees, module cache and ledgers. Delete it when done
+# with chmod -R u+w "$WORK" && rm -rf "$WORK" (Go makes the module cache read-only).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"

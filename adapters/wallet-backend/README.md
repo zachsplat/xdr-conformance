@@ -64,7 +64,7 @@ Needs docker and about 5 GB in `$WORK` (clone, module cache, ledgers). Images: `
 ```
 adapters/wallet-backend/run.sh fetch     # network on: clone wallet-backend, a worktree per commit, go mod download, 4 Galexie ledgers
 adapters/wallet-backend/run.sh replay    # offline: every run is docker --network none with GOPROXY=off; writes results/, checks expected.tsv
-rm -rf /dev/shm/xdrc-wb                  # WORK defaults to /dev/shm/xdrc-wb
+chmod -R u+w /dev/shm/xdrc-wb && rm -rf /dev/shm/xdrc-wb   # WORK defaults to /dev/shm/xdrc-wb; Go leaves its module cache read-only
 ```
 
 One commit, one input:
