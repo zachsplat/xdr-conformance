@@ -1,12 +1,36 @@
-# Expected adapter result per input and wallet-backend commit. run.sh replay fails if any cell differs.
-# "*" in the input column covers every input not listed (the SDK corpus controls and the pubnet ledgers).
+# Expected adapter result for every input at every wallet-backend commit (33 inputs x 7 commits = 231 cells).
+# run.sh replay fails if any cell differs, if an input listed here is missing from results/, or if results/ has an input not listed here.
 input	79ea2acd	6e5a5910	2a0a84ea	2c873353	764a4f5b	c152783c	3e22515a
 corpus:signer-signed-payload-setoptions	mishandled	halts	halts	pass	pass	pass	pass
-testnet:4437357.xdr.zst	mishandled	halts	halts	pass	pass	pass	pass
-corpus:soroban-muxed-source	mishandled	pass	pass	pass	pass	pass	pass
 corpus:sac-trust-creates-trustline	mishandled	mishandled	mishandled	mishandled	mishandled	pass	pass
+corpus:soroban-muxed-source	mishandled	pass	pass	pass	pass	pass	pass
 corpus:sac-native-transfer-creates-account	mishandled	mishandled	mishandled	mishandled	mishandled	mishandled	mishandled
-standalone:ledger-26.xdr.zst	error	error	error	error	error	error	mishandled
-standalone:ledger-45.xdr.zst	error	error	error	error	error	error	pass
+corpus:tx-v0-envelope	pass	pass	pass	pass	pass	pass	pass
+corpus:fee-bump	pass	pass	pass	pass	pass	pass	pass
+corpus:muxed-destination	pass	pass	pass	pass	pass	pass	pass
+corpus:muxed-source	pass	pass	pass	pass	pass	pass	pass
+corpus:muxed-merge-destination	pass	pass	pass	pass	pass	pass	pass
+corpus:signed-payload-extra-signer	pass	pass	pass	pass	pass	pass	pass
+corpus:precond-min-seq-num	pass	pass	pass	pass	pass	pass	pass
+corpus:memo-text-not-utf8	pass	pass	pass	pass	pass	pass	pass
+corpus:memo-text-max-len	pass	pass	pass	pass	pass	pass	pass
+corpus:operations-max-100	pass	pass	pass	pass	pass	pass	pass
+corpus:path-max-len-5	pass	pass	pass	pass	pass	pass	pass
+corpus:auth-tree-nested	pass	pass	pass	pass	pass	pass	pass
+corpus:claimable-balance-create	pass	pass	pass	pass	pass	pass	pass
+corpus:clawback	pass	pass	pass	pass	pass	pass	pass
+corpus:set-trust-line-flags	pass	pass	pass	pass	pass	pass	pass
+corpus:liquidity-pool-deposit	pass	pass	pass	pass	pass	pass	pass
+corpus:sponsorship-sandwich	pass	pass	pass	pass	pass	pass	pass
+corpus:extend-footprint-ttl	pass	pass	pass	pass	pass	pass	pass
+corpus:allow-trust-asset-code	pass	pass	pass	pass	pass	pass	pass
+corpus:scval-u256	pass	pass	pass	pass	pass	pass	pass
+corpus:meta-event-lp-address	pass	pass	pass	pass	pass	pass	pass
+corpus:meta-event-claimable-balance-address	pass	pass	pass	pass	pass	pass	pass
+pubnet:65486002.xdr.zst	pass	pass	pass	pass	pass	pass	pass
+pubnet:65486006.xdr.zst	pass	pass	pass	pass	pass	pass	pass
+pubnet:65486052.xdr.zst	pass	pass	pass	pass	pass	pass	pass
 standalone:ledger-43.xdr.zst	error	error	error	error	error	error	pass
-*	pass	pass	pass	pass	pass	pass	pass
+standalone:ledger-45.xdr.zst	error	error	error	error	error	error	pass
+standalone:ledger-26.xdr.zst	error	error	error	error	error	error	mishandled
+testnet:4437357.xdr.zst	mishandled	halts	halts	pass	pass	pass	pass

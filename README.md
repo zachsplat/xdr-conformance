@@ -113,11 +113,11 @@ js-stellar-sdk#1766: JS ordered liquidity-pool assets by issuer strkey text inst
 | issue | input | before the fix | after the fix |
 |---|---|---|---|
 | wallet-backend#716 | Soroban operation with an M... source (local core 30) | `79ea2acd`: stored as 33 bytes, reads back undecodable | `6e5a5910` (#693): reads back as the base G... account |
-| wallet-backend#716 and #729 | signed-payload signer, the testnet transaction #729 names (ledger 4,437,357) | `79ea2acd`: reads back undecodable; `6e5a5910` and `2a0a84ea`: the encoder refuses it | `2c873353` (#729): stored and read back exactly |
+| wallet-backend#716 and #729 | signed-payload signer: the only one in testnet ledger 4,437,357, the ledger #729 names | `79ea2acd`: reads back undecodable; `6e5a5910` and `2a0a84ea`: the encoder refuses it | `2c873353` (#729): stored and read back exactly |
 | wallet-backend#731 | `trust()` on an asset contract (local core 30) | `764a4f5b`: trustline created, no state change | `c152783c` (#734): TRUSTLINE/ADD |
 | wallet-backend#804 (open) | native-asset contract transfer that creates an account (local core 30) | main `3e22515a`: account created, no ACCOUNT/CREATE | no fix yet |
 
-The 22 pubnet corpus entries and three whole pubnet ledgers pass at all seven commits. `expected.tsv` pins all 231 results and `run.sh replay` fails on any change.
+The 22 pubnet corpus entries and three whole pubnet ledgers pass at all seven commits. `expected.tsv` pins all 231 results (33 inputs at 7 commits) and `run.sh replay` fails on any change.
 
 ## Hostile entries
 

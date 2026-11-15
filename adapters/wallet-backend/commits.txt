@@ -1,6 +1,6 @@
 # wallet-backend commits the adapter runs against, oldest first.
 # commit                                    role
-79ea2acd1dc65a07166133cc04b12e76db314db0    #715 merged; last commit before #693 (#716 filed against this state)
+79ea2acd1dc65a07166133cc04b12e76db314db0    #715 merged; last commit before #693 (#716 was found while reviewing #715)
 6e5a59101158dc2996295450190142366062cd05    #693 merged: M... reduced to the base account; other non-32-byte keys refused
 2a0a84ea12523b6c92e278c0c84b443041240095    last commit before #729
 2c873353c1f0f3c9b145e25a7d009023ad104a1c    #729 merged: signer keys stored in full (SignerKeyBytea)

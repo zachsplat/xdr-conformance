@@ -6,7 +6,7 @@ Written by `summarize.py` from `results/*.jsonl`. One row per input, one column 
 
 | commit | role |
 |---|---|
-| [`79ea2acd`](https://github.com/stellar/wallet-backend/commit/79ea2acd) | #715 merged; last commit before #693 (#716 filed against this state) |
+| [`79ea2acd`](https://github.com/stellar/wallet-backend/commit/79ea2acd) | #715 merged; last commit before #693 (#716 was found while reviewing #715) |
 | [`6e5a5910`](https://github.com/stellar/wallet-backend/commit/6e5a5910) | #693 merged: M... reduced to the base account; other non-32-byte keys refused |
 | [`2a0a84ea`](https://github.com/stellar/wallet-backend/commit/2a0a84ea) | last commit before #729 |
 | [`2c873353`](https://github.com/stellar/wallet-backend/commit/2c873353) | #729 merged: signer keys stored in full (SignerKeyBytea) |

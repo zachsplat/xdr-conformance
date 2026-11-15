@@ -70,7 +70,7 @@ one)
   ;;
 replay)
   mkdir -p "$HERE/results"
-  # The three indexer entries, then every entry of the SDK corpus that carries a result meta (controls).
+  # The four indexer entries, then every entry of the SDK corpus that carries a result meta (controls).
   entries=(-manifest /kit/corpus/indexer/manifest.json -manifest /kit/corpus/manifest.json)
   for m in corpus/indexer corpus; do
     for id in $(python3 -I -c 'import json,sys; print(" ".join(e["id"] for e in json.load(open(sys.argv[1]))["entries"] if "meta" in e["files"]))' "$ROOT/$m/manifest.json"); do

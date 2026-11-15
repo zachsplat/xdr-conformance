@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn results/*.jsonl into results/summary.md and check them against expected.tsv.
 
-Usage: summarize.py ADAPTER_DIR    (exit 1 if any cell differs from expected.tsv)
+Usage: summarize.py ADAPTER_DIR    (exit 1 if any cell differs from expected.tsv, or an input is in one and not the other)
 """
 import json
 import os
@@ -33,8 +33,14 @@ def main():
     head, rows = exp_rows[0], exp_rows[1:]
     expected = {row[0]: dict(zip(head[1:], row[1:])) for row in rows}
     mismatches, checked = [], 0
+    for inp in expected:
+        if inp not in order:
+            mismatches.append(f"{inp}: listed in expected.tsv, missing from results/")
     for inp in order:
-        want = expected.get(inp, expected["*"])
+        want = expected.get(inp)
+        if want is None:
+            mismatches.append(f"{inp}: in results/, not listed in expected.tsv")
+            continue
         for c in commits:
             got = res.get((inp, c), {}).get("result", "missing")
             checked += 1

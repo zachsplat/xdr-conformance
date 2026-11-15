@@ -28,7 +28,7 @@
    "caps": [
     "CAP-0040"
    ],
-   "description": "SetOptions adds an ed25519 signed-payload signer (P... strkey, 32-byte key plus a 4-byte payload). The testnet transaction wallet-backend#729 names as the one that halted ingestion.",
+   "description": "SetOptions adds an ed25519 signed-payload signer (P... strkey, 32-byte key plus a 4-byte payload). The only signed-payload signer in testnet ledger 4437357, the ledger wallet-backend#729 names as where ingestion halted.",
    "network": "testnet",
    "network_passphrase": "Test SDF Network ; September 2015",
    "protocol_version": 28,

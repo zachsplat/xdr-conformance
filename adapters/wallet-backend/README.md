@@ -9,12 +9,12 @@ Run on 2026-11-15. Full table: [`results/summary.md`](results/summary.md). Raw r
 | input | before the fix | after the fix | main (`3e22515a`) |
 |---|---|---|---|
 | #716, muxed source on a Soroban operation (`soroban-muxed-source`) | `79ea2acd`: the M... address is stored as 33 bytes and reads back as `MCEEMG2X...B5BL3OJ`, which does not decode (`invalid payload length 32, expected 40`) | `6e5a5910` (#693): reads back as its own G... base account | pass |
-| #716, signed-payload signer (`signer-signed-payload-setoptions`, the testnet transaction #729 names) | `79ea2acd`: the P... signer is stored as 33 bytes and reads back undecodable (`invalid signed payload length 32, expected at least 36`) | `6e5a5910` and `2a0a84ea`: the column encoder refuses it (**halts**, see below); `2c873353` (#729): stored and read back exactly | pass |
-| #731, `trust()` on an asset contract (`sac-trust-creates-trustline`) | `764a4f5b` and every earlier commit: trustline created in InvokeHostFunction, no state change | `c152783c` (#734): recorded as TRUSTLINE/ADD | pass |
+| #716, signed-payload signer (`signer-signed-payload-setoptions`, the only signed-payload signer in testnet ledger 4,437,357, the ledger #729 names) | `79ea2acd`: the P... signer is stored as 33 bytes and reads back undecodable (`invalid signed payload length 32, expected at least 36`) | `6e5a5910` and `2a0a84ea`: the column encoder refuses it (**halts**, see below); `2c873353` (#729): stored and read back exactly | pass |
+| #731, `trust()` on an asset contract (`sac-trust-creates-trustline`) | `764a4f5b` and the four earlier commits tested: trustline created in InvokeHostFunction, no state change | `c152783c` (#734): recorded as TRUSTLINE/ADD | pass |
 | #804 (open), native-asset contract transfer creates an account (`sac-native-transfer-creates-account`) | | no fix yet | account created in InvokeHostFunction, no ACCOUNT/CREATE state change |
 | controls: the 22 pubnet entries of the SDK corpus, and pubnet ledgers 65,486,002, 65,486,006 and 65,486,052 replayed whole (over 10,000 addresses per commit) | pass at every commit | | pass |
 
-`expected.tsv` holds the expected result for every input at every commit (231 cells); `run.sh replay` fails if any cell differs.
+`expected.tsv` holds the expected result for every input at every commit (33 inputs, 231 cells); `run.sh replay` fails if any cell differs or an input goes missing.
 
 Between #693 and #729 the signed-payload signer went from silently truncated to refused: #693 made `AddressBytea.Value()` reject any key that is not 32 bytes, and a P... key is 40 to 100 bytes. #729's description says what that does in production: the COPY encode fails, the persist transaction rolls back with the cursor, and ingestion retries the same ledger. The adapter shows the refusal on the real testnet transaction, both on its own and inside its whole ledger (4,437,357).
 
