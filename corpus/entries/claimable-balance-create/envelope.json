@@ -1,0 +1,59 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "af885d61",
+    "signature": "e6c52f251764daf194584cd4d054a5e88b4941afd2adb958901850ad4559730cfeb120907b29e7f6d5209f93aff044d1256993e23c4960e911a229c51742dd03"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1647113747",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 100,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "create_claimable_balance": {
+       "amount": "10000000000000",
+       "asset": {
+        "credit_alphanum12": {
+         "asset_code": "METAC",
+         "issuer": "GB5R6Z5BAVTMMIQJYG5PLRATH4I4JDC3BSQP5JV2BCKT4L4DMLY4YPLH"
+        }
+       },
+       "claimants": [
+        {
+         "claimant_type_v0": {
+          "destination": "GDFXKI2Q7ZPYGVZX2K5UMO6XUVOSN3YTKSJIMZN4CECUMI7UDOU72C5J",
+          "predicate": {
+           "before_relative_time": "432000"
+          }
+         }
+        },
+        {
+         "claimant_type_v0": {
+          "destination": "GATSA46POK5DQFXLJNE3UIAT5XL246VYD25N7IQ5AP2Y255PRBOWDHEI",
+          "predicate": {
+           "not": {
+            "before_absolute_time": "1647545568"
+           }
+          }
+         }
+        }
+       ]
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "152571308668723922",
+   "source_account": "GATSA46POK5DQFXLJNE3UIAT5XL246VYD25N7IQ5AP2Y255PRBOWDHEI"
+  }
+ }
+}

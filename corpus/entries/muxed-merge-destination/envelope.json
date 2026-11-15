@@ -1,0 +1,82 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "417ba473",
+    "signature": "b4079d0e0314faef24f27cd0cec46e2484e0d424909f211512ea25673d7e5346a66440f11187dfb596eedc812fccecf982d0464c3ef607e26955298d66321002"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1794716161",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 400,
+   "memo": {
+    "text": "\\xf0\\x9f\\xa7\\xb9 spam swept"
+   },
+   "operations": [
+    {
+     "body": {
+      "manage_sell_offer": {
+       "amount": "0",
+       "buying": {
+        "credit_alphanum12": {
+         "asset_code": "STARDUST",
+         "issuer": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU"
+        }
+       },
+       "offer_id": "1866143437",
+       "price": {
+        "d": 1,
+        "n": 1
+       },
+       "selling": "native"
+      }
+     },
+     "source_account": "GBHPEODFSFHGKDUETVVLKWDKUUDP56X5XMWSVMUTTSWVI36MOF5ERPEL"
+    },
+    {
+     "body": {
+      "payment": {
+       "amount": "45944782",
+       "asset": {
+        "credit_alphanum12": {
+         "asset_code": "STARDUST",
+         "issuer": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU"
+        }
+       },
+       "destination": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAABKGN33S"
+      }
+     },
+     "source_account": "GBHPEODFSFHGKDUETVVLKWDKUUDP56X5XMWSVMUTTSWVI36MOF5ERPEL"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "STARDUST",
+         "issuer": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU"
+        }
+       }
+      }
+     },
+     "source_account": "GBHPEODFSFHGKDUETVVLKWDKUUDP56X5XMWSVMUTTSWVI36MOF5ERPEL"
+    },
+    {
+     "body": {
+      "account_merge": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAABKGN33S"
+     },
+     "source_account": "GBHPEODFSFHGKDUETVVLKWDKUUDP56X5XMWSVMUTTSWVI36MOF5ERPEL"
+    }
+   ],
+   "seq_num": "183565459124517456",
+   "source_account": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAABKGN33S"
+  }
+ }
+}

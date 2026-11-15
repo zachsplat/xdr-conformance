@@ -1,0 +1,12 @@
+{
+  "name": "xdrconf-sightings",
+  "private": true,
+  "description": "Pinned js-stellar-sdk tags before and after the fixes for js-stellar-sdk#1766, #1785 and #1789.",
+  "dependencies": {
+    "@stellar/stellar-sdk": "17.4.0",
+    "sdk1720": "npm:@stellar/stellar-sdk@17.2.0",
+    "sdk1721": "npm:@stellar/stellar-sdk@17.2.1",
+    "sdk1730": "npm:@stellar/stellar-sdk@17.3.0",
+    "sdk1740": "npm:@stellar/stellar-sdk@17.4.0"
+  }
+}

@@ -1,0 +1,73 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "5a7b0cf9",
+    "signature": "d6da473ddc2945be6ba9dab76dfd52fe5cb235de1ecf17a351d307392c9ff07f7cc2e45ad5b24231eecada1a52d289e336f2a47409e26f69dacfc48bc4fefb03"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1794716398",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 400,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum12": {
+         "asset_code": "xRUNES",
+         "issuer": "GCLQS7XDYZN4KPW5STJVVLHSSYH5DYBQXDCMZG5PCWBGTX2EAUI54ZCS"
+        }
+       },
+       "dest_min": "243220648",
+       "destination": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF",
+       "path": [
+        {
+         "credit_alphanum4": {
+          "asset_code": "EURC",
+          "issuer": "GDHU6WRG4IEQXM5NZ4BMPKOXHW76MZM4Y2IEMFDVXBSDP6SJY4ITNPP2"
+         }
+        }
+       ],
+       "send_amount": "250000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "USDC",
+         "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        }
+       }
+      }
+     },
+     "source_account": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF"
+    },
+    {
+     "body": {
+      "liquidity_pool_deposit": {
+       "liquidity_pool_id": "LCOE5VYJJQROMMS3TH6TNXISDEER5UR63JKATF3NGI7NAMUZBUOBIBQU",
+       "max_amount_a": "250000",
+       "max_amount_b": "243220648",
+       "max_price": {
+        "d": 2095896694,
+        "n": 2141371
+       },
+       "min_price": {
+        "d": 2142472177,
+        "n": 2103115
+       }
+      }
+     },
+     "source_account": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF"
+    }
+   ],
+   "seq_num": "244402996560251553",
+   "source_account": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF"
+  }
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "reference": "rust",
+ "compared": [
+  "go"
+ ],
+ "total_requests": 44057,
+ "divergences": []
+}

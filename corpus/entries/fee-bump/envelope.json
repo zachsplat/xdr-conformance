@@ -1,0 +1,61 @@
+{
+ "tx_fee_bump": {
+  "signatures": [
+   {
+    "hint": "904edd03",
+    "signature": "490e502ab3337ce2451e4ce801cb3eb400dfc5e40d52f1ac8f29c4d11b177259051b1db766f390af0f77e81fc3c4d60ba28a1d0b7a1f7b2851acd240a5b63a0d"
+   }
+  ],
+  "tx": {
+   "ext": "v0",
+   "fee": "2000000",
+   "fee_source": "GAUA7XL5K54CC2DDGP77FJ2YBHRJLT36CPZDXWPM6MP7MANOGG77PNJU",
+   "inner_tx": {
+    "tx": {
+     "signatures": [
+      {
+       "hint": "0a8c9ec6",
+       "signature": "4876ad9b2fbaee41d0bb8434d2c75d7cf17b072d73b8a0f4602045f8f88379cd81ef646913aece3689a619e7c45830c31f6d1da9421ac0a4e6277d8b2c8fbe01"
+      },
+      {
+       "hint": "8ec2e048",
+       "signature": "368bfca9f83637122bea881d8b4ad33d71cb98b503950e8e5ee22090d56d40774bae3b4cdffe42d9724b37b21aef5458df92c2ac70c5559f4728dca77266f50a"
+      }
+     ],
+     "tx": {
+      "cond": {
+       "time": {
+        "max_time": "0",
+        "min_time": "0"
+       }
+      },
+      "ext": "v0",
+      "fee": 0,
+      "memo": {
+       "text": "260412530"
+      },
+      "operations": [
+       {
+        "body": {
+         "payment": {
+          "amount": "2500000000",
+          "asset": {
+           "credit_alphanum4": {
+            "asset_code": "USDC",
+            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+           }
+          },
+          "destination": "GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6"
+         }
+        },
+        "source_account": "GC5HUFIKZBK5XRNOBPXR4PBR3PWR26GP5UFRKSCOOOIENYVSF3NMA23U"
+       }
+      ],
+      "seq_num": "214085951993997683",
+      "source_account": "GCM3STWMIECHVD5KGOF2PYUE7E4JBSATLFI5PJQYOSTUOKUOYLQERJI7"
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,3 @@
+@stellar/stellar-sdk 17.2.0: FAIL Assets are not in lexicographic order
+@stellar/stellar-sdk 17.2.1: ok   decoded; pool id 7188b01c6e68948cf613b2c5673297da301fe4e10bb4200c3b7036cfec97ec3b matches Horizon
+@stellar/stellar-sdk 17.4.0: ok   decoded; pool id 7188b01c6e68948cf613b2c5673297da301fe4e10bb4200c3b7036cfec97ec3b matches Horizon

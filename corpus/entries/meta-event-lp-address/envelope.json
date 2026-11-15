@@ -1,0 +1,51 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "4cca3604",
+    "signature": "4f8312f840266015f6474a57517a28747b0a8cf8c2512d8d63b6066153102e0e620415af728fcf9d1505f80b6cf16abb72b033d6cd130a6b845cb833be75740f"
+   }
+  ],
+  "tx": {
+   "cond": "none",
+   "ext": "v0",
+   "fee": 100000,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum12": {
+         "asset_code": "yUSDC",
+         "issuer": "GDGTVWSM4MGS4T7Z6W4RPWOCHE2I6RDFCIFZGS3DOA63LWQTRNZNTTFF"
+        }
+       },
+       "dest_min": "7247",
+       "destination": "GBUA3QRAVYTQ2QEJYNKQ76NPMR6NZNNQSY5REUDRRYGA3SKMZI3AIQYA",
+       "path": [
+        "native",
+        {
+         "credit_alphanum4": {
+          "asset_code": "AMM",
+          "issuer": "GARQ7O5JPBD2DDVEFFZ2LVWH77BYSC7K7RMGI7W5GLRVSWPHZBNGBDOQ"
+         }
+        }
+       ],
+       "send_amount": "6250000",
+       "send_asset": {
+        "credit_alphanum12": {
+         "asset_code": "XAGTOK",
+         "issuer": "GCAM24OUUVGHDT3HCI2I2JNTPGXPHQU44XHJJE2BQA7623IAO7MHUTOK"
+        }
+       }
+      }
+     },
+     "source_account": "GBUA3QRAVYTQ2QEJYNKQ76NPMR6NZNNQSY5REUDRRYGA3SKMZI3AIQYA"
+    }
+   ],
+   "seq_num": "167665292623742775",
+   "source_account": "GBUA3QRAVYTQ2QEJYNKQ76NPMR6NZNNQSY5REUDRRYGA3SKMZI3AIQYA"
+  }
+ }
+}

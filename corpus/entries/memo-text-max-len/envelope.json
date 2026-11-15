@@ -1,0 +1,63 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "c4852275",
+    "signature": "fd4a5bddeee39accf052a6eb846f2770c422e085de8298b479d941897b99bfd86a05aec6c1f0685d42a3829def012f249698163ae0ade1a2e7efa66a9421c60b"
+   },
+   {
+    "hint": "48be41b0",
+    "signature": "e6765fb373c1e831ee3157535adbc711ce96067ce4d889d4463c541709a54f0c827701a851acd46791b745935e2943d71f5a2263286de01c6420ce5216e4790c"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1647113608",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 6002,
+   "memo": {
+    "text": "bsi3:0.0001182999999999948:5"
+   },
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": "native",
+       "dest_min": "500000",
+       "destination": "GBNBOFSOAVPFPSMXJ6CC7AUHSMUWYHCTWYRQJRM3XIRNUTCIXZA3AV7F",
+       "path": [
+        {
+         "credit_alphanum4": {
+          "asset_code": "SVIT",
+          "issuer": "GD6PZFZ3SEASOCNTJNAZ4YRE77NNCEX4AHKCI3FLLP7FPMMYDB25NBCC"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "GOLD",
+          "issuer": "GBC5ZGK6MQU3XG5Y72SXPA7P5R5NHYT2475SNEJB2U3EQ6J56QLVGOLD"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "XRP",
+          "issuer": "GBXRPL45NPHCVMFFAYZVUVFFVKSIZ362ZXFP7I2ETNQ3QKZMFLPRDTD5"
+         }
+        }
+       ],
+       "send_amount": "500000",
+       "send_asset": "native"
+      }
+     },
+     "source_account": "GBNBOFSOAVPFPSMXJ6CC7AUHSMUWYHCTWYRQJRM3XIRNUTCIXZA3AV7F"
+    }
+   ],
+   "seq_num": "171516319215126710",
+   "source_account": "GCEA54EM3BJCHDCAJWQCZZDYT46234YS4SPXK4OUVDKDXFWEQURHLLEY"
+  }
+ }
+}

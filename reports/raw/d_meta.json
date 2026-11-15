@@ -1,0 +1,137 @@
+{
+ "reference": "rust",
+ "compared": [
+  "pyxdr",
+  "sdk"
+ ],
+ "total_requests": 44057,
+ "divergences": [
+  {
+   "adapter": "sdk",
+   "kind": "sep51_json_differs",
+   "count": 44057,
+   "examples": [
+    {
+     "id": "28000000:0",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:1",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:2",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": {\"updated\": {\"amount\": \"363\", \"buying\": \"native\", \"ext\": \"v0\", \"flags\": 0, \"offer_id\": \"150804436\",...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:3",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": {\"crea...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:4",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:5",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:6",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:7",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": {\"created\": {\"amount\": \"2750001415\", \"buying\": {\"credit_alphanum4\": {\"asset_code\": \"BB1\", \"issuer\": ...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:8",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:9",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:10",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:11",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:12",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:13",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": {\"updated\": {\"amount\": \"395151961\", \"buying\": {\"credit_alphanum4\": {\"asset_code\": \"ETH\", \"issuer\": ...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:14",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": {\"updated\": {\"amount\": \"800000000\", \"buying\": {\"credit_alphanum4\": {\"asset_code\": \"GTN\", \"issuer\": ...",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:15",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:16",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:17",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:18",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "sdk": "\"<missing>\""
+    },
+    {
+     "id": "28000000:19",
+     "path": "$.result.result.result.tx_success",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"delete...",
+     "sdk": "\"<missing>\""
+    }
+   ]
+  }
+ ]
+}

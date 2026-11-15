@@ -1,0 +1,101 @@
+{
+ "id": "lp-issuers-strkey-vs-bytes-order",
+ "envelope_b64": "AAAAAgAAAABwm1egqg61kl+sbyG39Uhz+O1b6svKdmooOxjBQ+QEAgAAASwAVEAjAAAAAQAAAAAAAAAAAAAAAwAAAAAAAAAGAAAAAVVTRAAAAAAAywAq868W2hpjMFU9nws/BsEP427/SmaodctC0Vf0HQl//////////wAAAAAAAAAGAAAAAVVTRAAAAAAA+FmP//u0HmlrWaIyODMphovD/Squcbd5Wzsj5p34kNh//////////wAAAAAAAAAGAAAAAwAAAAAAAAABVVNEAAAAAADLACrzrxbaGmMwVT2fCz8GwQ/jbv9KZqh1y0LRV/QdCQAAAAFVU0QAAAAAAPhZj//7tB5pa1miMjgzKYaLw/0qrnG3eVs7I+ad+JDYAAAAHn//////////AAAAAAAAAAFD5AQCAAAAQDrwk4Ts77VQU/+bwL/3XWfU2A/avJb8Xammjo55O0CJB7b8ybY5JlupZ/pDu0MmbrRd2bGAeGj6V2Dhj491mgU=",
+ "meta_b64": null,
+ "meta_type": null,
+ "expected_json": {
+  "tx": {
+   "signatures": [
+    {
+     "hint": "43e40402",
+     "signature": "3af09384ecefb55053ff9bc0bff75d67d4d80fdabc96fc5da9a68e8e793b408907b6fcc9b639265ba967fa43bb43266eb45dd9b1807868fa5760e18f8f759a05"
+    }
+   ],
+   "tx": {
+    "cond": "none",
+    "ext": "v0",
+    "fee": 300,
+    "memo": "none",
+    "operations": [
+     {
+      "body": {
+       "change_trust": {
+        "limit": "9223372036854775807",
+        "line": {
+         "credit_alphanum4": {
+          "asset_code": "USD",
+          "issuer": "GDFQAKXTV4LNUGTDGBKT3HYLH4DMCD7DN37UUZVIOXFUFUKX6QOQTN2L"
+         }
+        }
+       }
+      },
+      "source_account": null
+     },
+     {
+      "body": {
+       "change_trust": {
+        "limit": "9223372036854775807",
+        "line": {
+         "credit_alphanum4": {
+          "asset_code": "USD",
+          "issuer": "GD4FTD777O2B42LLLGRDEOBTFGDIXQ75FKXHDN3ZLM5SHZU57CINQCG3"
+         }
+        }
+       }
+      },
+      "source_account": null
+     },
+     {
+      "body": {
+       "change_trust": {
+        "limit": "9223372036854775807",
+        "line": {
+         "pool_share": {
+          "liquidity_pool_constant_product": {
+           "asset_a": {
+            "credit_alphanum4": {
+             "asset_code": "USD",
+             "issuer": "GDFQAKXTV4LNUGTDGBKT3HYLH4DMCD7DN37UUZVIOXFUFUKX6QOQTN2L"
+            }
+           },
+           "asset_b": {
+            "credit_alphanum4": {
+             "asset_code": "USD",
+             "issuer": "GD4FTD777O2B42LLLGRDEOBTFGDIXQ75FKXHDN3ZLM5SHZU57CINQCG3"
+            }
+           },
+           "fee": 30
+          }
+         }
+        }
+       }
+      },
+      "source_account": null
+     }
+    ],
+    "seq_num": "23714417111728129",
+    "source_account": "GBYJWV5AVIHLLES7VRXSDN7VJBZ7R3K35LF4U5TKFA5RRQKD4QCAFG6G"
+   }
+  }
+ },
+ "tx_hash": "b79f02ec4c354f48528fe6213405ede999d4139124c332266c56c30c96b8eb2e",
+ "pattern": "lp_issuer_strkey_order_differs",
+ "caps": [
+  "CAP-0038"
+ ],
+ "description": "ChangeTrust into a constant-product pool of two USD assets whose issuers sort one way as raw key bytes and the other way as G... strkey text. No such pool exists on pubnet (0 of 639 same-code pools); this one is from testnet history.",
+ "network": "testnet",
+ "network_passphrase": "Test SDF Network ; September 2015",
+ "protocol_version": 29,
+ "source": {
+  "kind": "horizon-testnet",
+  "ledger": 5521445,
+  "tx_hash": "b79f02ec4c354f48528fe6213405ede999d4139124c332266c56c30c96b8eb2e",
+  "liquidity_pool_id": "7188b01c6e68948cf613b2c5673297da301fe4e10bb4200c3b7036cfec97ec3b",
+  "closed_at": "2026-11-02T14:47:45Z"
+ },
+ "synthetic": false,
+ "sightings": [
+  "https://github.com/stellar/js-stellar-sdk/pull/1766"
+ ]
+}

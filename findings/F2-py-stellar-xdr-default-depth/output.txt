@@ -1,0 +1,6 @@
+auth tree 198 levels: decodes with defaults
+   to_json_value() with defaults: ok
+auth tree 199 levels: XdrDepthError: nesting deeper than max_depth=200 at offset 33180
+   to_json_value() with defaults: XdrDepthError: value nested deeper than max_depth=200
+auth tree 493 levels: XdrDepthError: nesting deeper than max_depth=200 at offset 33180
+   to_json_value() with defaults: XdrDepthError: value nested deeper than max_depth=200

@@ -1,0 +1,409 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "2834294f",
+    "signature": "beec5bf32d30bae7417f6a92ff178f62897c6b8fbd4371999172877b8fc044abf060c71231eb8a8751bbb2048342159229b89412288ab060dd6a6f6d6d3a4503"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "v2": {
+     "extra_signers": [],
+     "ledger_bounds": {
+      "max_ledger": 65486244,
+      "min_ledger": 0
+     },
+     "min_seq_age": "0",
+     "min_seq_ledger_gap": 0,
+     "min_seq_num": null,
+     "time_bounds": null
+    }
+   },
+   "ext": {
+    "v1": {
+     "ext": "v0",
+     "resource_fee": "1499039",
+     "resources": {
+      "disk_read_bytes": 348,
+      "footprint": {
+       "read_only": [
+        {
+         "contract_data": {
+          "contract": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "TickBitmap"
+            },
+            {
+             "i32": -2
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CD3KRKGDRVWPXVB3VXLUMQKMX6XZ6Q2H334IVZD4XXNAMKSRVQL5GLYF",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_code": {
+          "hash": "003710b383f9da7d650a7f719a7be479110266427817ebbed61d924505fcd7c7"
+         }
+        },
+        {
+         "contract_code": {
+          "hash": "9f94c577ea24c2f71cbb0c964c9c9d321e02448d1fe946020afb18974b1c2602"
+         }
+        }
+       ],
+       "read_write": [
+        {
+         "account": {
+          "account_id": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+         }
+        },
+        {
+         "trustline": {
+          "account_id": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR",
+          "asset": {
+           "credit_alphanum4": {
+            "asset_code": "USDC",
+            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+           }
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR",
+          "durability": "temporary",
+          "key": {
+           "ledger_key_nonce": {
+            "nonce": "8605304438801587903"
+           }
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Balance"
+            },
+            {
+             "address": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "temporary",
+          "key": {
+           "vec": [
+            {
+             "symbol": "RecentOracleBucket"
+            },
+            {
+             "u128": "29911953"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "temporary",
+          "key": {
+           "vec": [
+            {
+             "symbol": "RecentOracleBucket"
+            },
+            {
+             "u128": "29911954"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "temporary",
+          "key": {
+           "vec": [
+            {
+             "symbol": "RecentOracleBucket"
+            },
+            {
+             "u128": "29911955"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "temporary",
+          "key": {
+           "vec": [
+            {
+             "symbol": "RecentOracleBucket"
+            },
+            {
+             "u128": "29911956"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Balance"
+            },
+            {
+             "address": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "HistoricalCheckpoint"
+            },
+            {
+             "u32": 9442
+            }
+           ]
+          }
+         }
+        }
+       ]
+      },
+      "instructions": 14392648,
+      "write_bytes": 4244
+     }
+    }
+   },
+   "fee": 9489298,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "invoke_host_function": {
+       "auth": [
+        {
+         "credentials": {
+          "address": {
+           "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR",
+           "nonce": "8605304438801587903",
+           "signature": {
+            "vec": [
+             {
+              "map": [
+               {
+                "key": {
+                 "symbol": "public_key"
+                },
+                "val": {
+                 "bytes": "8af0f97a004b885acea989bc3e5ade65bf852fa2630e77e53945316895739abd"
+                }
+               },
+               {
+                "key": {
+                 "symbol": "signature"
+                },
+                "val": {
+                 "bytes": "fb43e479e3e650015cab16aca6db4b1dafe680d426a3c4056083b02d2b6783d74e53dcdde1e28d87a60f1946e58f7a864da3b720681570061e804dc2caca1b00"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           "signature_expiration_ledger": 65486243
+          }
+         },
+         "root_invocation": {
+          "function": {
+           "contract_fn": {
+            "args": [
+             {
+              "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+             },
+             {
+              "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+             },
+             {
+              "bool": false
+             },
+             {
+              "i128": "4899655722"
+             },
+             {
+              "u256": "29488153457076084172868550656"
+             },
+             {
+              "map": [
+               {
+                "key": {
+                 "symbol": "checkpoint"
+                },
+                "val": {
+                 "u32": 9441
+                }
+               },
+               {
+                "key": {
+                 "symbol": "checkpoint_min"
+                },
+                "val": {
+                 "u32": 0
+                }
+               },
+               {
+                "key": {
+                 "symbol": "slot"
+                },
+                "val": {
+                 "u128": "29911954"
+                }
+               }
+              ]
+             }
+            ],
+            "contract_address": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+            "function_name": "swap"
+           }
+          },
+          "sub_invocations": [
+           {
+            "function": {
+             "contract_fn": {
+              "args": [
+               {
+                "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+               },
+               {
+                "address": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ"
+               },
+               {
+                "i128": "4899655722"
+               }
+              ],
+              "contract_address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+              "function_name": "transfer"
+             }
+            },
+            "sub_invocations": []
+           }
+          ]
+         }
+        }
+       ],
+       "host_function": {
+        "invoke_contract": {
+         "args": [
+          {
+           "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+          },
+          {
+           "address": "GBOT34TBVIIOXU3YIWU4ZA7H44EIXTUCHMNB6J5QMRKSU3M4R3HCDPLR"
+          },
+          {
+           "bool": false
+          },
+          {
+           "i128": "4899655722"
+          },
+          {
+           "u256": "29488153457076084172868550656"
+          },
+          {
+           "map": [
+            {
+             "key": {
+              "symbol": "checkpoint"
+             },
+             "val": {
+              "u32": 9441
+             }
+            },
+            {
+             "key": {
+              "symbol": "checkpoint_min"
+             },
+             "val": {
+              "u32": 0
+             }
+            },
+            {
+             "key": {
+              "symbol": "slot"
+             },
+             "val": {
+              "u128": "29911954"
+             }
+            }
+           ]
+          }
+         ],
+         "contract_address": "CCR2CH4GQVCZHG7CHFVMNANCK45CU5DVKXZIIITDZQAU3CEJZ7RQH2MQ",
+         "function_name": "swap"
+        }
+       }
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "280723353138889501",
+   "source_account": "GBBH75HQ5SSMDMNJS7XIXEUKYKEOE4CWWL2CAGYOKRBVLEL5APGEPLAX"
+  }
+ }
+}

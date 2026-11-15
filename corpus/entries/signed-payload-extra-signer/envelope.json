@@ -1,0 +1,89 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "1bf1d1ca",
+    "signature": "d10dc3397442688cd186517bcbb64ba816763c21599b7729d099d03a7237c562b6b66120c44b45e3cc5f0fa8c5eed166823cfa68c48e6f47f7765f999002f908"
+   },
+   {
+    "hint": "76e4117d",
+    "signature": "7a7215002a291e4af764e5b2eb25488e46c7d9600d22e268d540425fdf79f78017bcd1b4701453fe9f099e5ac21ec2b3af656cec8f1b790542fa0721572d4a0c"
+   },
+   {
+    "hint": "370f9d1a",
+    "signature": "2d78fd9f1f2dbcdafd98be429dc94640d8aad61a9ca50405847a518acfb3ed3fc6e7abe22854f7ae6fa502f898c6a626bb3cd197212d820fa0e2f1689c1e2209"
+   },
+   {
+    "hint": "4b835b92",
+    "signature": "df038afaf7c6145352db7c1dc60c4431dec90c6604206c638bdc6480ad5c81f0f25370d520cb545ab4d0f306dd55aa959b65af27974198cab8b95f5a6680f602"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "v2": {
+     "extra_signers": [
+      "PABSQ37P6FNTA4VKJIO54BR4BKXXMRKU6EFO7RVQD6Y4ACKBH2ZBUAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYAALMA",
+      "PANKAXT5ZIGT35PS2POIKXW35GYJNMRYTYOPW3ZESGL6RWR5WJ2JGAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYBX2CA"
+     ],
+     "ledger_bounds": {
+      "max_ledger": 65486007,
+      "min_ledger": 0
+     },
+     "min_seq_age": "0",
+     "min_seq_ledger_gap": 0,
+     "min_seq_num": null,
+     "time_bounds": null
+    }
+   },
+   "ext": "v0",
+   "fee": 2129,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_receive": {
+       "dest_amount": "543119",
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "USDC",
+         "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        }
+       },
+       "destination": "GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M",
+       "path": [
+        {
+         "credit_alphanum4": {
+          "asset_code": "XAU",
+          "issuer": "GBCB4WO6J4ET55RWK2SVX76LUQ4PQ7TCDHG2YFILQML7D6XR3HACLXAU"
+         }
+        },
+        {
+         "credit_alphanum12": {
+          "asset_code": "BBB99",
+          "issuer": "GBGRBCUB6L7LH4JQ6EPDP7REH2DDACMCUQI76M3P6DM52QWU2Z5LIEVW"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "yXLM",
+          "issuer": "GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55"
+         }
+        }
+       ],
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "USDC",
+         "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        }
+       },
+       "send_max": "535779"
+      }
+     },
+     "source_account": "GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M"
+    }
+   ],
+   "seq_num": "278477317171454418",
+   "source_account": "GCFFF5KMMQDHRSM5EX4B4VUXYZFKRE64VCVXQ4BKDZ3GSLY36HI4VUGW"
+  }
+ }
+}

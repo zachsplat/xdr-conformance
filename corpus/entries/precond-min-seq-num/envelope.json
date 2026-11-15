@@ -1,0 +1,70 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "514f1089",
+    "signature": "37a11546117782f0c59d91535c2feb96e4dd6a2ae512d4c2cfe893f1a5d0ed1fda96164937646ed4ac3361edfcb053d73e6f6165d4e34ad442b8e41613f5120c"
+   },
+   {
+    "hint": "346257f8",
+    "signature": "d36476ce8ebc77c37a01569e6adb47bee9b7cf6aa9bb9b5fdbb4d664d3dfb7a32808271dd61c12112b11aa9757b3f7cc502f4d6f906ee70cb40fd396dbdb4c0c"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "v2": {
+     "extra_signers": [],
+     "ledger_bounds": {
+      "max_ledger": 50460006,
+      "min_ledger": 0
+     },
+     "min_seq_age": "0",
+     "min_seq_ledger_gap": 0,
+     "min_seq_num": "0",
+     "time_bounds": {
+      "max_time": "0",
+      "min_time": "0"
+     }
+    }
+   },
+   "ext": "v0",
+   "fee": 1300000,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_receive": {
+       "dest_amount": "137038641",
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "yXLM",
+         "issuer": "GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55"
+        }
+       },
+       "destination": "GB7QUY5QHHBRBIMCU7QA4SINZNI47WRPVBJPJAS2EPX2JSBUMJL7RDYW",
+       "path": [
+        {
+         "credit_alphanum4": {
+          "asset_code": "AUY",
+          "issuer": "GAISQZX2KTMVEOHD3GLRBMQQH2ZY56BUMCLKYGVGT2XWO55FV57KRIGB"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "AQUA",
+          "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+         }
+        }
+       ],
+       "send_asset": "native",
+       "send_max": "135538641"
+      }
+     },
+     "source_account": "GB7QUY5QHHBRBIMCU7QA4SINZNI47WRPVBJPJAS2EPX2JSBUMJL7RDYW"
+    }
+   ],
+   "seq_num": "169721911943644316",
+   "source_account": "GDZROQPUXGJ7DHIF32M3R2BQAXLDZGICR4CBLR7UHHNYPR2RJ4IIT6DC"
+  }
+ }
+}

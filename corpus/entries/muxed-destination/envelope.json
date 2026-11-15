@@ -1,0 +1,55 @@
+{
+ "tx_fee_bump": {
+  "signatures": [
+   {
+    "hint": "5f7ee202",
+    "signature": "c0b4314fd7a2bc0cbb7f7371056038159182e431809bbaff4bfb3463cbaf9b0b7f4815692202690cbe097ca6197b2fee95289626cc23695f42c62d3f2a521c00"
+   }
+  ],
+  "tx": {
+   "ext": "v0",
+   "fee": "100000",
+   "fee_source": "GBELHFUGJ2B2AIETGA3AUXJPL7PYVSMZB5ZAEZUQMDOSM727P3RAFVUS",
+   "inner_tx": {
+    "tx": {
+     "signatures": [
+      {
+       "hint": "ba33f03d",
+       "signature": "7252eaeef673f62f3435e2f5611b073dd279922d2720c1da6d28c1d42ab847c2a0f2e2fbd5d9a68fd2cfc2aee6160a8d05fb0ac3afeba59f7a2f15e190391909"
+      }
+     ],
+     "tx": {
+      "cond": {
+       "time": {
+        "max_time": "1794716989",
+        "min_time": "0"
+       }
+      },
+      "ext": "v0",
+      "fee": 110,
+      "memo": "none",
+      "operations": [
+       {
+        "body": {
+         "payment": {
+          "amount": "90000000",
+          "asset": {
+           "credit_alphanum4": {
+            "asset_code": "USDC",
+            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+           }
+          },
+          "destination": "MBHQQOBLAZFIUIMNBMRXEFUHVJDCHDYRGDI7YC3FEESWV3SZFSQG2DYTMK3PCQ3BF6WUG"
+         }
+        },
+        "source_account": null
+       }
+      ],
+      "seq_num": "277435667342950402",
+      "source_account": "GCWQA7ELASJ6XH5ZGNI64FS2MLA354MTJCTCZJPCL7XEXBF2GPYD2EFQ"
+     }
+    }
+   }
+  }
+ }
+}

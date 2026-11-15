@@ -1,0 +1,95 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "c9b4333e",
+    "signature": "8c85a3c80fdef258d1ffb1a17e9eb756304d03649e241d83bfbfe8f7c80871490d7471697e9042ed7a7371bb043fdd94815bf2b906aa9aae05171cc825f37607"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1708463242",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 3600,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "allow_trust": {
+       "asset": "FIL",
+       "authorize": 0,
+       "trustor": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "clawback": {
+       "amount": "10728488",
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "FIL",
+         "issuer": "GAMQXNIL2IV7YV3GIBQG56RCJAGTCW3WU64XDOM2M5N7A3OJWQZT5BNB"
+        }
+       },
+       "from": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "allow_trust": {
+       "asset": "FIL",
+       "authorize": 1,
+       "trustor": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "allow_trust": {
+       "asset": "XMR",
+       "authorize": 0,
+       "trustor": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "clawback": {
+       "amount": "25151818",
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "XMR",
+         "issuer": "GAMQXNIL2IV7YV3GIBQG56RCJAGTCW3WU64XDOM2M5N7A3OJWQZT5BNB"
+        }
+       },
+       "from": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "allow_trust": {
+       "asset": "XMR",
+       "authorize": 1,
+       "trustor": "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "205048662198356783",
+   "source_account": "GAMQXNIL2IV7YV3GIBQG56RCJAGTCW3WU64XDOM2M5N7A3OJWQZT5BNB"
+  }
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "ac0dae57",
+    "signature": "ed2967646c97a66e4e9dbe059e1d0d1426dba44ffade5492e7e9df357e71ca11d73cd109f70095c27ec7af78d0ecdb512a1ccc33a3581eebbc8be5efcabb0400"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1647113879",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 24042,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "path_payment_strict_receive": {
+       "dest_amount": "3000000000",
+       "dest_asset": "native",
+       "destination": "GBH4N44YZFJ3PKEDF3XYRH755LOGTE2EYUQX3XFVQQSWQYVMBWXFPBVE",
+       "path": [
+        {
+         "credit_alphanum4": {
+          "asset_code": "GOLD",
+          "issuer": "GBC5ZGK6MQU3XG5Y72SXPA7P5R5NHYT2475SNEJB2U3EQ6J56QLVGOLD"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "USDC",
+          "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "BTC",
+          "issuer": "GDPJALI4AZKUU2W426U5WKMAT6CN3AJRPIIRYR2YM54TL2GDWO5O2MZM"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "yBTC",
+          "issuer": "GBUVRNH4RW4VLHP4C5MOF46RRIRZLAVHYGX45MVSTKA2F6TMR7E7L6NW"
+         }
+        },
+        {
+         "credit_alphanum4": {
+          "asset_code": "BTC",
+          "issuer": "GAUTUYY2THLF7SGITDFMXJVYH3LHDSMGEAKSBU267M2K7A3W543CKUEF"
+         }
+        }
+       ],
+       "send_asset": "native",
+       "send_max": "3000000000"
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "167984378629215348",
+   "source_account": "GBH4N44YZFJ3PKEDF3XYRH755LOGTE2EYUQX3XFVQQSWQYVMBWXFPBVE"
+  }
+ }
+}

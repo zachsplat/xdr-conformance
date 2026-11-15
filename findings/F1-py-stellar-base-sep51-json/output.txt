@@ -1,0 +1,18 @@
+ClawbackOp field `from`  [clawback, ledger 50460006]
+  py-stellar-xdr / rs-stellar-xdr: from = "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+  py-stellar-base 17.0.1:          from_ = "GDABKBZ5XUWWTGVSXWHWJC7BVXZWPEJAOTNXGJNSILR6XCI5LCFDR4OQ"
+  py-stellar-base reads the SEP-51 form: no (KeyError: 'from_')
+
+AllowTrustOp `asset` (AssetCode union)  [allow-trust-asset-code, ledger 50460006]
+  py-stellar-xdr / rs-stellar-xdr: asset = "FIL"
+  py-stellar-base 17.0.1:          asset = {"credit_alphanum4": "FIL"}
+  py-stellar-base reads the SEP-51 form: no (ValueError: Expected a single-key object for AssetCode, got: FIL)
+
+TransactionResult arm for txSUCCESS / txFEE_BUMP_INNER_*  [muxed-source, ledger 65486002]
+  py-stellar-xdr / rs-stellar-xdr: tx_success = [{"op_inner": {"manage_sell_offer": {"success": {"offers_claimed": [], "offer": {"updated"
+  py-stellar-base 17.0.1:          txsuccess = [{"opinner": {"manage_sell_offer": {"success": {"offers_claimed": [], "offer": {"updated":
+
+ContractEvent `contract_id` (ContractID)  [meta-event-lp-address, ledger 40000000]
+  py-stellar-xdr / rs-stellar-xdr: contract_id = "CB4IGHI26R4BC66PTKVUP2XRG467XSKWME3XAETTLWVV2G4GLMC5EHD3"
+  py-stellar-base 17.0.1:          contract_id = "78831d1af478117bcf9aab47eaf1373dfbc95661377012735dab5d1b865b05d2"
+

@@ -1,0 +1,37 @@
+# Example GitHub Actions workflow (not yet used anywhere): run the corpus
+# through every SDK adapter on each pull request. An SDK repo would keep only
+# its own job and point it at a pinned corpus release.
+name: xdr-conformance
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  corpus:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build adapters and install SDKs
+        run: ./run.sh build
+      - name: Conformance matrix (fails on any divergence from the manifest)
+        run: |
+          W=$HOME/.cache/xdrconf
+          python3 -I tools/check_corpus.py corpus reports/corpus-matrix.md \
+            rs-stellar-xdr="$W/bin/facts-wrapper 0" \
+            go-stellar-sdk="$W/bin/xdrconf-go" \
+            js-stellar-sdk="cd $W/js && node $GITHUB_WORKSPACE/runners/js/facts.mjs @stellar/stellar-sdk" \
+            py-stellar-base="$W/venv/bin/python -I runners/python/facts.py sdk" \
+            py-stellar-xdr="$W/venv/bin/python -I runners/python/facts.py pyxdr"
+      - name: Sightings (known JS SDK bugs reproduce on pre-fix tags only)
+        run: ./run.sh sightings
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: corpus-matrix
+          path: reports/corpus-matrix.md

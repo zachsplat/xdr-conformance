@@ -1,0 +1,75 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "43e40402",
+    "signature": "3af09384ecefb55053ff9bc0bff75d67d4d80fdabc96fc5da9a68e8e793b408907b6fcc9b639265ba967fa43bb43266eb45dd9b1807868fa5760e18f8f759a05"
+   }
+  ],
+  "tx": {
+   "cond": "none",
+   "ext": "v0",
+   "fee": 300,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GDFQAKXTV4LNUGTDGBKT3HYLH4DMCD7DN37UUZVIOXFUFUKX6QOQTN2L"
+        }
+       }
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GD4FTD777O2B42LLLGRDEOBTFGDIXQ75FKXHDN3ZLM5SHZU57CINQCG3"
+        }
+       }
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "pool_share": {
+         "liquidity_pool_constant_product": {
+          "asset_a": {
+           "credit_alphanum4": {
+            "asset_code": "USD",
+            "issuer": "GDFQAKXTV4LNUGTDGBKT3HYLH4DMCD7DN37UUZVIOXFUFUKX6QOQTN2L"
+           }
+          },
+          "asset_b": {
+           "credit_alphanum4": {
+            "asset_code": "USD",
+            "issuer": "GD4FTD777O2B42LLLGRDEOBTFGDIXQ75FKXHDN3ZLM5SHZU57CINQCG3"
+           }
+          },
+          "fee": 30
+         }
+        }
+       }
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "23714417111728129",
+   "source_account": "GBYJWV5AVIHLLES7VRXSDN7VJBZ7R3K35LF4U5TKFA5RRQKD4QCAFG6G"
+  }
+ }
+}

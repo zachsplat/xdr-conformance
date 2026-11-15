@@ -1,0 +1,58 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "90698949",
+    "signature": "f4e2e6520be65f4aabc6aefe4ea099367431933a7cefce7c27c5971f563e37cf96c7d1628c5ed3da23740ef2676382c3d8df19fd3243185f2843eb7b26f7cf0c"
+   },
+   {
+    "hint": "21550301",
+    "signature": "7a118d3dd40b1bb3bb1e888008826dca63f8d6f7af77bb70719b0eddcccf97c521638f08dd2386d243edd69610081ed797ac2ed4375e84cc9a2b21a6c97b3200"
+   },
+   {
+    "hint": "1873fd6a",
+    "signature": "7f0e58e6881828f0bb5d64123fce432562d75e1633d30b95c81bbe07a0c6dade6bb744b2b4cf27689e18f425ed14bd176a2668dd835ddd97f974b9eae28d8e06"
+   },
+   {
+    "hint": "0f42fc12",
+    "signature": "9d583a20fb48baa82b4c15e444a384bd1750f52753dcbed3e9f4bb46e32d5e496e4e9aebf151df66fd9e63461208848d61d7cf5410c8bd708e9bba3bf7e6da0b"
+   },
+   {
+    "hint": "238f3b51",
+    "signature": "616c69dea612185ff0d082af16c90207165a44e9023c8d96b4a4e2ca6ffb5727bcdbb1d8e534a47cad80671ac467c65531294a4d4b01e98c361a46b660a51b01"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1758285948",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 1000000,
+   "memo": {
+    "text": "staking reward: 9fe8\\xe2\\x80\\xa6323b"
+   },
+   "operations": [
+    {
+     "body": {
+      "payment": {
+       "amount": "261022971",
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "SSLX",
+         "issuer": "GBHFGY3ZNEJWLNO4LBUKLYOCEK4V7ENEBJGPRHHX7JU47GWHBREH37UR"
+        }
+       },
+       "destination": "GBY5IQCCW3ANTWTX63L4APKFZBZ36DD4RXYQQCR5IC25OSNTDOU7JVB7"
+      }
+     },
+     "source_account": "GDU2KSJUCEEOVYTEPVCNQ4O6W5G6DORN4HZVBGTQWUUXSKZDR45VDK44"
+    }
+   ],
+   "seq_num": "214644164598477356",
+   "source_account": "GDUTEKP2TDQO3QOIS7D4N5PKYTKABPUNKVJURYNLC2NDZTJXHKN7XGUS"
+  }
+ }
+}

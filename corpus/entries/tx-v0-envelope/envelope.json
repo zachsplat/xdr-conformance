@@ -1,0 +1,44 @@
+{
+ "tx_v0": {
+  "signatures": [
+   {
+    "hint": "f0f53976",
+    "signature": "cf5a022eb26a2f54d2b2c265348e46bc19a3c84921fcd261ef73688bc66291781b9eff28fc2dae17c0d51f5c3951e69fe4fb1c495a443bf6d0dc2e997fbc5c07"
+   },
+   {
+    "hint": "ca8fd2c0",
+    "signature": "4a4a79b427f3d8008b036d294cdb1d026521511d07f395b312cb3ea9aec4a7a91dc58853728c96520a84a6ef0f45f9adb1abc905dd06116a6293ffe22b403b02"
+   }
+  ],
+  "tx": {
+   "ext": "v0",
+   "fee": 100,
+   "memo": {
+    "hash": "6e7777ed143086d909aca5c9fe32040cf663785e6a308b7ca3958eb42955f9c4"
+   },
+   "operations": [
+    {
+     "body": {
+      "payment": {
+       "amount": "29",
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "NODL",
+         "issuer": "GB2Y3AWXVROM2BHFQKQPTWKIOI3TZEBBD3LTKTVQTKEPXGOBE742NODL"
+        }
+       },
+       "destination": "GA7W63QG5FOPNC4SUB7LMBI4VE7BB6WNYLLKCLTMR6YIO74URHLZGOLD"
+      }
+     },
+     "source_account": "GDQWI6FKB72DPOJE4CGYCFQZKRPQQIOYXRMZ5KEVGXMG6UUTGJMBCASH"
+    }
+   ],
+   "seq_num": "112094110940331119",
+   "source_account_ed25519": "c193d98a63ba611e7b53304e9b7cb09f470e9fc41e33e772c46537cdca8fd2c0",
+   "time_bounds": {
+    "max_time": "0",
+    "min_time": "0"
+   }
+  }
+ }
+}

@@ -1,0 +1,542 @@
+{
+ "schema": "manifest.schema.json",
+ "version": 1,
+ "entries": [
+  {
+   "id": "hostile-cls-baseline",
+   "description": "Unmodified mainnet envelope.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": false,
+   "source": {
+    "kind": "galexie-public-datalake",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-baseline.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "8fc054d1465487bef6e870df74ac41885290644e797346e4fd5aba2181d0a74a"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "baseline"
+  },
+  {
+   "id": "hostile-cls-memo_text_nonzero_padding",
+   "description": "One padding byte after an odd-length memo text set to 0x01 (RFC 4506 4.9-4.11 says padding is zero).",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-memo_text_nonzero_padding.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "1ebc1eb884151072eb413ba9999056d95fbf17c44a1fcb8b013a1147fdc6f6b4"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "Non-zero padding bytes encountered"
+   },
+   "mutation": "memo_text_nonzero_padding"
+  },
+  {
+   "id": "hostile-cls-optional_flag_2",
+   "description": "The operation's optional sourceAccount flag set to 2 instead of 1.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-optional_flag_2.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "3586ffc897cc56593544e2cb2f0a52461386efd44e9d7a07318462fdd565b23d"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "xdr::pointer size must be 0 or 1"
+   },
+   "mutation": "optional_flag_2"
+  },
+  {
+   "id": "hostile-cls-trailing_bytes",
+   "description": "Four zero bytes appended after a complete envelope.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-trailing_bytes.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "e309c770c1a6da8de257ef6b59f8f3046a453d92a09b856b404d47346fabfb82"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "unmarshaling did not consume whole message"
+   },
+   "mutation": "trailing_bytes"
+  },
+  {
+   "id": "hostile-cls-memo_text_len_29",
+   "description": "Memo text of 29 bytes; the schema says string<28>.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-memo_text_len_29.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "2d47dcbf3aae0027efc83e86896911d89475e3edae52666cf3a92f9b483b0f10"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "xstring overflow"
+   },
+   "mutation": "memo_text_len_29"
+  },
+  {
+   "id": "hostile-cls-memo_type_unknown",
+   "description": "Memo union discriminant 5, which no MemoType names.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-memo_type_unknown.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "fc85b57d9a6d9190c2dc047233dae3e92d5482122dfbf16e0e71f36ba0f4fb6b"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "bad value of type in Memo"
+   },
+   "mutation": "memo_type_unknown"
+  },
+  {
+   "id": "hostile-cls-envelope_type_scp",
+   "description": "TransactionEnvelope discriminant 1 (ENVELOPE_TYPE_SCP), not an arm of the union.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-envelope_type_scp.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "759b69f2b443eecc900087673d573a99cbc1c592aa2a66a726255920f1ecb1db"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "bad value of type in TransactionEnvelope"
+   },
+   "mutation": "envelope_type_scp"
+  },
+  {
+   "id": "hostile-cls-asset_type_unknown",
+   "description": "Payment asset discriminant 4, which no AssetType names.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-asset_type_unknown.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "e80da41b61aad7049ff4ff7d8e903be7fb7e677dd1dea96ffc185e91538d3860"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "bad value of type in Asset"
+   },
+   "mutation": "asset_type_unknown"
+  },
+  {
+   "id": "hostile-cls-operations_101",
+   "description": "The single operation repeated 101 times; the schema says Operation operations<100>.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-operations_101.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "cea94427d924b3957e9ca3cafe2fae0d4cdc4418524f748ce6623282a9799882"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "xvector overflow"
+   },
+   "mutation": "operations_101"
+  },
+  {
+   "id": "hostile-cls-operations_count_huge_truncated",
+   "description": "Operation count 0xFFFFFFFF and the input ends there; a decoder must fail without reserving memory for the count.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-operations_count_huge_truncated.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "621a6974614bc7591a325bd3ec94bb83c1ada7feadcc52e0260ea25f67befe9c"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "xvector overflow"
+   },
+   "mutation": "operations_count_huge_truncated"
+  },
+  {
+   "id": "hostile-cls-memo_text_non_utf8_nul",
+   "description": "Memo text bytes FF FE 00 41 C3: not UTF-8 and with a NUL. stellar-core passes memos through untouched.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 40000001,
+    "tx_hash": "4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/cls-memo_text_non_utf8_nul.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "2fdfd7c359ca012ae257749d439f31fce0520fd6e3d323b5f91624c3c081eece"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "memo_text_non_utf8_nul"
+  },
+  {
+   "id": "hostile-sor-baseline",
+   "description": "Unmodified mainnet envelope.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": false,
+   "source": {
+    "kind": "galexie-public-datalake",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-baseline.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "8eae1f01910aedd9800ce14bca7155cc80e13ac6663902f48cfb17799ab03478"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "baseline"
+  },
+  {
+   "id": "hostile-sor-scval_bool_2",
+   "description": "First contract argument replaced by an ScVal bool whose 4-byte value is 2.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scval_bool_2.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "5fff5a50873831bcc011a17d3302ac8e7a15904e6e11d8e7dce77e8b33c6ed2e"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "scval_bool_2"
+  },
+  {
+   "id": "hostile-sor-scval_nested_vec_90",
+   "description": "First contract argument replaced by 90 nested ScVal vecs around a u32.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scval_nested_vec_90.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "d11f30d89f84c79ebd90e04bb0a1d608de29dcb542fda3ed6a89c796bd646c35"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "scval_nested_vec_90"
+  },
+  {
+   "id": "hostile-sor-scval_nested_vec_200",
+   "description": "First contract argument replaced by 200 nested ScVal vecs around a u32.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scval_nested_vec_200.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "48c43469d171960098c0e4a1e07728dc491a1f565e1f798b49ed68034241881a"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "scval_nested_vec_200"
+  },
+  {
+   "id": "hostile-sor-scval_nested_vec_1000",
+   "description": "First contract argument replaced by 1000 nested ScVal vecs around a u32.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scval_nested_vec_1000.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "0dfc705bc9b68cb47126410f374b13e955be54a2167fe5850f2a11e95682f16a"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "stack overflow in xdr_generic_get"
+   },
+   "mutation": "scval_nested_vec_1000"
+  },
+  {
+   "id": "hostile-sor-scmap_unsorted_keys",
+   "description": "ScMap with keys b, a (not ascending). Valid XDR; only the host rejects it.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scmap_unsorted_keys.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "a18de330de3a33c3917d3be8d42d96c66cb0623d5251b118c1c257dc6fdee151"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "scmap_unsorted_keys"
+  },
+  {
+   "id": "hostile-sor-scsymbol_invalid_chars",
+   "description": "ScSymbol 'a b!' (space and '!' are outside the symbol charset). Valid XDR; only the host rejects it.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/sor-scsymbol_invalid_chars.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "32f1af4684a8dd63d7ff3583f886468cf864c1e011089ee209589ce416fdfad8"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "scsymbol_invalid_chars"
+  },
+  {
+   "id": "hostile-ext-baseline",
+   "description": "Unmodified mainnet envelope.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": false,
+   "source": {
+    "kind": "galexie-public-datalake",
+    "ledger": 65486006,
+    "tx_hash": "7018fca10754729a4705c524e803d31a6972e90c0eb85ee6e357644acf9f2898"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/ext-baseline.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "5a30e54be1f96a532a2a7692bb12487891ed645beb835ea0dcdf6c9f9b885e5c"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "baseline"
+  },
+  {
+   "id": "hostile-ext-signed_payload_len_65",
+   "description": "Extra signer of type signed payload with a 65-byte payload; the schema says opaque payload<64>.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 65486006,
+    "tx_hash": "7018fca10754729a4705c524e803d31a6972e90c0eb85ee6e357644acf9f2898"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/ext-signed_payload_len_65.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "9cd063694311eec3906862b2d11d89111dbec7c4d4d599ee65b55fc094cb0374"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "reject",
+    "stellar_core_error": "xvector overflow"
+   },
+   "mutation": "signed_payload_len_65"
+  },
+  {
+   "id": "hostile-ext-signed_payload_len_0",
+   "description": "Extra signer of type signed payload with an empty payload. Valid XDR (CAP-40 allows 0..64 at the XDR level).",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 65486006,
+    "tx_hash": "7018fca10754729a4705c524e803d31a6972e90c0eb85ee6e357644acf9f2898"
+   },
+   "files": {
+    "envelope": {
+     "path": "hostile/ext-signed_payload_len_0.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "ff4c20acbfc6fb4119bb315f0b4058a0002dc31a68c572ed836d383a838f0322"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept"
+   },
+   "mutation": "signed_payload_len_0"
+  }
+ ]
+}

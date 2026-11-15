@@ -1,0 +1,9 @@
+@stellar/stellar-sdk 17.2.1
+  #1789 returned {"1":20} (2 entries in, 1 out)
+  #1785 accepted "0x10": id() = "0x10", M-address encodes id 16
+@stellar/stellar-sdk 17.3.0
+  #1789 throws: scvMap has more than one key that converts to "1"; read the raw map entries instead
+  #1785 rejects "0x10": id is not a valid uint64 string: 0x10
+@stellar/stellar-sdk 17.4.0
+  #1789 throws: scvMap has more than one key that converts to "1"; read the raw map entries instead
+  #1785 rejects "0x10": id is not a valid uint64 string: 0x10

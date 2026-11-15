@@ -1,0 +1,480 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "30f78657",
+    "signature": "55408cb3e8b3946dfb46ec3aba80fdb7b791517220c1bad419548bc6a6acceca2de978ca143111f293a82828fbd52a7f02e5f790cf00088699d33806d7a9280f"
+   }
+  ],
+  "tx": {
+   "cond": "none",
+   "ext": "v0",
+   "fee": 3000000,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "aiXDOGE",
+         "issuer": "GAPGM7PVMHELZVRHNHPIAHVBDC2IY7FPFHGQTURLUTBRVH657Z466RAI"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAAPTKTPT3KLQSRBXQD5S3ATIVWXHW2WXRFSKQIHUJQT5RWYE5PMBMXHZY"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "28306",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "200000000",
+       "send_asset": {
+        "credit_alphanum12": {
+         "asset_code": "aiXDOGE",
+         "issuer": "GAPGM7PVMHELZVRHNHPIAHVBDC2IY7FPFHGQTURLUTBRVH657Z466RAI"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "aiXDOGE",
+         "issuer": "GAPGM7PVMHELZVRHNHPIAHVBDC2IY7FPFHGQTURLUTBRVH657Z466RAI"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "ALGO",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAALU7IBNII5SD4RZPXJLZMRW3JTNPV3NRWCVQW6VV357SAQ7TRLF6PKFI"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "312956",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "50000000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "ALGO",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "ALGO",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAADKTCTGGBSTMVTAES6TSRWVGNEVMAXHSKXRDTDRPAHG7UJS5EGGLZKOQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "2346814",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "1250000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "SGB",
+         "issuer": "GAXENTSWB4O6LSQSHPXMGZ7SBJYHLOGQZ25HMCKLF4X5G7ZNYZB62FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "XAUTOK",
+         "issuer": "GCMH4STEKUAGTOEJA6U67Q36LU6EKT5O6PQNXIF35GYIGULENYNSUTOK"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAAGUOOMEMX2GTGYQWV2RXNNGUUBTUQFIFK3NHIWWIQKY5MWP25B2HJWWM"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "870848",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "3350000",
+       "send_asset": {
+        "credit_alphanum12": {
+         "asset_code": "XAUTOK",
+         "issuer": "GCMH4STEKUAGTOEJA6U67Q36LU6EKT5O6PQNXIF35GYIGULENYNSUTOK"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "XAUTOK",
+         "issuer": "GCMH4STEKUAGTOEJA6U67Q36LU6EKT5O6PQNXIF35GYIGULENYNSUTOK"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "HBAR",
+         "issuer": "GBIQ65YD2LTJOWPPRPY66KKKI2ZZ2NKLTJNQVKEAZ25FZRUOEGMQHBAR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAAC54GYMYQI75N4SQ3NMMRB47WD46N7QWZYLXK7LXGFMIQFVY6GD6S44Y"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "1271006",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "440000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "HBAR",
+         "issuer": "GBIQ65YD2LTJOWPPRPY66KKKI2ZZ2NKLTJNQVKEAZ25FZRUOEGMQHBAR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "HBAR",
+         "issuer": "GBIQ65YD2LTJOWPPRPY66KKKI2ZZ2NKLTJNQVKEAZ25FZRUOEGMQHBAR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "SHIB",
+         "issuer": "GDD4L47CMVY56FRUCSELJJW2K65JP7J7GX5FBNVOHVXTPBADW5XTSHIB"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAAM5NDK7QSFKT2PSQERSJJ56O7LHRPGNNPVMTGPJLVNG7QGFOT6FLFIDQ"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "3177226",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "5000000000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "SHIB",
+         "issuer": "GDD4L47CMVY56FRUCSELJJW2K65JP7J7GX5FBNVOHVXTPBADW5XTSHIB"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "SHIB",
+         "issuer": "GDD4L47CMVY56FRUCSELJJW2K65JP7J7GX5FBNVOHVXTPBADW5XTSHIB"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "XDC",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAABSKYVTQH4GYLT5OJIY6MMB6HAHVVG2KHN25XXJ5UVBZEIZOJFTFNRG4"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "17332921",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "300000000",
+       "send_asset": {
+        "credit_alphanum4": {
+         "asset_code": "XDC",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum4": {
+         "asset_code": "XDC",
+         "issuer": "GABNVUROUNESR42TNKRP63CNK7326CYPBHFJYTESOWCM22CARET55FLR"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "9223372036854775807",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "COPPER",
+         "issuer": "GD57LIOPJ6DQNFBM2LLZNUDARWPAJCEGJ6O3QD6UPIV2RNEY6RMDJ3G3"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "claim_claimable_balance": {
+       "balance_id": "BAAPUJ36LYATBFQJN66JAZGS36CSBFT7CF2324YMDQCI2DOF7XVNOVUNGM"
+      }
+     },
+     "source_account": null
+    },
+    {
+     "body": {
+      "path_payment_strict_send": {
+       "dest_asset": {
+        "credit_alphanum4": {
+         "asset_code": "AQUA",
+         "issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        }
+       },
+       "dest_min": "3812670",
+       "destination": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG",
+       "path": [
+        "native"
+       ],
+       "send_amount": "1000000000",
+       "send_asset": {
+        "credit_alphanum12": {
+         "asset_code": "COPPER",
+         "issuer": "GD57LIOPJ6DQNFBM2LLZNUDARWPAJCEGJ6O3QD6UPIV2RNEY6RMDJ3G3"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    },
+    {
+     "body": {
+      "change_trust": {
+       "limit": "0",
+       "line": {
+        "credit_alphanum12": {
+         "asset_code": "COPPER",
+         "issuer": "GD57LIOPJ6DQNFBM2LLZNUDARWPAJCEGJ6O3QD6UPIV2RNEY6RMDJ3G3"
+        }
+       }
+      }
+     },
+     "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+    }
+   ],
+   "seq_num": "150826461022913256",
+   "source_account": "GAN4CIBJHZWBXILII3LYXNNK5PEYPB7UW54FNU62JM4INNJQ66DFPWWG"
+  }
+ }
+}

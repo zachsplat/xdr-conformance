@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manifest.schema.json",
+  "title": "Stellar XDR conformance corpus manifest (draft)",
+  "description": "One entry per rare ledger or transaction shape. XDR lives in files next to the manifest; the manifest says where each file came from, which CAP introduced the shape, and what a correct decoder must produce.",
+  "type": "object",
+  "required": ["version", "entries"],
+  "properties": {
+    "schema": {"type": "string"},
+    "version": {"const": 1},
+    "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["id", "files", "expected", "caps", "protocol_version", "network", "network_passphrase", "source", "synthetic", "description"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Stable entry ID; also the directory name under entries/."},
+        "pattern": {"type": "string", "description": "Scanner tag that selected the entry."},
+        "description": {"type": "string"},
+        "caps": {"type": "array", "items": {"type": "string", "pattern": "^CAP-[0-9]{4}$"}, "description": "CAPs that introduced or changed the shape. Empty for shapes as old as the protocol."},
+        "protocol_version": {"type": "integer", "minimum": 1, "description": "Ledger protocol version when the transaction was applied (or the version the generator targeted)."},
+        "network": {"enum": ["pubnet", "testnet", "standalone"]},
+        "network_passphrase": {"type": "string"},
+        "synthetic": {"type": "boolean", "description": "True when any byte was written by hand or derived by mutation rather than emitted by stellar-core."},
+        "source": {
+          "type": "object",
+          "required": ["kind"],
+          "properties": {
+            "kind": {"enum": ["galexie-public-datalake", "horizon-testnet", "horizon-pubnet", "local-stellar-core", "mutation"]},
+            "ledger": {"type": "integer"},
+            "tx_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "index_in_tx_set": {"type": "integer"},
+            "derived_from": {"type": "string", "description": "Entry ID a mutation started from."}
+          }
+        },
+        "files": {
+          "type": "object",
+          "required": ["envelope"],
+          "additionalProperties": {
+            "type": "object",
+            "required": ["path", "xdr_type", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "xdr_type": {"type": "string", "description": "Type name as written in the stellar-xdr .x files."},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "transaction_meta_version": {"type": "string"}
+            }
+          }
+        },
+        "expected": {
+          "type": "object",
+          "properties": {
+            "envelope_sep51_json": {"type": "string", "description": "Path to the SEP-51 XDR-JSON a conforming decoder produces. Written only where rs-stellar-xdr, py-stellar-xdr and js-stellar-sdk agree."},
+            "tx_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "roundtrip": {"enum": ["identity"], "description": "Decoding then re-encoding must reproduce the file byte for byte."},
+            "stellar_core_decode": {"enum": ["accept", "reject"], "description": "Verdict of stellar-core's own decoder (print-xdr); the reference for hostile entries."}
+          }
+        },
+        "sightings": {"type": "array", "items": {"type": "string", "format": "uri"}, "description": "Public issues or PRs this entry reproduces."},
+        "meta_note": {"type": "string"}
+      }
+    }
+  }
+}

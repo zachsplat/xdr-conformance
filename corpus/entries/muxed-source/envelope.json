@@ -1,0 +1,47 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "417ba473",
+    "signature": "46f9b88c7d6b1af863a21c0becfc580925bf744a6632a0b8cce99c9534a824abcb5e6060ce335988e046373bf55d0c8f676e8993230062336ac6176440adde08"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1794716108",
+     "min_time": "0"
+    }
+   },
+   "ext": "v0",
+   "fee": 100,
+   "memo": {
+    "text": "Activity convergence"
+   },
+   "operations": [
+    {
+     "body": {
+      "manage_sell_offer": {
+       "amount": "50000000",
+       "buying": {
+        "credit_alphanum12": {
+         "asset_code": "STARDUST",
+         "issuer": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU"
+        }
+       },
+       "offer_id": "1866144011",
+       "price": {
+        "d": 1114961,
+        "n": 10000000
+       },
+       "selling": "native"
+      }
+     },
+     "source_account": "GDPSA2F567BKHOAKZKR6TSZM4VJ2ZJ4Y6MRD55A52T47RIKXDAVV4RAT"
+    }
+   ],
+   "seq_num": "183565459124517454",
+   "source_account": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAABIXOK46"
+  }
+ }
+}

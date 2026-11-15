@@ -1,0 +1,79 @@
+{
+ "tx_fee_bump": {
+  "signatures": [
+   {
+    "hint": "579080be",
+    "signature": "d992a0094cc672b1d74c395edfcdbf13de11a67821fe112675a18360948bbccd7d20a045dbf310c36cca1e5a158ebff9b2aeb19f1ddbd4757d16af2418a99508"
+   }
+  ],
+  "tx": {
+   "ext": "v0",
+   "fee": "40000000",
+   "fee_source": "GCZGSFPITKVJPJERJIVLCQK5YIHYTDXCY45ZHU3IRCUC53SXSCAL44JV",
+   "inner_tx": {
+    "tx": {
+     "signatures": [
+      {
+       "hint": "579080be",
+       "signature": "63ee19419d1b61a7ea67ceab298ea14516411c5a618c9c35a091a426be7530d3db56f624a29fef0b50ffe25289100a7fffb9e14ab3f6c5c166abe8f5f2da6e0c"
+      },
+      {
+       "hint": "9c32ab00",
+       "signature": "4e29e521ba40bf434e96894787d95b75af91ad0e814c6d007114b8222ed287ae779f4c65b11b7768ab926a795a71375c98878077e3ddf89cdb50fcd8460bc60b"
+      },
+      {
+       "hint": "9b246b37",
+       "signature": "1576c8fe21c72162887a0109503da96e69cf9f03f9001d6fae089c7d20f1e3567b3738c5867eb3b3d2ce60bddf3bf2b031af24c1b5371095752babd882cc4c00"
+      }
+     ],
+     "tx": {
+      "cond": {
+       "time": {
+        "max_time": "1708463416",
+        "min_time": "0"
+       }
+      },
+      "ext": "v0",
+      "fee": 30000000,
+      "memo": "none",
+      "operations": [
+       {
+        "body": {
+         "begin_sponsoring_future_reserves": {
+          "sponsored_id": "GDNY5CAXRSJMAIVLSM22DVAYDEO7LOFSXITALGHKTET6NTX6XTNXYAJU"
+         }
+        },
+        "source_account": "GCZGSFPITKVJPJERJIVLCQK5YIHYTDXCY45ZHU3IRCUC53SXSCAL44JV"
+       },
+       {
+        "body": {
+         "set_options": {
+          "clear_flags": null,
+          "high_threshold": null,
+          "home_domain": null,
+          "inflation_dest": null,
+          "low_threshold": null,
+          "master_weight": null,
+          "med_threshold": null,
+          "set_flags": null,
+          "signer": {
+           "key": "GC2IMNGJ4S4SJXEOEW5BXTU2GJGENMLHJNJP7EPE56QKDII47QR7BH4C",
+           "weight": 20
+          }
+         }
+        },
+        "source_account": "GDNY5CAXRSJMAIVLSM22DVAYDEO7LOFSXITALGHKTET6NTX6XTNXYAJU"
+       },
+       {
+        "body": "end_sponsoring_future_reserves",
+        "source_account": "GDNY5CAXRSJMAIVLSM22DVAYDEO7LOFSXITALGHKTET6NTX6XTNXYAJU"
+       }
+      ],
+      "seq_num": "215582726621757442",
+      "source_account": "GDNY5CAXRSJMAIVLSM22DVAYDEO7LOFSXITALGHKTET6NTX6XTNXYAJU"
+     }
+    }
+   }
+  }
+ }
+}

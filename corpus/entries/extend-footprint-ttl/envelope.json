@@ -1,0 +1,172 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "211bf25c",
+    "signature": "8a1b620fb15163eebd9fc97c5f6c91ddc3c830c6354e79dfc271730c3abe920e78875c03797e880d9c258d9eb5ce9767b6cb3368f90f8e1e7709fc3427652e03"
+   }
+  ],
+  "tx": {
+   "cond": "none",
+   "ext": {
+    "v1": {
+     "ext": "v0",
+     "resource_fee": "1111685",
+     "resources": {
+      "disk_read_bytes": 0,
+      "footprint": {
+       "read_only": [
+        {
+         "contract_data": {
+          "contract": "CATOPAHXKSGLQ4RL37AP2I5SNPCAQ6Q5XMTHD5WQF27CUDHRYGBQV6FD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "StakingData"
+            },
+            {
+             "u64": "46"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CATOPAHXKSGLQ4RL37AP2I5SNPCAQ6Q5XMTHD5WQF27CUDHRYGBQV6FD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "StakingData"
+            },
+            {
+             "u64": "47"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CATOPAHXKSGLQ4RL37AP2I5SNPCAQ6Q5XMTHD5WQF27CUDHRYGBQV6FD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "StakingData"
+            },
+            {
+             "u64": "48"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CATOPAHXKSGLQ4RL37AP2I5SNPCAQ6Q5XMTHD5WQF27CUDHRYGBQV6FD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "StakingData"
+            },
+            {
+             "u64": "108"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CA7AG25C72ZNHBKYJEGZ4GDZJO3A5OH4CT7ICBN6SE3HS43W4E4S4AGO",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Balance"
+            },
+            {
+             "address": "GCGBJ7WR4WHNKFXS7BS3NH5WFKRIP55B4MF5QVQLP2G2DN4AFIUNIG3N"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CA7AG25C72ZNHBKYJEGZ4GDZJO3A5OH4CT7ICBN6SE3HS43W4E4S4AGO",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "NftMetaData"
+            },
+            {
+             "u32": 108
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CA7AG25C72ZNHBKYJEGZ4GDZJO3A5OH4CT7ICBN6SE3HS43W4E4S4AGO",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Owner"
+            },
+            {
+             "u32": 108
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CBZ4DCE7PYMUTOAKKUTRSUPT3FJFVOWCSKWUM5A72D6SAVMUJE5JN2PJ",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Balance"
+            },
+            {
+             "address": "GCGBJ7WR4WHNKFXS7BS3NH5WFKRIP55B4MF5QVQLP2G2DN4AFIUNIG3N"
+            }
+           ]
+          }
+         }
+        }
+       ],
+       "read_write": []
+      },
+      "instructions": 0,
+      "write_bytes": 0
+     }
+    }
+   },
+   "fee": 1211685,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "extend_footprint_ttl": {
+       "ext": "v0",
+       "extend_to": 1000000
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "277405160190246948",
+   "source_account": "GCI7I7H2OKH3FGTIIENKYVAHADE7D3H4X2BHHX5EQLUB4VJBDPZFY5JY"
+  }
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "bafe1d72",
+    "signature": "fdd68579356a7a887ea48b926386e985578a4ff9f068ca0da8f6f500f4b659c4e3d54bf462f23e71745e160ad278ffc58abdc09954aff7d5c46da6b2d12d7d0e"
+   },
+   {
+    "hint": "1501d8b3",
+    "signature": "ba1f7b42b96e0544c9ec1434ce3d0fdaa045f20085ecc4312c8c715efca3ff2c88c847451086c2e970170c3ef74843737bd74c35643686d10df977d46e1d760e"
+   }
+  ],
+  "tx": {
+   "cond": "none",
+   "ext": "v0",
+   "fee": 120000,
+   "memo": {
+    "hash": "f9a7bf04776f3d4e8d3d01677722a6d000000000000000000000000000000000"
+   },
+   "operations": [
+    {
+     "body": {
+      "set_trust_line_flags": {
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+        }
+       },
+       "clear_flags": 2,
+       "set_flags": 1,
+       "trustor": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+      }
+     },
+     "source_account": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+    },
+    {
+     "body": {
+      "set_trust_line_flags": {
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "BTC",
+         "issuer": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+        }
+       },
+       "clear_flags": 2,
+       "set_flags": 1,
+       "trustor": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+      }
+     },
+     "source_account": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+    },
+    {
+     "body": {
+      "manage_sell_offer": {
+       "amount": "255892777466",
+       "buying": {
+        "credit_alphanum4": {
+         "asset_code": "BTC",
+         "issuer": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+        }
+       },
+       "offer_id": "1478771167",
+       "price": {
+        "d": 1304356375,
+        "n": 25358
+       },
+       "selling": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+        }
+       }
+      }
+     },
+     "source_account": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+    },
+    {
+     "body": {
+      "manage_sell_offer": {
+       "amount": "15521231",
+       "buying": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+        }
+       },
+       "offer_id": "1478771168",
+       "price": {
+        "d": 32612,
+        "n": 1711643437
+       },
+       "selling": {
+        "credit_alphanum4": {
+         "asset_code": "BTC",
+         "issuer": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+        }
+       }
+      }
+     },
+     "source_account": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+    },
+    {
+     "body": {
+      "set_trust_line_flags": {
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "USD",
+         "issuer": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+        }
+       },
+       "clear_flags": 1,
+       "set_flags": 2,
+       "trustor": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+      }
+     },
+     "source_account": "GC2ATEL4K2O5BJO7Z76MYSV6TKHCROKV5GXEOU7NO2TUEOOMFDDIPWID"
+    },
+    {
+     "body": {
+      "set_trust_line_flags": {
+       "asset": {
+        "credit_alphanum4": {
+         "asset_code": "BTC",
+         "issuer": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+        }
+       },
+       "clear_flags": 1,
+       "set_flags": 2,
+       "trustor": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+      }
+     },
+     "source_account": "GC33QUM35DONISNWLDPALVMIKGPT3MNDU3NJVNKR7K4NG3RWTKKBUQZA"
+    }
+   ],
+   "seq_num": "196389007402922814",
+   "source_account": "GBHWOSOHO36AMLGJM7LQTSQIANDQ4KHR72UYSLVTKWC3FOF27YOXFA7U"
+  }
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "reference": "rust",
+ "compared": [
+  "js"
+ ],
+ "total_requests": 112278,
+ "divergences": []
+}

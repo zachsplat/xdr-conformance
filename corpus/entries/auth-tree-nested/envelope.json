@@ -1,0 +1,414 @@
+{
+ "tx": {
+  "signatures": [
+   {
+    "hint": "3a299840",
+    "signature": "ee99e88926af42ff064349553541c78ada5475fdc6aa269ce04078c28198dbccfa2e8b0ecbc848e3869e9b7ff94be049e1002f1fdc575a6b700ede2055aed903"
+   }
+  ],
+  "tx": {
+   "cond": {
+    "time": {
+     "max_time": "1758286043",
+     "min_time": "0"
+    }
+   },
+   "ext": {
+    "v1": {
+     "ext": "v0",
+     "resource_fee": "216765",
+     "resources": {
+      "disk_read_bytes": 348,
+      "footprint": {
+       "read_only": [
+        {
+         "account": {
+          "account_id": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "temporary",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Auction"
+            },
+            {
+             "map": [
+              {
+               "key": {
+                "symbol": "auct_type"
+               },
+               "val": {
+                "u32": 0
+               }
+              },
+              {
+               "key": {
+                "symbol": "user"
+               },
+               "val": {
+                "address": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "EmisData"
+            },
+            {
+             "u32": 3
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "ResConfig"
+            },
+            {
+             "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+          "durability": "persistent",
+          "key": "ledger_key_contract_instance"
+         }
+        },
+        {
+         "contract_code": {
+          "hash": "a41fc53d6753b6c04eb15b021c55052366a4c8e0e21bc72700f461264ec1350e"
+         }
+        },
+        {
+         "contract_code": {
+          "hash": "d1340ea680c4bc45be21997554cb5d37421a9290bc20fa50f2ede79029a77f8d"
+         }
+        }
+       ],
+       "read_write": [
+        {
+         "trustline": {
+          "account_id": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT",
+          "asset": {
+           "credit_alphanum4": {
+            "asset_code": "USDC",
+            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+           }
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT",
+          "durability": "temporary",
+          "key": {
+           "ledger_key_nonce": {
+            "nonce": "3215271830178490194"
+           }
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Positions"
+            },
+            {
+             "address": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "ResData"
+            },
+            {
+             "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Deposit"
+            },
+            {
+             "map": [
+              {
+               "key": {
+                "symbol": "reserve"
+               },
+               "val": {
+                "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+               }
+              },
+              {
+               "key": {
+                "symbol": "user"
+               },
+               "val": {
+                "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "ResVault"
+            },
+            {
+             "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "contract_data": {
+          "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+          "durability": "persistent",
+          "key": {
+           "vec": [
+            {
+             "symbol": "Balance"
+            },
+            {
+             "address": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD"
+            }
+           ]
+          }
+         }
+        }
+       ]
+      },
+      "instructions": 7181129,
+      "write_bytes": 1736
+     }
+    }
+   },
+   "fee": 1539192,
+   "memo": "none",
+   "operations": [
+    {
+     "body": {
+      "invoke_host_function": {
+       "auth": [
+        {
+         "credentials": {
+          "address": {
+           "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT",
+           "nonce": "3215271830178490194",
+           "signature": {
+            "vec": [
+             {
+              "map": [
+               {
+                "key": {
+                 "symbol": "public_key"
+                },
+                "val": {
+                 "bytes": "6aaa514741863dfbdefe8626739159dabdf4cd80665fa8451660c948f949392f"
+                }
+               },
+               {
+                "key": {
+                 "symbol": "signature"
+                },
+                "val": {
+                 "bytes": "82576c370290db494da87eaf774c5596592076e9d2b5f05d153701ee1f47aa094b58392d3b945cfc66acefc43fbad940f0f9444138a6dfa4c51f2d3343dae30c"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           "signature_expiration_ledger": 59000101
+          }
+         },
+         "root_invocation": {
+          "function": {
+           "contract_fn": {
+            "args": [
+             {
+              "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+             },
+             {
+              "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+             },
+             {
+              "i128": "1900000000"
+             }
+            ],
+            "contract_address": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR",
+            "function_name": "deposit"
+           }
+          },
+          "sub_invocations": [
+           {
+            "function": {
+             "contract_fn": {
+              "args": [
+               {
+                "address": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR"
+               },
+               {
+                "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+               },
+               {
+                "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+               },
+               {
+                "vec": [
+                 {
+                  "map": [
+                   {
+                    "key": {
+                     "symbol": "address"
+                    },
+                    "val": {
+                     "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+                    }
+                   },
+                   {
+                    "key": {
+                     "symbol": "amount"
+                    },
+                    "val": {
+                     "i128": "1900000000"
+                    }
+                   },
+                   {
+                    "key": {
+                     "symbol": "request_type"
+                    },
+                    "val": {
+                     "u32": 0
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ],
+              "contract_address": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD",
+              "function_name": "submit"
+             }
+            },
+            "sub_invocations": [
+             {
+              "function": {
+               "contract_fn": {
+                "args": [
+                 {
+                  "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+                 },
+                 {
+                  "address": "CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD"
+                 },
+                 {
+                  "i128": "1900000000"
+                 }
+                ],
+                "contract_address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+                "function_name": "transfer"
+               }
+              },
+              "sub_invocations": []
+             }
+            ]
+           }
+          ]
+         }
+        }
+       ],
+       "host_function": {
+        "invoke_contract": {
+         "args": [
+          {
+           "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+           "address": "GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT"
+          },
+          {
+           "i128": "1900000000"
+          }
+         ],
+         "contract_address": "CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR",
+         "function_name": "deposit"
+        }
+       }
+      }
+     },
+     "source_account": null
+    }
+   ],
+   "seq_num": "248476334953615437",
+   "source_account": "GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"
+  }
+ }
+}
