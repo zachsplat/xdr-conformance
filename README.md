@@ -22,7 +22,7 @@ It took 13 seconds on my machine with empty npm and pip caches. Each step compar
 3. **F1** rerun against py-stellar-base 17.0.1: the four SEP-51 JSON differences, identical to `findings/F1-py-stellar-base-sep51-json/output.txt`.
 4. **F2 before and after the upstream fix:** with stellar-xdr 0.2.0 the auth trees of 199, 490 and 491 levels fail with `XdrDepthError: nesting deeper than max_depth=200`; with 0.2.1, released after I reported it, all four decode.
 
-The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs docker and is under [Reproduce](#reproduce).
+The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs docker and is under [Reproduce](#reproduce). The wallet-backend reproductions (#716, #729 and #731 on pre-fix and fixed commits, and the still-open #804) need docker and about 5 GB; see [wallet-backend replay](#wallet-backend-replay-first-version-of-the-tranche-2-adapter).
 
 ## What CI checks
 
