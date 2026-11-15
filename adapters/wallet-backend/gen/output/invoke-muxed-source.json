@@ -1,0 +1,11 @@
+{
+ "case": "invoke-muxed-source",
+ "closed_at": "",
+ "error": "TransactionResultCodeTxSorobanInvalid",
+ "ledger": 0,
+ "network_passphrase": "Standalone Network ; February 2017",
+ "protocol_version": 0,
+ "status": "REJECTED_ERROR",
+ "tx_hash": "ed8d10044dd804353c8cb817701fec4483392579576b1521dfbcbd9bb4222b7e",
+ "tx_source": "MCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKAAAAAAETFQC2KPHU"
+}

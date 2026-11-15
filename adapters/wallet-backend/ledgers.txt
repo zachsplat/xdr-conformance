@@ -1,0 +1,9 @@
+# Whole ledgers replayed at every commit.
+# network     source                                    ledger or repo path                                                 report only tx
+testnet       lake:testnet/2025-12-18                   4437357                                                             d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed
+standalone    file                                      corpus/indexer/entries/sac-trust-creates-trustline/ledger-43.xdr.zst   -
+standalone    file                                      corpus/indexer/entries/soroban-muxed-source/ledger-45.xdr.zst          -
+standalone    file                                      corpus/indexer/entries/sac-native-transfer-creates-account/ledger-26.xdr.zst   -
+pubnet        lake:pubnet                               65486002                                                            -
+pubnet        lake:pubnet                               65486006                                                            -
+pubnet        lake:pubnet                               65486052                                                            -

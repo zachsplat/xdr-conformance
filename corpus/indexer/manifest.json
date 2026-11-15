@@ -1,0 +1,197 @@
+{
+ "schema": "../manifest.schema.json",
+ "version": 1,
+ "entries": [
+  {
+   "id": "signer-signed-payload-setoptions",
+   "files": {
+    "envelope": {
+     "path": "entries/signer-signed-payload-setoptions/envelope.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "7bbbcb0681f9b7b8310547745fdfd59203f0c39f0684360aafa46de8ccdf90b7"
+    },
+    "meta": {
+     "path": "entries/signer-signed-payload-setoptions/meta.xdr",
+     "xdr_type": "TransactionResultMetaV1",
+     "sha256": "e0f890f1cd3d9ee2783770869964af70b6dacc2d419d30b26b476c1d89447f19",
+     "transaction_meta_version": "v4"
+    }
+   },
+   "expected": {
+    "tx_hash": "d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
+    "roundtrip": "identity",
+    "indexer": {
+     "signer_added": "PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS"
+    }
+   },
+   "pattern": "signed_payload_signer:set_options",
+   "caps": [
+    "CAP-0040"
+   ],
+   "description": "SetOptions adds an ed25519 signed-payload signer (P... strkey, 32-byte key plus a 4-byte payload). The testnet transaction wallet-backend#729 names as the one that halted ingestion.",
+   "network": "testnet",
+   "network_passphrase": "Test SDF Network ; September 2015",
+   "protocol_version": 28,
+   "source": {
+    "kind": "galexie-public-datalake",
+    "lake_prefix": "v1.1/stellar/ledgers/testnet/2025-12-18",
+    "ledger": 4437357,
+    "tx_hash": "d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
+    "index_in_tx_set": 0,
+    "closed_at": "2026-08-31T21:06:12Z"
+   },
+   "synthetic": false,
+   "sightings": [
+    "https://github.com/stellar/wallet-backend/issues/716",
+    "https://github.com/stellar/wallet-backend/pull/729"
+   ]
+  },
+  {
+   "id": "sac-trust-creates-trustline",
+   "files": {
+    "envelope": {
+     "path": "entries/sac-trust-creates-trustline/envelope.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "d6b7bac836d0008e82849eed4ea9a02c0a767ec6a7f41519c46d01310e5b7241"
+    },
+    "meta": {
+     "path": "entries/sac-trust-creates-trustline/meta.xdr",
+     "xdr_type": "TransactionResultMetaV1",
+     "sha256": "303969f4c1e35f123301382feff0d0090139685f2819f7e6bb519e0b5f07a35f",
+     "transaction_meta_version": "v4"
+    },
+    "ledger": {
+     "path": "entries/sac-trust-creates-trustline/ledger-43.xdr.zst",
+     "xdr_type": "LedgerCloseMetaBatch (zstd)",
+     "sha256": "efb3322b269599c3812782e080e044f56cb7617bd77f32d157e976abcea4e0ba"
+    }
+   },
+   "expected": {
+    "tx_hash": "47fa0b692ad9ccc5c7c23261f6708bdbb3b6fffbe55ad2872c5f17195839b931",
+    "roundtrip": "identity",
+    "indexer": {
+     "trustline_created": "XDRC:GADASODGGUBTIMJWN5HKKBGI273WE4AAETKKYABFNOEB4XH7EO3GYO4G for GCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKJHW"
+    }
+   },
+   "pattern": "op:invoke_host_function:sac_trust",
+   "caps": [
+    "CAP-0073",
+    "CAP-0046"
+   ],
+   "description": "An account calls trust(self) on a Stellar Asset Contract. stellar-core creates the trustline inside InvokeHostFunction and emits no contract event. Generated on a local network by adapters/wallet-backend/gen; the whole ledger core closed is kept next to it.",
+   "network": "standalone",
+   "network_passphrase": "Standalone Network ; February 2017",
+   "protocol_version": 30,
+   "source": {
+    "kind": "local-stellar-core",
+    "stellar_core": "v30.0.0 (stellar/quickstart:latest, image revision f7fe0705, --local, docker --network none)",
+    "ledger": 43,
+    "tx_hash": "47fa0b692ad9ccc5c7c23261f6708bdbb3b6fffbe55ad2872c5f17195839b931",
+    "index_in_tx_set": 0,
+    "closed_at": "2026-11-15T20:26:15Z"
+   },
+   "synthetic": false,
+   "sightings": [
+    "https://github.com/stellar/wallet-backend/issues/731"
+   ]
+  },
+  {
+   "id": "soroban-muxed-source",
+   "files": {
+    "envelope": {
+     "path": "entries/soroban-muxed-source/envelope.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "fd55d0c2bf94b1587fe786fe7289220708cee7604ee72ff4f5d5275be1027203"
+    },
+    "meta": {
+     "path": "entries/soroban-muxed-source/meta.xdr",
+     "xdr_type": "TransactionResultMetaV1",
+     "sha256": "0c90850e9919b0cc9fbe5b54c71195642ec2125be46a973a72a2f10f2d6086fe",
+     "transaction_meta_version": "v4"
+    },
+    "ledger": {
+     "path": "entries/soroban-muxed-source/ledger-45.xdr.zst",
+     "xdr_type": "LedgerCloseMetaBatch (zstd)",
+     "sha256": "f125458a0a83fa954ba5aeb634395f08de4d0380dea9c698f4ac0bc45f2891ff"
+    }
+   },
+   "expected": {
+    "tx_hash": "2b97d2629703eafa1e7fea89eb1227b526792d8bb011ded070e8708631bacfb0",
+    "roundtrip": "identity",
+    "indexer": {
+     "participant": "MCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKAAAAAAETFQC2KPHU"
+    }
+   },
+   "pattern": "muxed_account:source_account:soroban",
+   "caps": [
+    "CAP-0027",
+    "CAP-0046"
+   ],
+   "description": "A Soroban operation (ExtendFootprintTTL on an asset contract instance) whose transaction source is an M... muxed account. Core 30 applies it; the same source on InvokeHostFunction is refused with txSOROBAN_INVALID. Generated on a local network by adapters/wallet-backend/gen.",
+   "network": "standalone",
+   "network_passphrase": "Standalone Network ; February 2017",
+   "protocol_version": 30,
+   "source": {
+    "kind": "local-stellar-core",
+    "stellar_core": "v30.0.0 (stellar/quickstart:latest, image revision f7fe0705, --local, docker --network none)",
+    "ledger": 45,
+    "tx_hash": "2b97d2629703eafa1e7fea89eb1227b526792d8bb011ded070e8708631bacfb0",
+    "index_in_tx_set": 0,
+    "closed_at": "2026-11-15T20:26:17Z"
+   },
+   "synthetic": false,
+   "sightings": [
+    "https://github.com/stellar/wallet-backend/issues/716"
+   ]
+  },
+  {
+   "id": "sac-native-transfer-creates-account",
+   "files": {
+    "envelope": {
+     "path": "entries/sac-native-transfer-creates-account/envelope.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "8c95635af6224bbcc831479e55fdee7b38f6d10afd8b75482798244a35f6ad62"
+    },
+    "meta": {
+     "path": "entries/sac-native-transfer-creates-account/meta.xdr",
+     "xdr_type": "TransactionResultMetaV1",
+     "sha256": "7c6464caa9534fb183101bbb47f48a0dbdd37a1769a46cea4443453ed804e29e",
+     "transaction_meta_version": "v4"
+    },
+    "ledger": {
+     "path": "entries/sac-native-transfer-creates-account/ledger-26.xdr.zst",
+     "xdr_type": "LedgerCloseMetaBatch (zstd)",
+     "sha256": "73efe970214437af33331a1b11e7c275c0053e63aff030c94c88d4bde673a20f"
+    }
+   },
+   "expected": {
+    "tx_hash": "85870b758c13df4cc8ee7280aa47eb9d73e6d36491508214640c32bd7ff11fa2",
+    "roundtrip": "identity",
+    "indexer": {
+     "account_created": "GDNUUT6J7UYDGHXGK4R2DPBZXNHGHMRZV7II4SEH3YVNCR2QFC3YH54V"
+    }
+   },
+   "pattern": "op:invoke_host_function:sac_transfer_creates_account",
+   "caps": [
+    "CAP-0073",
+    "CAP-0046"
+   ],
+   "description": "A transfer through the native asset contract to a G... address that does not exist. stellar-core creates the account inside InvokeHostFunction; there is no CreateAccount operation. Generated on a local network by adapters/wallet-backend/gen.",
+   "network": "standalone",
+   "network_passphrase": "Standalone Network ; February 2017",
+   "protocol_version": 30,
+   "source": {
+    "kind": "local-stellar-core",
+    "stellar_core": "v30.0.0 (stellar/quickstart:latest, image revision f7fe0705, --local, docker --network none)",
+    "ledger": 26,
+    "tx_hash": "85870b758c13df4cc8ee7280aa47eb9d73e6d36491508214640c32bd7ff11fa2",
+    "index_in_tx_set": 0,
+    "closed_at": "2026-11-15T20:34:21Z"
+   },
+   "synthetic": false,
+   "sightings": [
+    "https://github.com/stellar/wallet-backend/issues/804"
+   ]
+  }
+ ]
+}

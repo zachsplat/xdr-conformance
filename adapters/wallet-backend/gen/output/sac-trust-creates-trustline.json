@@ -1,0 +1,11 @@
+{
+ "case": "sac-trust-creates-trustline",
+ "closed_at": "2026-11-15T20:26:15Z",
+ "error": "",
+ "ledger": 43,
+ "network_passphrase": "Standalone Network ; February 2017",
+ "protocol_version": 30,
+ "status": "SUCCESS",
+ "tx_hash": "47fa0b692ad9ccc5c7c23261f6708bdbb3b6fffbe55ad2872c5f17195839b931",
+ "tx_source": "GCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKJHW"
+}

@@ -1,0 +1,12 @@
+# Expected adapter result per input and wallet-backend commit. run.sh replay fails if any cell differs.
+# "*" in the input column covers every input not listed (the SDK corpus controls and the pubnet ledgers).
+input	79ea2acd	6e5a5910	2a0a84ea	2c873353	764a4f5b	c152783c	3e22515a
+corpus:signer-signed-payload-setoptions	mishandled	halts	halts	pass	pass	pass	pass
+testnet:4437357.xdr.zst	mishandled	halts	halts	pass	pass	pass	pass
+corpus:soroban-muxed-source	mishandled	pass	pass	pass	pass	pass	pass
+corpus:sac-trust-creates-trustline	mishandled	mishandled	mishandled	mishandled	mishandled	pass	pass
+corpus:sac-native-transfer-creates-account	mishandled	mishandled	mishandled	mishandled	mishandled	mishandled	mishandled
+standalone:ledger-26.xdr.zst	error	error	error	error	error	error	mishandled
+standalone:ledger-45.xdr.zst	error	error	error	error	error	error	pass
+standalone:ledger-43.xdr.zst	error	error	error	error	error	error	pass
+*	pass	pass	pass	pass	pass	pass	pass

@@ -1,0 +1,9 @@
+# wallet-backend commits the adapter runs against, oldest first.
+# commit                                    role
+79ea2acd1dc65a07166133cc04b12e76db314db0    #715 merged; last commit before #693 (#716 filed against this state)
+6e5a59101158dc2996295450190142366062cd05    #693 merged: M... reduced to the base account; other non-32-byte keys refused
+2a0a84ea12523b6c92e278c0c84b443041240095    last commit before #729
+2c873353c1f0f3c9b145e25a7d009023ad104a1c    #729 merged: signer keys stored in full (SignerKeyBytea)
+764a4f5bcbff5abb0949d93da37f769063013ea0    last commit before #734
+c152783c054c765c8b51fd26ed313fd1ebc1c50c    #734 merged: state changes for SAC-created trustlines (closes #731)
+3e22515a44979fdc3a558fda3991ca2b48e38cef    main on 2026-11-15

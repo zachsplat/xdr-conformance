@@ -1,0 +1,11 @@
+{
+ "case": "sac-native-transfer-creates-account",
+ "closed_at": "2026-11-15T20:34:21Z",
+ "error": "",
+ "ledger": 26,
+ "network_passphrase": "Standalone Network ; February 2017",
+ "protocol_version": 30,
+ "status": "SUCCESS",
+ "tx_hash": "85870b758c13df4cc8ee7280aa47eb9d73e6d36491508214640c32bd7ff11fa2",
+ "tx_source": "GCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKJHW"
+}

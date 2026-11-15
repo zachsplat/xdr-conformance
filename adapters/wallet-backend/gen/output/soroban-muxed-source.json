@@ -1,0 +1,11 @@
+{
+ "case": "soroban-muxed-source",
+ "closed_at": "2026-11-15T20:26:17Z",
+ "error": "",
+ "ledger": 45,
+ "network_passphrase": "Standalone Network ; February 2017",
+ "protocol_version": 30,
+ "status": "SUCCESS",
+ "tx_hash": "2b97d2629703eafa1e7fea89eb1227b526792d8bb011ded070e8708631bacfb0",
+ "tx_source": "MCEEMG2XFPLCETNPSGQFQPBCJVSH6EQQQLWE2WID2WFGHIZG3B5BKAAAAAAETFQC2KPHU"
+}
