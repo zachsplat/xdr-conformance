@@ -85,29 +85,21 @@ sightings)
   (cd "$JSDIR" && node repro1766.mjs "$ROOT/sightings/testnet-ledger-5521445-tx-b79f02ec.json" && node repro_sightings.mjs)
   ;;
 quick)
-  # Each step compares a fresh run with the output committed in this repo.
+  # Each step compares a fresh run with what this repo documents. Same pins as CI.
   Q=$WORK/quick; mkdir -p "$Q/js"
-  cp "$ROOT/sightings/package.json" "$ROOT/sightings/"*.mjs "$Q/js/"
-  (cd "$Q/js" && npm install --silent --no-audit --no-fund)
+  cp "$ROOT/sightings/package.json" "$ROOT/sightings/package-lock.json" "$ROOT/sightings/"*.mjs "$Q/js/"
+  (cd "$Q/js" && npm ci --silent --no-audit --no-fund)
   echo "1. RFP sightings on pre-fix and fixed js-stellar-sdk tags"
   (cd "$Q/js" && node repro1766.mjs "$ROOT/sightings/testnet-ledger-5521445-tx-b79f02ec.json") > "$Q/1766.txt"
   (cd "$Q/js" && node repro_sightings.mjs) > "$Q/178x.txt"
   cat "$Q/1766.txt" "$Q/178x.txt"
   diff "$Q/1766.txt" "$ROOT/sightings/js-1766-output.txt" && diff "$Q/178x.txt" "$ROOT/sightings/js-1785-1789-output.txt" && echo "   same as sightings/*-output.txt" || echo "   DIFFERS from sightings/*-output.txt"
-  [ -x "$Q/old/bin/python" ] || { python3 -m venv "$Q/old" && "$Q/old/bin/pip" install -q stellar-sdk==17.0.1 stellar-xdr==0.2.0; }
-  [ -x "$Q/new/bin/python" ] || { python3 -m venv "$Q/new" && "$Q/new/bin/pip" install -q stellar-xdr==0.2.1; }
-  echo "2. Conformance runner, all 44 corpus entries, Python adapters"
-  python3 -I "$ROOT/tools/check_corpus.py" "$ROOT/corpus" "$Q/matrix.md" py-stellar-base="$Q/old/bin/python -I $ROOT/runners/python/facts.py sdk" py-stellar-xdr="$Q/old/bin/python -I $ROOT/runners/python/facts.py pyxdr" || true
-  python3 -I - "$Q/matrix.md" "$ROOT/reports/corpus-matrix.md" <<'PY'
-import sys
-def rows(p):
-    return [[c.strip() for c in l.strip().strip("|").split("|")] for l in open(p) if l.startswith("| `")]
-a = {r[0]: r[1:] for r in rows(sys.argv[1])}
-b = {r[0]: r[-2:] for r in rows(sys.argv[2])}
-print("   same as the py-stellar-base and py-stellar-xdr columns of reports/corpus-matrix.md" if a == b else "   DIFFERS from reports/corpus-matrix.md")
-PY
+  [ -x "$Q/new/bin/python" ] || { python3 -m venv "$Q/new" && "$Q/new/bin/pip" install -q -r "$ROOT/ci/requirements.txt"; }
+  [ -x "$Q/old/bin/python" ] || { python3 -m venv "$Q/old" && "$Q/old/bin/pip" install -q -r "$ROOT/ci/requirements-pyxdr-0.2.0.txt"; }
+  echo "2. Conformance runner, all 44 corpus entries, Python adapters, against ci/known-findings.json"
+  python3 -I "$ROOT/tools/check_corpus.py" --known "$ROOT/ci/known-findings.json" "$ROOT/corpus" "$Q/matrix.md" py-stellar-base="$Q/new/bin/python -I $ROOT/runners/python/facts.py sdk" py-stellar-xdr="$Q/new/bin/python -I $ROOT/runners/python/facts.py pyxdr" && echo "   every failing cell is a documented finding (exit 0)" || echo "   UNDOCUMENTED failure or stale finding (exit 1)"
   echo "3. F1: py-stellar-base SEP-51 JSON (StellarCN/py-stellar-base#1269)"
-  (cd "$ROOT/findings/F1-py-stellar-base-sep51-json" && "$Q/old/bin/python" -I repro.py ../../corpus) > "$Q/f1.txt"
+  (cd "$ROOT/findings/F1-py-stellar-base-sep51-json" && "$Q/new/bin/python" -I repro.py ../../corpus) > "$Q/f1.txt"
   diff "$Q/f1.txt" "$ROOT/findings/F1-py-stellar-base-sep51-json/output.txt" && echo "   same as findings/F1-*/output.txt" || echo "   DIFFERS from findings/F1-*/output.txt"
   echo "4. F2: py-stellar-xdr default depth (lightsail-network/py-stellar-xdr#17, fixed by #19 in 0.2.1)"
   for v in old new; do

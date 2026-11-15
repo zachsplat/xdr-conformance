@@ -1,5 +1,7 @@
 # xdr-conformance (proof of concept)
 
+[![conformance](https://github.com/zachsplat/xdr-conformance/actions/workflows/conformance.yml/badge.svg?branch=master)](https://github.com/zachsplat/xdr-conformance/actions/workflows/conformance.yml?query=branch%3Amaster)
+
 A shared test kit for code that decodes the Stellar ledger: a corpus of rare but valid ledger and transaction shapes, a hostile set judged by stellar-core's own decoder, and a runner that puts every entry through rs-stellar-xdr, go-stellar-sdk, js-stellar-sdk, py-stellar-base and py-stellar-xdr and reports where they differ from the network and from each other.
 
 This is the two-day proof behind my application to the Stellar Community Fund RFP "XDR/CAP-Coverage Audit Tool and Indexer-Hardening Guide". Run on 2026-11-15. Apache-2.0.
@@ -13,14 +15,31 @@ git clone https://github.com/zachsplat/xdr-conformance && cd xdr-conformance
 ./run.sh quick
 ```
 
-It took 16 seconds on my machine with empty npm and pip caches. Each step compares a fresh run with the output committed here and prints `same as ...` or `DIFFERS`. What you should see:
+It took 13 seconds on my machine with empty npm and pip caches. Each step compares a fresh run with the output committed here and prints `same as ...` or `DIFFERS`. What you should see:
 
 1. **RFP sightings** on the js-stellar-sdk tags before and after each fix (`sightings/`). 17.2.0: `FAIL Assets are not in lexicographic order` on the real testnet transaction; 17.2.1 and 17.4.0 decode it and compute pool ID `7188b01c...97ec3b`, the one Horizon reports. 17.2.1 returns `{"1":20}` from a two-entry map (#1789) and accepts `"0x10"` as a muxed ID (#1785); 17.3.0 and 17.4.0 throw on both.
-2. **The conformance runner** (`tools/check_corpus.py`) on all 44 corpus entries with the two Python adapters: `44 entries x 2 adapters, 8 failing cells`, the same cells as those columns of `reports/corpus-matrix.md`. It exits 1 on any failing cell, which is what lets it gate CI.
+2. **The conformance runner** (`tools/check_corpus.py`) on all 44 corpus entries with the two Python adapters, at the versions CI pins: `44 entries x 2 adapters: 7 known findings reproduced, 0 undocumented failures, 0 known findings changed, 0 files with a wrong hash`. Every failing cell matches an entry in `ci/known-findings.json` (F1, F3, py-stellar-base#1262 and #1263, and the recorded bool-2 behaviour). The runner exits 1 on an undocumented failure, on a known finding that stops reproducing, or on a file whose hash differs from the manifest, which is what lets it gate CI.
 3. **F1** rerun against py-stellar-base 17.0.1: the four SEP-51 JSON differences, identical to `findings/F1-py-stellar-base-sep51-json/output.txt`.
 4. **F2 before and after the upstream fix:** with stellar-xdr 0.2.0 the auth trees of 199, 490 and 491 levels fail with `XdrDepthError: nesting deeper than max_depth=200`; with 0.2.1, released after I reported it, all four decode.
 
 The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs docker and is under [Reproduce](#reproduce).
+
+## In CI
+
+`.github/workflows/conformance.yml` runs on every push and pull request with every library version pinned. It builds the Rust adapter (rs-stellar-xdr 30.0.0) and the Go adapter (go-stellar-sdk v0.9.0), installs js-stellar-sdk 17.4.0 and the Python libraries, and then:
+
+- runs all 44 corpus entries through the five adapters against `ci/known-findings.json`;
+- runs the F2 depth entries with each library's shipped defaults, with stellar-xdr 0.2.0 and 0.2.1 as separate columns;
+- reruns the three JS sightings and diffs them against the committed transcripts.
+
+A divergence that is not in `ci/known-findings.json` fails the run, and so does a listed one that stops reproducing, so a library upgrade that fixes or breaks something shows up as a red build. stellar-core is not run in CI; its verdicts are recorded in the manifests.
+
+First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com/zachsplat/xdr-conformance/actions/runs/43757458433
+
+```
+44 entries x 5 adapters: 11 known findings reproduced, 0 undocumented failures, 0 known findings changed, 0 files with a wrong hash
+3 entries x 7 adapters: 2 known findings reproduced, 0 undocumented failures, 0 known findings changed, 0 files with a wrong hash
+```
 
 ## Where the findings stand upstream
 
@@ -43,7 +62,8 @@ The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs doc
 | `sightings/` | js-stellar-sdk#1766, #1785, #1789 reproduced on the last tag before each fix and the first after |
 | `findings/` | new discrepancies, each with a minimal reproduction and draft issue text |
 | `reports/` | `corpus-matrix.md`, `hostile-matrix.md`, `depth-sweep.md`, `raw/` (diff summaries, pool census, ledger hashes, pattern counts) |
-| `ci/conformance.yml` | example workflow that gates a pull request on the corpus |
+| `.github/workflows/conformance.yml` | the CI job: builds the Rust and Go adapters, runs the corpus, the F2 depth entries and the sightings on every push and pull request |
+| `ci/known-findings.json`, `ci/requirements*.txt` | the divergences CI expects with the pinned versions (each tied to a finding, an upstream issue or a recorded behaviour), and the Python pins |
 | `run.sh` | `quick` (the five-minute check above), and rebuilds everything from public data: `fetch`, `build`, `scan`, `replay`, `hostile`, `depth`, `corpus`, `sightings` |
 
 ## What was run
