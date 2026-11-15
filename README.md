@@ -37,6 +37,8 @@ A divergence that is not in `ci/known-findings.json` fails the run, and so does 
 
 F2 is listed for the 0.2.0 column only. The gating py-stellar-xdr column pins 0.2.1, the first release with the fix, so the 0.2.0 column is there as a before and after and can be dropped. The other listed cells are F1 and F3, py-stellar-base#1262 and #1263, rs-stellar-xdr#622, three libraries that refuse a bool of 2 (stricter than core, recorded rather than reported), and one setting of this runner (Rust at depth 500 in the corpus run). Versions are pinned in `runners/rust/Cargo.lock`, `runners/go/go.sum`, `sightings/package-lock.json` and `ci/requirements*.txt`; the Rust build and package downloads are cached. Each run's summary page shows the full matrices, and they are attached to the run as an artifact.
 
+To check that the gate fails when it should, I ran the same workflow on a throwaway branch that pins stellar-xdr back to 0.2.0. It went red on the one corpus cell 0.2.0 gets wrong even at `max_depth=500` (`hostile-sor-scval_nested_vec_200 / py-stellar-xdr: refuses (core accepts)`): https://github.com/zachsplat/xdr-conformance/actions/runs/43758099461
+
 First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com/zachsplat/xdr-conformance/actions/runs/43757458433
 
 ```
