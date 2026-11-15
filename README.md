@@ -149,7 +149,7 @@ Go and JS are looser than admission (already filed: go-stellar-sdk#6047, js-stel
 None of these had been filed by anyone when I found them; status is in [Where the findings stand upstream](#where-the-findings-stand-upstream).
 
 - **F1** py-stellar-base 17.0.1 SEP-51 JSON: `txsuccess`/`opinner` for `tx_success`/`op_inner`, `from_` for `from`, `AssetCode` as an object, `ContractEvent.contract_id` as hex. Found on pubnet transactions. Filed as StellarCN/py-stellar-base#1269.
-- **F2** py-stellar-xdr 0.2.0 default `max_depth=200` refuses authorization trees from 199 levels and ScVal nesting from 200, which pass stellar-core's XDR admission checks (up to 490 and 246 in the tested transaction). It mattered because py-stellar-base draft PR #1268 adopts py-stellar-xdr. Filed as lightsail-network/py-stellar-xdr#17; fixed in #19 and released in 0.2.1.
+- **F2** py-stellar-xdr 0.2.0 default `max_depth=200` refuses authorization trees from 199 levels and ScVal nesting from 200, which pass stellar-core's XDR admission checks (up to 490 and 246 in the tested transaction). It mattered because py-stellar-base PR #1268 replaces the SDK's XDR code with py-stellar-xdr; that PR now requires 0.2.1 or later. Filed as lightsail-network/py-stellar-xdr#17; fixed in #19 and released in 0.2.1.
 - **F3** (minor) py-stellar-xdr refuses an empty signed-payload signer that core's decoder takes and core's validation then refuses. Not filed.
 
 Already filed by others and reproduced here: rs-stellar-xdr#622 and #629, py-stellar-base#1262 and #1263, js-stellar-sdk#1901 and #1908, go-stellar-sdk#6047.

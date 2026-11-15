@@ -1,6 +1,6 @@
 # F2. py-stellar-xdr 0.2.0 refuses, with its default limits, envelopes that stellar-core admits
 
-Status on 2026-11-15: not filed (lightsail-network/py-stellar-xdr has no outside issues yet). Draft issue text below.
+Status: filed as [lightsail-network/py-stellar-xdr#17](https://github.com/lightsail-network/py-stellar-xdr/issues/17) on 2026-11-15. The maintainer confirmed it and fixed it the same day in [#19](https://github.com/lightsail-network/py-stellar-xdr/pull/19) (default `max_depth` 200 to 500, recursive arrays read in loops), released in stellar-xdr 0.2.1. With 0.2.1 all four files below decode with the defaults (`./run.sh quick`, step 4) and round-trip through SEP-51 JSON to the same bytes. The rest of this page describes 0.2.0, as reported.
 
 ## What happens
 
@@ -17,9 +17,9 @@ stellar-core has two decoders on the submission path. xdrpp decodes the envelope
 
 The same limit applies to nested `ScVal` in a contract argument: py-stellar-xdr stops at 199 levels; stellar-core admits 246 (`../../reports/depth-sweep.md`).
 
-## Why it matters now
+## Why it mattered
 
-py-stellar-base PR #1268 (draft) replaces the SDK's generated XDR code with py-stellar-xdr. Today's SDK decodes all the admitted envelopes above. After the change, a Python service reading ledgers with default settings would stop on any ledger holding such a transaction, and Galexie's `LedgerCloseMetaBatch` files add more levels on top of the envelope.
+py-stellar-base PR #1268 replaces the SDK's generated XDR code with py-stellar-xdr. The SDK as released (17.0.1) decodes all the admitted envelopes above. With the change on 0.2.0, a Python service reading ledgers with default settings would have stopped on any ledger holding such a transaction, and Galexie's `LedgerCloseMetaBatch` files add more levels on top of the envelope. #1268 now requires stellar-xdr 0.2.1 or later.
 
 ## Minimal reproduction
 
