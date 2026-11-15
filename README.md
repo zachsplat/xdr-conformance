@@ -60,11 +60,13 @@ First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com
 |---|---|
 | `corpus/manifest.schema.json` | draft manifest schema (entry ID, CAPs, protocol version, source, synthetic flag, expected values) |
 | `corpus/manifest.json`, `corpus/entries/` | 23 real entries, one per rare shape: 22 from pubnet history (Galexie public data lake), 1 from testnet history |
+| `corpus/indexer/` | 4 indexer entries with their own manifest (same schema): one testnet transaction from the public data lake, three from a local stellar-core 30 network, each kept with the whole ledger core wrote |
 | `corpus/hostile-manifest.json`, `corpus/hostile/` | 21 entries with stellar-core's verdict: three real pubnet envelopes and 18 variants of them, one change each |
 | `runners/` | one adapter per implementation, same JSONL protocol: `rust/` (also the scanner), `go/`, `js/`, `python/` (both Python libraries), `core/` (stellar-core `print-xdr` as the reference) |
 | `tools/` | `fetch_galexie.py`, `pick_corpus.py`, `pick_bases.py`, `mutate.py`, `write_hostile.py`, `diff_results.py`, `lockstep.py`, `check_corpus.py` (the conformance runner) |
 | `sweeps/` | nesting-depth sweep, table printer, run-all-adapters script |
 | `sightings/` | js-stellar-sdk#1766, #1785, #1789 reproduced on the last tag before each fix and the first after |
+| `adapters/wallet-backend/` | the wallet-backend replay adapter: runs wallet-backend's own indexer at seven commits, offline, and checks what it would store against the ledger |
 | `findings/` | new discrepancies, each with a minimal reproduction and draft issue text |
 | `reports/` | `corpus-matrix.md`, `hostile-matrix.md`, `depth-sweep.md`, `raw/` (diff summaries, pool census, ledger hashes, pattern counts) |
 | `.github/workflows/conformance.yml` | the CI job: builds the Rust and Go adapters, runs the corpus, the F2 depth entries and the sightings on every push to master and every pull request |
@@ -103,6 +105,19 @@ js-stellar-sdk#1766: JS ordered liquidity-pool assets by issuer strkey text inst
 | js-stellar-sdk#1766 | real testnet transaction, ledger 5,521,445 (`corpus/entries/lp-issuers-strkey-vs-bytes-order`) | 17.2.0: `Assets are not in lexicographic order` | 17.2.1: decodes, pool ID matches Horizon |
 | js-stellar-sdk#1789 | ScMap with keys u32 1 and symbol "1" | 17.2.1: returns `{"1":20}`, one entry lost | 17.3.0: throws |
 | js-stellar-sdk#1785 | muxed account ID `"0x10"` | 17.2.1: accepted, `id()` says "0x10", M-address encodes 16 | 17.3.0: rejected |
+
+## wallet-backend replay (first version of the tranche 2 adapter)
+
+`adapters/wallet-backend/` runs wallet-backend's own `indexer.ProcessLedger` inside a checkout of each commit (docker `--network none`), puts every address it would store through that commit's own column encoder and decoder, and checks that every account, trustline and signer the ledger created has a state change. Details and exact commands: [`adapters/wallet-backend/README.md`](adapters/wallet-backend/README.md).
+
+| issue | input | before the fix | after the fix |
+|---|---|---|---|
+| wallet-backend#716 | Soroban operation with an M... source (local core 30) | `79ea2acd`: stored as 33 bytes, reads back undecodable | `6e5a5910` (#693): reads back as the base G... account |
+| wallet-backend#716 and #729 | signed-payload signer, the testnet transaction #729 names (ledger 4,437,357) | `79ea2acd`: reads back undecodable; `6e5a5910` and `2a0a84ea`: the encoder refuses it | `2c873353` (#729): stored and read back exactly |
+| wallet-backend#731 | `trust()` on an asset contract (local core 30) | `764a4f5b`: trustline created, no state change | `c152783c` (#734): TRUSTLINE/ADD |
+| wallet-backend#804 (open) | native-asset contract transfer that creates an account (local core 30) | main `3e22515a`: account created, no ACCOUNT/CREATE | no fix yet |
+
+The 22 pubnet corpus entries and three whole pubnet ledgers pass at all seven commits. `expected.tsv` pins all 231 results and `run.sh replay` fails on any change.
 
 ## Hostile entries
 
@@ -145,7 +160,7 @@ The Galexie lake stores meta for every sampled ledger, protocol 12 and 18 includ
 
 ## Limits
 
-No indexer replay yet (wallet-backend, stellar-etl); Java, Swift, Dart and PHP SDKs not run; hostile variants come from three base transactions; depth thresholds measured in one envelope context; core admission measured by running core's own admission parser settings (rs-stellar-xdr at depth 1000), not by submitting to a local network.
+Indexer replay covers wallet-backend only (four indexer entries, seven commits, no database), not stellar-etl; Java, Swift, Dart and PHP SDKs not run; hostile variants come from three base transactions; depth thresholds measured in one envelope context; core admission measured by running core's own admission parser settings (rs-stellar-xdr at depth 1000), not by submitting to a local network.
 
 ## Reproduce
 
