@@ -52,6 +52,7 @@
           "type": "object",
           "properties": {
             "envelope_sep51_json": {"type": "string", "description": "Path to the SEP-51 XDR-JSON a conforming decoder produces. Written only where rs-stellar-xdr, py-stellar-xdr and js-stellar-sdk agree."},
+            "envelope_sep51_json_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 of the envelope_sep51_json file, checked like the XDR files."},
             "tx_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "roundtrip": {"enum": ["identity"], "description": "Decoding then re-encoding must reproduce the file byte for byte."},
             "stellar_core_decode": {"enum": ["accept", "reject"], "description": "Verdict of stellar-core's own decoder (print-xdr); the reference for hostile entries."},

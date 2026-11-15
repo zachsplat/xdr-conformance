@@ -26,18 +26,18 @@ The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs doc
 
 ## What CI checks
 
-`.github/workflows/conformance.yml` runs on every push and pull request with every library version pinned. It builds the Rust adapter (rs-stellar-xdr 30.0.0) and the Go adapter (go-stellar-sdk v0.9.0), installs js-stellar-sdk 17.4.0 and the Python libraries, and then:
+`.github/workflows/conformance.yml` runs on every push to master, on every pull request and on manual dispatch, with every library version pinned. It builds the Rust adapter (rs-stellar-xdr 30.0.0) and the Go adapter (go-stellar-sdk v0.9.0), installs js-stellar-sdk 17.4.0 and the Python libraries, and then:
 
-- checks every corpus file against the sha256 in its manifest;
+- checks every corpus file (the XDR and the expected SEP-51 JSON) against the sha256 in its manifest;
 - runs all 44 corpus entries through the five adapters against `ci/known-findings.json`: decode, byte round-trip, transaction hash, SEP-51 JSON, and for hostile entries stellar-core's recorded verdict;
 - runs the F2 depth entries (`findings/F2-py-stellar-xdr-default-depth/manifest.json`) with each library's shipped defaults, next to stellar-core's admission parse (rs-stellar-xdr at depth 1000), with stellar-xdr 0.2.0 and 0.2.1 as separate columns;
 - reruns the three JS sightings and diffs them against the committed transcripts.
 
 A divergence that is not in `ci/known-findings.json` fails the run, and so does a listed one that stops reproducing, so a library upgrade that fixes or breaks something shows up as a red build. stellar-core is not run in CI; its verdicts are recorded in the manifests.
 
-F2 is listed for the 0.2.0 column only. The gating py-stellar-xdr column pins 0.2.1, the first release with the fix, so the 0.2.0 column is there as a before and after and can be dropped. The other listed cells are F1 and F3, py-stellar-base#1262 and #1263, rs-stellar-xdr#622, three libraries that refuse a bool of 2 (stricter than core, recorded rather than reported), and one setting of this runner (Rust at depth 500 in the corpus run). Versions are pinned in `runners/rust/Cargo.lock`, `runners/go/go.sum`, `sightings/package-lock.json` and `ci/requirements*.txt`; the Rust build and package downloads are cached. Each run's summary page shows the full matrices, and they are attached to the run as an artifact.
+F2 is listed for the 0.2.0 column only. The gating py-stellar-xdr column pins 0.2.1, the first release with the fix, so the 0.2.0 column is there as a before and after and can be dropped. The other listed cells are F1 and F3, py-stellar-base#1262 and #1263, rs-stellar-xdr#622, the bool-2 cells (Go, JS and py-stellar-xdr refuse a bool of 2, stricter than core; py-stellar-base reads it as true, as core does, but re-encodes it as 1; recorded rather than reported), and one setting of this runner (Rust at depth 500 in the corpus run). Versions are pinned in `runners/rust/Cargo.lock`, `runners/go/go.sum`, `sightings/package-lock.json` and `ci/requirements*.txt`; the Rust build and package downloads are cached. Each run's summary page shows the full matrices, and they are attached to the run as an artifact.
 
-To check that the gate fails when it should, I ran the same workflow on a throwaway branch that pins stellar-xdr back to 0.2.0. It went red on the one corpus cell 0.2.0 gets wrong even at `max_depth=500` (`hostile-sor-scval_nested_vec_200 / py-stellar-xdr: refuses (core accepts)`): https://github.com/zachsplat/xdr-conformance/actions/runs/43758099461
+To check that the gate fails when it should, I ran the same workflow on a branch that pins stellar-xdr back to 0.2.0 and changes nothing else (`demo/gate-catches-pyxdr-downgrade`, one line in `ci/requirements.txt`). It went red on the one corpus cell 0.2.0 gets wrong even at `max_depth=500` (`hostile-sor-scval_nested_vec_200 / py-stellar-xdr: refuses (core accepts)`): https://github.com/zachsplat/xdr-conformance/actions/runs/43758099461
 
 First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com/zachsplat/xdr-conformance/actions/runs/43757458433
 
@@ -67,7 +67,7 @@ First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com
 | `sightings/` | js-stellar-sdk#1766, #1785, #1789 reproduced on the last tag before each fix and the first after |
 | `findings/` | new discrepancies, each with a minimal reproduction and draft issue text |
 | `reports/` | `corpus-matrix.md`, `hostile-matrix.md`, `depth-sweep.md`, `raw/` (diff summaries, pool census, ledger hashes, pattern counts) |
-| `.github/workflows/conformance.yml` | the CI job: builds the Rust and Go adapters, runs the corpus, the F2 depth entries and the sightings on every push and pull request |
+| `.github/workflows/conformance.yml` | the CI job: builds the Rust and Go adapters, runs the corpus, the F2 depth entries and the sightings on every push to master and every pull request |
 | `ci/known-findings.json`, `ci/requirements*.txt` | the divergences CI expects with the pinned versions (each tied to a finding, an upstream issue or a recorded behaviour), and the Python pins |
 | `run.sh` | `quick` (the five-minute check above), and rebuilds everything from public data: `fetch`, `build`, `scan`, `replay`, `hostile`, `depth`, `corpus`, `sightings` |
 

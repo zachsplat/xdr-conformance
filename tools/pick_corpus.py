@@ -68,10 +68,12 @@ def write_entry(corpus, eid, env_b64, meta_b64, meta_type, expected_json, expect
         meta = base64.b64decode(meta_b64)
         open(os.path.join(d, "meta.xdr"), "wb").write(meta)
         files["meta"] = {"path": f"entries/{eid}/meta.xdr", "xdr_type": meta_type, "sha256": sha(meta)}
+    js = json.dumps(expected_json, indent=1, sort_keys=True)
     with open(os.path.join(d, "envelope.json"), "w") as f:
-        json.dump(expected_json, f, indent=1, sort_keys=True)
+        f.write(js)
     entry = {"id": eid, "files": files,
-             "expected": {"envelope_sep51_json": f"entries/{eid}/envelope.json", "tx_hash": expected_hash,
+             "expected": {"envelope_sep51_json": f"entries/{eid}/envelope.json",
+                          "envelope_sep51_json_sha256": sha(js.encode()), "tx_hash": expected_hash,
                           "roundtrip": "identity"}}
     entry.update(meta_fields)
     return entry

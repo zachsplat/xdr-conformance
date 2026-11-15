@@ -4,8 +4,8 @@
 For each entry and adapter: the file decodes, re-encoding gives the same bytes,
 the transaction hash matches the manifest, and (for adapters that write SEP-51
 JSON) the JSON equals the expected JSON. Hostile and depth entries are checked
-against stellar-core's recorded verdict instead. Every file's sha256 is checked
-against the manifest first.
+against stellar-core's recorded verdict instead. Every XDR file and expected
+JSON file is checked against its sha256 in the manifest first.
 
 Usage: check_corpus.py [--known KNOWN.json] CORPUS_DIR OUT.md NAME='command' [...]
 
@@ -46,7 +46,11 @@ def requests(corpus):
                          "b64": base64.b64encode(raw).decode(), "network": e["network_passphrase"]})
             ex = dict(e["expected"])
             if "envelope_sep51_json" in ex:
-                ex["json"] = json.load(open(os.path.join(corpus, ex["envelope_sep51_json"])))
+                data = open(os.path.join(corpus, ex["envelope_sep51_json"]), "rb").read()
+                want = ex.get("envelope_sep51_json_sha256")
+                if want and hashlib.sha256(data).hexdigest() != want:
+                    bad_files.append(ex["envelope_sep51_json"])
+                ex["json"] = json.loads(data)
             expect[e["id"]] = ex
     return reqs, expect, bad_files
 
