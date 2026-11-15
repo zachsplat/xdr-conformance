@@ -24,15 +24,18 @@ It took 13 seconds on my machine with empty npm and pip caches. Each step compar
 
 The full rebuild (Rust and Go adapters, stellar-core, the 380 ledgers) needs docker and is under [Reproduce](#reproduce).
 
-## In CI
+## What CI checks
 
 `.github/workflows/conformance.yml` runs on every push and pull request with every library version pinned. It builds the Rust adapter (rs-stellar-xdr 30.0.0) and the Go adapter (go-stellar-sdk v0.9.0), installs js-stellar-sdk 17.4.0 and the Python libraries, and then:
 
-- runs all 44 corpus entries through the five adapters against `ci/known-findings.json`;
-- runs the F2 depth entries with each library's shipped defaults, with stellar-xdr 0.2.0 and 0.2.1 as separate columns;
+- checks every corpus file against the sha256 in its manifest;
+- runs all 44 corpus entries through the five adapters against `ci/known-findings.json`: decode, byte round-trip, transaction hash, SEP-51 JSON, and for hostile entries stellar-core's recorded verdict;
+- runs the F2 depth entries (`findings/F2-py-stellar-xdr-default-depth/manifest.json`) with each library's shipped defaults, next to stellar-core's admission parse (rs-stellar-xdr at depth 1000), with stellar-xdr 0.2.0 and 0.2.1 as separate columns;
 - reruns the three JS sightings and diffs them against the committed transcripts.
 
 A divergence that is not in `ci/known-findings.json` fails the run, and so does a listed one that stops reproducing, so a library upgrade that fixes or breaks something shows up as a red build. stellar-core is not run in CI; its verdicts are recorded in the manifests.
+
+F2 is listed for the 0.2.0 column only. The gating py-stellar-xdr column pins 0.2.1, the first release with the fix, so the 0.2.0 column is there as a before and after and can be dropped. The other listed cells are F1 and F3, py-stellar-base#1262 and #1263, rs-stellar-xdr#622, three libraries that refuse a bool of 2 (stricter than core, recorded rather than reported), and one setting of this runner (Rust at depth 500 in the corpus run). Versions are pinned in `runners/rust/Cargo.lock`, `runners/go/go.sum`, `sightings/package-lock.json` and `ci/requirements*.txt`; the Rust build and package downloads are cached. Each run's summary page shows the full matrices, and they are attached to the run as an artifact.
 
 First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com/zachsplat/xdr-conformance/actions/runs/43757458433
 
