@@ -1,0 +1,107 @@
+# Runs the committed corpus through the Rust, Go, JS and Python adapters and
+# fails on any divergence that is not listed in ci/known-findings.json.
+# Every library version is pinned (Cargo.lock, go.sum, package-lock.json,
+# ci/requirements*.txt), so a version bump and its known-findings change land
+# in the same commit. stellar-core is not run here: its verdicts are recorded
+# in the manifests.
+name: conformance
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: conformance-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  RUST_TOOLCHAIN: "1.93.0"
+jobs:
+  corpus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ci/requirements*.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: sightings/package-lock.json
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: runners/go/go.mod
+          cache-dependency-path: runners/go/go.sum
+
+      - name: Rust toolchain
+        run: rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal && rustup default "$RUST_TOOLCHAIN"
+      - name: Cache Rust build (the slow part)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            runners/rust/target
+          key: rust-${{ env.RUST_TOOLCHAIN }}-${{ hashFiles('runners/rust/Cargo.lock') }}-${{ hashFiles('runners/rust/src/**') }}
+          restore-keys: rust-${{ env.RUST_TOOLCHAIN }}-${{ hashFiles('runners/rust/Cargo.lock') }}-
+
+      - name: Build Rust adapter (rs-stellar-xdr 30.0.0)
+        run: cargo build --release --locked --manifest-path runners/rust/Cargo.toml
+      - name: Build Go adapter (go-stellar-sdk v0.9.0)
+        working-directory: runners/go
+        run: go build -o "$RUNNER_TEMP/xdrconf-go" .
+      - name: Install JS packages (js-stellar-sdk 17.4.0, plus 17.2.0, 17.2.1, 17.3.0 for sightings)
+        working-directory: sightings
+        run: npm ci --no-audit --no-fund
+      - name: Install Python libraries (stellar-sdk 17.0.1, stellar-xdr 0.2.1; stellar-xdr 0.2.0 for F2)
+        run: |
+          python -m venv "$RUNNER_TEMP/py" && "$RUNNER_TEMP/py/bin/pip" install -q -r ci/requirements.txt
+          python -m venv "$RUNNER_TEMP/py020" && "$RUNNER_TEMP/py020/bin/pip" install -q -r ci/requirements-pyxdr-0.2.0.txt
+          "$RUNNER_TEMP/py/bin/pip" freeze
+
+      - name: Corpus (23 real entries, 21 hostile entries judged by stellar-core)
+        run: |
+          FACTS="$GITHUB_WORKSPACE/runners/rust/target/release/facts"
+          python3 -I tools/check_corpus.py --known ci/known-findings.json corpus "$RUNNER_TEMP/corpus-matrix.md" \
+            "rs-stellar-xdr=XDRCONF_DEPTH=500 $FACTS" \
+            "go-stellar-sdk=$RUNNER_TEMP/xdrconf-go" \
+            "js-stellar-sdk=cd sightings && node ../runners/js/facts.mjs @stellar/stellar-sdk" \
+            "py-stellar-base=$RUNNER_TEMP/py/bin/python -I runners/python/facts.py sdk" \
+            "py-stellar-xdr=$RUNNER_TEMP/py/bin/python -I runners/python/facts.py pyxdr"
+
+      - name: Depth entries with shipped defaults (F2 on stellar-xdr 0.2.0, fixed in 0.2.1)
+        env:
+          XDRCONF_DEFAULTS: "1"
+        run: |
+          FACTS="$GITHUB_WORKSPACE/runners/rust/target/release/facts"
+          python3 -I tools/check_corpus.py --known ci/known-findings.json findings/F2-py-stellar-xdr-default-depth "$RUNNER_TEMP/depth-matrix.md" \
+            "stellar-core admission=XDRCONF_DEFAULTS=0 XDRCONF_DEPTH=1000 $FACTS" \
+            "rs-stellar-xdr=$FACTS" \
+            "go-stellar-sdk=$RUNNER_TEMP/xdrconf-go" \
+            "js-stellar-sdk=cd sightings && node ../runners/js/facts.mjs @stellar/stellar-sdk" \
+            "py-stellar-base=$RUNNER_TEMP/py/bin/python -I runners/python/facts.py sdk" \
+            "py-stellar-xdr 0.2.0=$RUNNER_TEMP/py020/bin/python -I runners/python/facts.py pyxdr" \
+            "py-stellar-xdr 0.2.1=$RUNNER_TEMP/py/bin/python -I runners/python/facts.py pyxdr"
+
+      - name: Sightings (js-stellar-sdk#1766, #1785, #1789 fail on the pre-fix tag, pass after)
+        working-directory: sightings
+        run: |
+          node repro1766.mjs testnet-ledger-5521445-tx-b79f02ec.json | tee "$RUNNER_TEMP/js-1766-output.txt" | diff -u js-1766-output.txt -
+          node repro_sightings.mjs | tee "$RUNNER_TEMP/js-1785-1789-output.txt" | diff -u js-1785-1789-output.txt -
+          { echo '### Sightings'; echo; echo '```'; cat "$RUNNER_TEMP"/js-1766-output.txt "$RUNNER_TEMP"/js-1785-1789-output.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-matrices
+          path: |
+            ${{ runner.temp }}/*-matrix.md
+            ${{ runner.temp }}/js-*-output.txt
+          retention-days: 14
+          if-no-files-found: ignore

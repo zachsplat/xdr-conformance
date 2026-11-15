@@ -54,7 +54,8 @@
             "envelope_sep51_json": {"type": "string", "description": "Path to the SEP-51 XDR-JSON a conforming decoder produces. Written only where rs-stellar-xdr, py-stellar-xdr and js-stellar-sdk agree."},
             "tx_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "roundtrip": {"enum": ["identity"], "description": "Decoding then re-encoding must reproduce the file byte for byte."},
-            "stellar_core_decode": {"enum": ["accept", "reject"], "description": "Verdict of stellar-core's own decoder (print-xdr); the reference for hostile entries."}
+            "stellar_core_decode": {"enum": ["accept", "reject"], "description": "Verdict of stellar-core's own decoder (print-xdr); the reference for hostile entries."},
+            "stellar_core_admission": {"enum": ["accept", "reject"], "description": "Verdict of stellar-core's protocol-28+ XDR admission parse (rs-stellar-xdr at depth 1000, validateXDRForProtocol); recorded for depth entries."}
           }
         },
         "sightings": {"type": "array", "items": {"type": "string", "format": "uri"}, "description": "Public issues or PRs this entry reproduces."},

@@ -3,13 +3,23 @@
 
 For each entry and adapter: the file decodes, re-encoding gives the same bytes,
 the transaction hash matches the manifest, and (for adapters that write SEP-51
-JSON) the JSON equals the expected JSON. Hostile entries are checked against
-stellar-core's recorded verdict instead.
+JSON) the JSON equals the expected JSON. Hostile and depth entries are checked
+against stellar-core's recorded verdict instead. Every file's sha256 is checked
+against the manifest first.
 
-Usage: check_corpus.py CORPUS_DIR OUT.md NAME='command' [NAME='command' ...]
-Exit status 1 if any cell fails, so it can gate CI.
+Usage: check_corpus.py [--known KNOWN.json] CORPUS_DIR OUT.md NAME='command' [...]
+
+CORPUS_DIR holds manifest.json and/or hostile-manifest.json. With --known, a
+failing cell that matches a documented known finding (same entry, same adapter
+name, same verdict) is reported but does not fail the run. A known finding that
+no longer reproduces does fail the run, so the list stays true.
+
+Exit status 1 on any undocumented failing cell, stale known finding, or file
+whose hash differs from the manifest. If GITHUB_STEP_SUMMARY is set, the matrix
+is also appended there.
 """
 import base64
+import hashlib
 import json
 import os
 import subprocess
@@ -20,12 +30,16 @@ from diff_results import first_diff  # noqa: E402
 
 
 def requests(corpus):
-    reqs, expect = [], {}
+    reqs, expect, bad_files = [], {}, []
     for mf in ("manifest.json", "hostile-manifest.json"):
         p = os.path.join(corpus, mf)
         if not os.path.exists(p):
             continue
         for e in json.load(open(p))["entries"]:
+            for part in e["files"].values():
+                data = open(os.path.join(corpus, part["path"]), "rb").read()
+                if part.get("sha256") and hashlib.sha256(data).hexdigest() != part["sha256"]:
+                    bad_files.append(part["path"])
             f = e["files"]["envelope"]
             raw = open(os.path.join(corpus, f["path"]), "rb").read()
             reqs.append({"id": e["id"], "op": "decode", "type": f["xdr_type"],
@@ -34,7 +48,7 @@ def requests(corpus):
             if "envelope_sep51_json" in ex:
                 ex["json"] = json.load(open(os.path.join(corpus, ex["envelope_sep51_json"])))
             expect[e["id"]] = ex
-    return reqs, expect
+    return reqs, expect, bad_files
 
 
 def verdict(ex, r):
@@ -60,24 +74,68 @@ def verdict(ex, r):
     return "pass"
 
 
+def load_known(path):
+    known = {}
+    if not path:
+        return known
+    for k in json.load(open(path))["known"]:
+        for entry in k["entries"]:
+            known[(entry, k["adapter"])] = k
+    return known
+
+
 def main():
-    corpus, out = sys.argv[1], sys.argv[2]
-    reqs, expect = requests(corpus)
+    args = sys.argv[1:]
+    known_path = None
+    if args and args[0] == "--known":
+        known_path, args = args[1], args[2:]
+    corpus, out = args[0], args[1]
+    known = load_known(known_path)
+    reqs, expect, bad_files = requests(corpus)
     payload = "".join(json.dumps(r) + "\n" for r in reqs)
     cols = []
-    for arg in sys.argv[3:]:
+    for arg in args[2:]:
         name, cmd = arg.split("=", 1)
-        res = subprocess.run(cmd, shell=True, input=payload, capture_output=True, text=True).stdout
-        cols.append((name, {json.loads(l)["id"]: json.loads(l) for l in res.splitlines() if l.strip()}))
-    fails = 0
+        proc = subprocess.run(cmd, shell=True, input=payload, capture_output=True, text=True)
+        got = {json.loads(l)["id"]: json.loads(l) for l in proc.stdout.splitlines() if l.strip()}
+        if not got:
+            print(f"{name}: adapter produced no results (exit {proc.returncode}): {proc.stderr[-500:]}")
+        cols.append((name, got))
+    unknown, stale, known_hits = [], [], []
     lines = ["| entry | " + " | ".join(n for n, _ in cols) + " |", "|---|" + "---|" * len(cols)]
     for r in reqs:
-        cells = [verdict(expect[r["id"]], c.get(r["id"])) for _, c in cols]
-        fails += sum(1 for c in cells if not c.startswith("pass"))
+        cells = []
+        for name, got in cols:
+            v = verdict(expect[r["id"]], got.get(r["id"]))
+            k = known.get((r["id"], name))
+            if k and v == k["verdict"]:
+                known_hits.append((r["id"], name, k["id"]))
+                cells.append(f"known: {v} ({k['id']})")
+            elif k:
+                stale.append(f"{r['id']} / {name}: known {k['id']} expects \"{k['verdict']}\", got \"{v}\"")
+                cells.append(f"**{v}** (was known {k['id']})")
+            elif v != "pass":
+                unknown.append(f"{r['id']} / {name}: {v}")
+                cells.append(f"**{v}**")
+            else:
+                cells.append("pass")
         lines.append(f"| `{r['id']}` | " + " | ".join(cells) + " |")
-    open(out, "w").write("\n".join(lines) + "\n")
-    print(f"{len(reqs)} entries x {len(cols)} adapters, {fails} failing cells")
-    sys.exit(1 if fails else 0)
+    summary = (f"{len(reqs)} entries x {len(cols)} adapters: {len(known_hits)} known findings reproduced, "
+               f"{len(unknown)} undocumented failures, {len(stale)} known findings changed, "
+               f"{len(bad_files)} files with a wrong hash")
+    report = "\n".join(lines) + "\n"
+    open(out, "w").write(report)
+    print(summary)
+    for f in bad_files:
+        print(f"HASH MISMATCH: {f}")
+    for u in unknown:
+        print(f"UNDOCUMENTED: {u}")
+    for s in stale:
+        print(f"KNOWN FINDING CHANGED (update {known_path}): {s}")
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
+            f.write(f"### `{corpus}`\n\n{summary}\n\n{report}\n")
+    sys.exit(1 if unknown or stale or bad_files else 0)
 
 
 if __name__ == "__main__":

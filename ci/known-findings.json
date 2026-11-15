@@ -1,0 +1,126 @@
+{
+  "about": "Divergences CI expects to see with the versions pinned in ci/requirements.txt, sightings/package-lock.json, runners/go/go.sum and runners/rust/Cargo.lock. A cell listed here is reported but does not fail the run. Any other failing cell fails it, and so does a listed cell that stops reproducing, so this file has to change in the same commit as a version bump. kind: finding = found by this project; filed = reported upstream by others and reproduced here; recorded = behaviour recorded in reports/, no bug report; setting = a choice of this runner, not a library bug.",
+  "known": [
+    {
+      "id": "F1",
+      "kind": "finding",
+      "adapter": "py-stellar-base",
+      "entries": ["clawback", "allow-trust-asset-code"],
+      "verdict": "JSON differs at asset",
+      "what": "stellar_sdk.xdr 17.0.1 writes SEP-51 JSON differently from rs-stellar-xdr, py-stellar-xdr and js-stellar-sdk on four shapes; these two are in envelope entries (findings/F1-py-stellar-base-sep51-json).",
+      "ref": "https://github.com/StellarCN/py-stellar-base/issues/1269",
+      "status": "open upstream",
+      "drop_when": "a stellar-sdk release fixes #1269 and ci/requirements.txt pins it"
+    },
+    {
+      "id": "F2",
+      "kind": "finding",
+      "adapter": "py-stellar-xdr 0.2.0",
+      "entries": ["depth-auth-tree-199", "depth-auth-tree-490"],
+      "verdict": "refuses (core accepts)",
+      "what": "py-stellar-xdr 0.2.0 default max_depth=200 refuses auth trees from 199 levels that pass stellar-core's admission parse (findings/F2-py-stellar-xdr-default-depth).",
+      "ref": "https://github.com/lightsail-network/py-stellar-xdr/issues/17",
+      "status": "fixed upstream in lightsail-network/py-stellar-xdr#19, released as stellar-xdr 0.2.1 on 2026-11-15. CI pins 0.2.1 for the gating py-stellar-xdr column and keeps a 0.2.0 column only to show the finding on the last release before the fix.",
+      "drop_when": "the 0.2.0 column is removed"
+    },
+    {
+      "id": "F3",
+      "kind": "finding",
+      "adapter": "py-stellar-xdr",
+      "entries": ["hostile-ext-signed_payload_len_0"],
+      "verdict": "refuses (core accepts)",
+      "what": "py-stellar-xdr refuses an empty signed-payload signer at decode; stellar-core decodes it and then refuses it in validation (findings/F3-py-stellar-xdr-empty-signed-payload). Minor.",
+      "ref": "findings/F3-py-stellar-xdr-empty-signed-payload/README.md",
+      "status": "not filed",
+      "drop_when": "py-stellar-xdr decodes it, or the corpus records the validation verdict as the reference"
+    },
+    {
+      "id": "py-stellar-base#1262",
+      "kind": "filed",
+      "adapter": "py-stellar-base",
+      "entries": ["hostile-cls-memo_text_nonzero_padding"],
+      "verdict": "accepts (core refuses)",
+      "what": "Non-zero XDR padding after a memo text is accepted; stellar-core refuses it.",
+      "ref": "https://github.com/StellarCN/py-stellar-base/issues/1262",
+      "status": "open upstream",
+      "drop_when": "a stellar-sdk release fixes #1262 and ci/requirements.txt pins it"
+    },
+    {
+      "id": "py-stellar-base#1263",
+      "kind": "filed",
+      "adapter": "py-stellar-base",
+      "entries": ["hostile-cls-optional_flag_2"],
+      "verdict": "accepts (core refuses)",
+      "what": "An optional flag of 2 is read as present; stellar-core accepts only 0 or 1.",
+      "ref": "https://github.com/StellarCN/py-stellar-base/issues/1263",
+      "status": "open upstream",
+      "drop_when": "a stellar-sdk release fixes #1263 and ci/requirements.txt pins it"
+    },
+    {
+      "id": "rs-stellar-xdr#622",
+      "kind": "filed",
+      "adapter": "rs-stellar-xdr",
+      "entries": ["hostile-sor-scval_bool_2"],
+      "verdict": "accepts, re-encodes to other bytes",
+      "what": "An ScVal bool encoded as 2 decodes as false; stellar-core reads it as true.",
+      "ref": "https://github.com/stellar/rs-stellar-xdr/issues/622 and https://github.com/stellar/rs-stellar-xdr/issues/629",
+      "status": "open upstream",
+      "drop_when": "an rs-stellar-xdr release changes bool decoding and runners/rust/Cargo.lock pins it"
+    },
+    {
+      "id": "bool-2",
+      "kind": "recorded",
+      "adapter": "py-stellar-base",
+      "entries": ["hostile-sor-scval_bool_2"],
+      "verdict": "accepts, re-encodes to other bytes",
+      "what": "Reads bool 2 as True, as stellar-core does; re-encoding writes 1, so the bytes change (reports/hostile-matrix.md).",
+      "ref": "reports/hostile-matrix.md",
+      "status": "no bug report",
+      "drop_when": "the corpus decides what a conforming decoder does with bool 2"
+    },
+    {
+      "id": "bool-2",
+      "kind": "recorded",
+      "adapter": "go-stellar-sdk",
+      "entries": ["hostile-sor-scval_bool_2"],
+      "verdict": "refuses (core accepts)",
+      "what": "Refuses bool 2; stellar-core's decoder reads it as true. Stricter than core (reports/hostile-matrix.md). The bool question is open upstream in rs-stellar-xdr#622 and #629.",
+      "ref": "reports/hostile-matrix.md",
+      "status": "no bug report",
+      "drop_when": "the corpus decides what a conforming decoder does with bool 2"
+    },
+    {
+      "id": "bool-2",
+      "kind": "recorded",
+      "adapter": "js-stellar-sdk",
+      "entries": ["hostile-sor-scval_bool_2"],
+      "verdict": "refuses (core accepts)",
+      "what": "Refuses bool 2; stellar-core's decoder reads it as true. Stricter than core (reports/hostile-matrix.md).",
+      "ref": "reports/hostile-matrix.md",
+      "status": "no bug report",
+      "drop_when": "the corpus decides what a conforming decoder does with bool 2"
+    },
+    {
+      "id": "bool-2",
+      "kind": "recorded",
+      "adapter": "py-stellar-xdr",
+      "entries": ["hostile-sor-scval_bool_2"],
+      "verdict": "refuses (core accepts)",
+      "what": "Refuses bool 2; stellar-core's decoder reads it as true. Stricter than core (reports/hostile-matrix.md).",
+      "ref": "reports/hostile-matrix.md",
+      "status": "no bug report",
+      "drop_when": "the corpus decides what a conforming decoder does with bool 2"
+    },
+    {
+      "id": "depth-500",
+      "kind": "setting",
+      "adapter": "rs-stellar-xdr",
+      "entries": ["hostile-sor-scval_nested_vec_200"],
+      "verdict": "refuses (core accepts)",
+      "what": "The corpus run gives rs-stellar-xdr a depth limit of 500; 200 nested ScVal vecs need more. stellar-core's admission parse uses depth 1000 and admits it (reports/depth-sweep.md).",
+      "ref": "reports/depth-sweep.md",
+      "status": "runner setting",
+      "drop_when": "the corpus run moves rs-stellar-xdr to depth 1000"
+    }
+  ]
+}

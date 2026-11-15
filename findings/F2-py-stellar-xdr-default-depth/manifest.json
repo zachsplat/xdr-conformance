@@ -1,0 +1,84 @@
+{
+ "schema": "../../corpus/manifest.schema.json",
+ "version": 1,
+ "entries": [
+  {
+   "id": "depth-auth-tree-198",
+   "description": "Real pubnet Soroban transaction with its authorization root replaced by a chain of 198 nested sub-invocations. Passes stellar-core 30.0.0's XDR admission parse (rs-stellar-xdr at depth 1000) and its print-xdr decoder.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "auth-tree-198.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "cfb7eccd5c783fac04a2896ea62fe52a431bd9adb5dd2c2d3691034afff750f5"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept",
+    "stellar_core_admission": "accept"
+   },
+   "mutation": "auth_tree_depth_198"
+  },
+  {
+   "id": "depth-auth-tree-199",
+   "description": "Real pubnet Soroban transaction with its authorization root replaced by a chain of 199 nested sub-invocations. Passes stellar-core 30.0.0's XDR admission parse (rs-stellar-xdr at depth 1000) and its print-xdr decoder.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "auth-tree-199.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "f18984f255a079fa086d048d6ee62e922cdd04fd86fe92b975f3b602b981e346"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept",
+    "stellar_core_admission": "accept"
+   },
+   "mutation": "auth_tree_depth_199"
+  },
+  {
+   "id": "depth-auth-tree-490",
+   "description": "Real pubnet Soroban transaction with its authorization root replaced by a chain of 490 nested sub-invocations. Passes stellar-core 30.0.0's XDR admission parse (rs-stellar-xdr at depth 1000) and its print-xdr decoder.",
+   "caps": [],
+   "protocol_version": 30,
+   "network": "pubnet",
+   "network_passphrase": "Public Global Stellar Network ; September 2015",
+   "synthetic": true,
+   "source": {
+    "kind": "mutation",
+    "ledger": 59000003,
+    "tx_hash": "06ff45db8393c6ada64f84807d69d7303d7e43f4ea2aca22f6f75b1ab5373a3e"
+   },
+   "files": {
+    "envelope": {
+     "path": "auth-tree-490.xdr",
+     "xdr_type": "TransactionEnvelope",
+     "sha256": "b4c4f4c9498f927460b14d92078e3dbb7ec54cb0acd3029c14897c8444469cec"
+    }
+   },
+   "expected": {
+    "stellar_core_decode": "accept",
+    "stellar_core_admission": "accept"
+   },
+   "mutation": "auth_tree_depth_490"
+  }
+ ]
+}
