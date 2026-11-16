@@ -51,7 +51,7 @@ First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com
 | finding | filed | status on 2026-11-15 |
 |---|---|---|
 | F2: py-stellar-xdr's default depth refuses transactions stellar-core admits | [lightsail-network/py-stellar-xdr#17](https://github.com/lightsail-network/py-stellar-xdr/issues/17) | Confirmed by the maintainer and fixed the same day in [#19](https://github.com/lightsail-network/py-stellar-xdr/pull/19) (default `max_depth` 200 to 500, recursive arrays read in loops); released in stellar-xdr 0.2.1. I reran the four files against the fix: all decode and round-trip through JSON. |
-| F1: py-stellar-base SEP-51 JSON differs on four shapes | [StellarCN/py-stellar-base#1269](https://github.com/StellarCN/py-stellar-base/issues/1269) | Open. Filed the way the maintainer asks in #1264: the new stellar-xdr package already writes all four shapes correctly. |
+| F1: py-stellar-base SEP-51 JSON differs on four shapes | [StellarCN/py-stellar-base#1269](https://github.com/StellarCN/py-stellar-base/issues/1269) | Closed 2026-11-16 as fixed on main: #1268 moved the SDK onto stellar-xdr, so all four shapes are now SEP-51 (verified at 91bff1038a). Ships in the next major release. |
 | F3: empty signed-payload signer refused at decode | not filed | Minor: stellar-core's validation refuses the same transaction a step later. |
 
 ## Layout

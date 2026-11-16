@@ -1,6 +1,6 @@
 # F1. py-stellar-base 17.0.1 writes SEP-51 XDR-JSON that differs from the other implementations, on four shapes found in pubnet history
 
-Status: filed as [StellarCN/py-stellar-base#1269](https://github.com/StellarCN/py-stellar-base/issues/1269) on 2026-11-15, open. `main` at 1b33206507 had the same generated code that day. PR #1268 (replace the generated XDR with py-stellar-xdr) would remove it as a side effect.
+Status: filed as [StellarCN/py-stellar-base#1269](https://github.com/StellarCN/py-stellar-base/issues/1269) on 2026-11-15; closed 2026-11-16 as fixed on main by #1268 (verified at 91bff1038a: `stellar_sdk.xdr` re-exports stellar-xdr 0.2.1 and all four shapes are SEP-51; ships in the next major release). `main` at 1b33206507 had the same generated code that day. PR #1268 (replace the generated XDR with py-stellar-xdr) would remove it as a side effect.
 
 ## How it was found
 
