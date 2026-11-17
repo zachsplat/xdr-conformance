@@ -11,6 +11,8 @@
 #   ./run.sh corpus    pick one entry per rare shape and write corpus/
 #   ./run.sh sightings reproduce js-stellar-sdk#1766, #1785, #1789 on pre-fix and fixed tags
 #   ./run.sh quick     five-minute check, no docker: sightings, runner (Python columns), F1, F2 before/after the fix
+#   ./run.sh mockrpc   serve the sample over Stellar RPC (getLedgers etc.) on $ADDR (default 127.0.0.1:8000), $PACE to replay live
+#   ./run.sh mockrpc-check  read every ledger back through RPCLedgerBackend, a getLedgers cursor walk and BufferedStorageBackend
 set -e
 ROOT=$(cd "$(dirname "$0")" && pwd)
 WORK=${WORK:-${XDG_CACHE_HOME:-$HOME/.cache}/xdrconf}
@@ -22,6 +24,18 @@ export BIN=$WORK/bin PY=$WORK/venv/bin/python JSDIR=$WORK/js
 case "$1" in
 fetch)
   python3 -I "$ROOT/tools/fetch_galexie.py" "$WORK/lake" 65486000 65486299 59000000 59000019 50460000 50460019 40000000 40000019 28000000 28000019
+  ;;
+mockrpc|mockrpc-check)
+  docker run --rm -u "$(id -u):$(id -g)" -e GOPATH=/g -e GOCACHE=/g/cache -e GOFLAGS=-mod=mod -e CGO_ENABLED=0 -v "$WORK/gopath:/g" -v "$ROOT/mockrpc:/src" -v "$WORK/bin:/out" -w /src golang:1.25-alpine \
+    sh -c 'go build -o /out/mockrpc-serve ./serve && go build -o /out/mockrpc-export ./export && go build -o /out/mockrpc-check ./check'
+  rm -rf "$WORK/galexie" && "$WORK/bin/mockrpc-export" -lake "$WORK/lake" -out "$WORK/galexie"
+  if [ "$1" = mockrpc ]; then
+    exec "$WORK/bin/mockrpc-serve" -lake "$WORK/lake" -addr "${ADDR:-127.0.0.1:8000}" -pace "${PACE:-0}"
+  fi
+  "$WORK/bin/mockrpc-serve" -lake "$WORK/lake" -addr 127.0.0.1:8765 & SRV=$!
+  trap 'kill $SRV 2>/dev/null' EXIT
+  until curl -sf http://127.0.0.1:8765/ranges >/dev/null; do sleep 1; done
+  "$WORK/bin/mockrpc-check" -lake "$WORK/lake" -rpc http://127.0.0.1:8765 -datastore "$WORK/galexie"
   ;;
 build)
   docker run --rm -u "$(id -u):$(id -g)" -e CARGO_HOME=/c -e CARGO_TARGET_DIR=/t -v "$WORK/cargo:/c" -v "$WORK/target:/t" -v "$ROOT/runners/rust:/src" -w /src rust:1.93-slim cargo build --release

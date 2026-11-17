@@ -67,6 +67,7 @@ First run, on commit cd87c05 (2026-11-15, 2 min 44 s, green): https://github.com
 | `sweeps/` | nesting-depth sweep, table printer, run-all-adapters script |
 | `sightings/` | js-stellar-sdk#1766, #1785, #1789 reproduced on the last tag before each fix and the first after |
 | `adapters/wallet-backend/` | the wallet-backend replay adapter: runs wallet-backend's own indexer at seven commits, offline, and checks what it would store against the ledger |
+| `mockrpc/` | serves the ledger sample over Stellar RPC (`getLedgers` and friends) and exports it in Galexie's datastore layout, so an indexer can ingest it unchanged |
 | `findings/` | new discrepancies, each with a minimal reproduction and draft issue text |
 | `reports/` | `corpus-matrix.md`, `hostile-matrix.md`, `depth-sweep.md`, `raw/` (diff summaries, pool census, ledger hashes, pattern counts) |
 | `.github/workflows/conformance.yml` | the CI job: builds the Rust and Go adapters, runs the corpus, the F2 depth entries and the sightings on every push to master and every pull request |
@@ -118,6 +119,10 @@ js-stellar-sdk#1766: JS ordered liquidity-pool assets by issuer strkey text inst
 | wallet-backend#804 (open) | native-asset contract transfer that creates an account (local core 30) | main `3e22515a`: account created, no ACCOUNT/CREATE | no fix yet |
 
 The 22 pubnet corpus entries and three whole pubnet ledgers pass at all seven commits. `expected.tsv` pins all 231 results (33 inputs at 7 commits) and `run.sh replay` fails on any change.
+
+## Mock Stellar RPC and Galexie datastore
+
+`./run.sh mockrpc` serves the 380 sample ledgers over Stellar RPC (`getHealth`, `getLatestLedger`, `getNetwork`, `getLedgers` with cursor paging), one endpoint per run of consecutive ledgers, optionally paced like a live network (`PACE=2s`). The same run also writes the ledgers in Galexie's datastore layout, so an indexer pointed at either an RPC URL or a datastore path ingests real pubnet ledgers with no code changes. `./run.sh mockrpc-check` reads every ledger back through go-stellar-sdk's `RPCLedgerBackend`, a raw `getLedgers` cursor walk and `BufferedStorageBackend`, and compares each `LedgerCloseMeta` byte for byte with the stored file: 380 of 380 on each path, 0 failures (`reports/mockrpc-check.txt`). Details and limits: [`mockrpc/README.md`](mockrpc/README.md).
 
 ## Hostile entries
 
