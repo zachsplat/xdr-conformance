@@ -21,8 +21,19 @@ type Ledger struct {
 	CloseTime int64
 	Protocol  uint32
 	Header    []byte // LedgerHeaderHistoryEntry XDR
-	Meta      []byte // LedgerCloseMeta XDR, exactly as stored in the batch
 	Raw       []byte // the compressed file, byte for byte
+}
+
+var dec, _ = zstd.NewReader(nil, zstd.WithDecoderConcurrency(0))
+
+// Meta returns the LedgerCloseMeta XDR exactly as stored in the batch. Only the compressed file
+// is kept in memory; Load has already checked that these bytes decode and re-encode unchanged.
+func (l *Ledger) Meta() ([]byte, error) {
+	plain, err := dec.DecodeAll(l.Raw, nil)
+	if err != nil {
+		return nil, err
+	}
+	return plain[12:], nil
 }
 
 // Range is a run of consecutive ledgers.
@@ -33,7 +44,6 @@ func Load(dir string) (map[uint32]*Ledger, []Range, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	dec, _ := zstd.NewReader(nil)
 	out := map[uint32]*Ledger{}
 	var seqs []uint32
 	for _, n := range names {
@@ -74,7 +84,7 @@ func Load(dir string) (map[uint32]*Ledger, []Range, error) {
 			return nil, nil, fmt.Errorf("%s holds ledger %d", n, lcm.LedgerSequence())
 		}
 		out[uint32(s)] = &Ledger{Seq: uint32(s), Hash: lcm.LedgerHash().HexString(), CloseTime: lcm.LedgerCloseTime(),
-			Protocol: lcm.ProtocolVersion(), Header: hdr, Meta: meta, Raw: raw}
+			Protocol: lcm.ProtocolVersion(), Header: hdr, Raw: raw}
 		seqs = append(seqs, uint32(s))
 	}
 	sort.Slice(seqs, func(i, j int) bool { return seqs[i] < seqs[j] })

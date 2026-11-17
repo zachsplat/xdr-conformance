@@ -28,9 +28,13 @@ var fails int
 
 func cmp(path string, want *lake.Ledger, got xdr.LedgerCloseMeta) {
 	b, err := got.MarshalBinary()
-	if err != nil || !bytes.Equal(b, want.Meta) || got.LedgerHash().HexString() != want.Hash {
+	wm, err2 := want.Meta()
+	if err == nil {
+		err = err2
+	}
+	if err != nil || !bytes.Equal(b, wm) || got.LedgerHash().HexString() != want.Hash {
 		fails++
-		log.Printf("FAIL %s ledger %d: bytes equal=%v hash %s vs %s err=%v", path, want.Seq, bytes.Equal(b, want.Meta), got.LedgerHash().HexString(), want.Hash, err)
+		log.Printf("FAIL %s ledger %d: bytes equal=%v hash %s vs %s err=%v", path, want.Seq, bytes.Equal(b, wm), got.LedgerHash().HexString(), want.Hash, err)
 	}
 }
 

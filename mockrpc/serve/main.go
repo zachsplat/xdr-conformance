@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	protocol "github.com/stellar/go-stellar-sdk/protocols/rpc"
@@ -50,6 +51,51 @@ type rpcErr struct {
 }
 
 var (
+	ratePerMin = flag.Int("rate-per-min", 0, "requests per minute per client IP (CF-Connecting-IP, else the peer address); 0 disables")
+	maxPages   = flag.Int("max-concurrent", 4, "getLedgers requests served at once; the rest wait")
+	pageSem    chan struct{}
+	limMu      sync.Mutex
+	limits     = map[string]*bucket{}
+)
+
+type bucket struct {
+	tokens float64
+	last   time.Time
+}
+
+// allow is a token bucket per client: ratePerMin tokens a minute, bursts up to the same number.
+func allow(r *http.Request) bool {
+	if *ratePerMin <= 0 {
+		return true
+	}
+	ip := r.Header.Get("CF-Connecting-IP")
+	if ip == "" {
+		ip, _, _ = strings.Cut(r.RemoteAddr, ":")
+	}
+	now := time.Now()
+	limMu.Lock()
+	defer limMu.Unlock()
+	if len(limits) > 10000 {
+		limits = map[string]*bucket{}
+	}
+	b, ok := limits[ip]
+	if !ok {
+		b = &bucket{tokens: float64(*ratePerMin), last: now}
+		limits[ip] = b
+	}
+	b.tokens += now.Sub(b.last).Minutes() * float64(*ratePerMin)
+	if b.tokens > float64(*ratePerMin) {
+		b.tokens = float64(*ratePerMin)
+	}
+	b.last = now
+	if b.tokens < 1 {
+		return false
+	}
+	b.tokens--
+	return true
+}
+
+var (
 	defLimit = flag.Uint("default-limit", 5, "getLedgers page size when none is given")
 	maxLimit = flag.Uint("max-limit", 200, "largest getLedgers page size accepted")
 )
@@ -69,6 +115,8 @@ func (e *endpoint) call(method string, params json.RawMessage) (any, *rpcErr) {
 	case protocol.GetVersionInfoMethodName:
 		return map[string]any{"version": "xdr-conformance mockrpc", "protocolVersion": latest.Protocol}, nil
 	case protocol.GetLedgersMethodName:
+		pageSem <- struct{}{}
+		defer func() { <-pageSem }()
 		var req protocol.GetLedgersRequest
 		if len(params) > 0 {
 			if err := json.Unmarshal(params, &req); err != nil {
@@ -99,8 +147,12 @@ func (e *endpoint) call(method string, params json.RawMessage) (any, *rpcErr) {
 			LatestLedgerCloseTime: latest.CloseTime, OldestLedger: oldest.Seq, OldestLedgerCloseTime: oldest.CloseTime}
 		for s := start; s <= latest.Seq && uint(len(resp.Ledgers)) < limit; s++ {
 			l := e.ledgers[s]
+			meta, err := l.Meta()
+			if err != nil {
+				return nil, &rpcErr{-32603, err.Error()}
+			}
 			resp.Ledgers = append(resp.Ledgers, protocol.LedgerInfo{Hash: l.Hash, Sequence: l.Seq, LedgerCloseTime: l.CloseTime,
-				LedgerHeader: base64.StdEncoding.EncodeToString(l.Header), LedgerMetadata: base64.StdEncoding.EncodeToString(l.Meta)})
+				LedgerHeader: base64.StdEncoding.EncodeToString(l.Header), LedgerMetadata: base64.StdEncoding.EncodeToString(meta)})
 		}
 		if n := len(resp.Ledgers); n > 0 {
 			resp.Cursor = strconv.FormatUint(uint64(resp.Ledgers[n-1].Sequence), 10)
@@ -122,6 +174,11 @@ func (e *endpoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	if r.Method != http.MethodPost {
 		http.Error(w, help, http.StatusMethodNotAllowed)
+		return
+	}
+	if !allow(r) {
+		w.Header().Set("Retry-After", "10")
+		http.Error(w, "rate limited", http.StatusTooManyRequests)
 		return
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 64<<10)
@@ -150,6 +207,7 @@ func main() {
 	addr := flag.String("addr", "127.0.0.1:8000", "listen address")
 	pace := flag.Duration("pace", 0, "advance one ledger per interval (0: every ledger available at once)")
 	flag.Parse()
+	pageSem = make(chan struct{}, *maxPages)
 	ledgers, ranges, err := lake.Load(*dir)
 	if err != nil || len(ranges) == 0 {
 		log.Fatalf("load %s: %v (%d ranges)", *dir, err, len(ranges))
