@@ -6,6 +6,8 @@ A shared test kit for code that decodes the Stellar ledger: a corpus of rare but
 
 This is the two-day proof behind my application to the Stellar Community Fund RFP "XDR/CAP-Coverage Audit Tool and Indexer-Hardening Guide". Run on 2026-11-15. Apache-2.0.
 
+Technical architecture and the planned work per tranche: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Check it in five minutes
 
 Needs git, Node 24 and Python 3.12 or later. No docker, keys or accounts.
