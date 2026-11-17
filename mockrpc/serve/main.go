@@ -23,6 +23,9 @@ import (
 
 const passphrase = "Public Global Stellar Network ; September 2015"
 
+const help = "xdr-conformance mock Stellar RPC: POST JSON-RPC 2.0 (getHealth, getLatestLedger, getNetwork, getVersionInfo, getLedgers).\n" +
+	"Real pubnet ledgers from the public Galexie data lake; /ranges lists the endpoints. Source: https://github.com/zachsplat/xdr-conformance/tree/master/mockrpc\n"
+
 type endpoint struct {
 	r       lake.Range
 	ledgers map[uint32]*lake.Ledger
@@ -110,10 +113,18 @@ func (e *endpoint) call(method string, params json.RawMessage) (any, *rpcErr) {
 }
 
 func (e *endpoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "POST a JSON-RPC 2.0 request", http.StatusMethodNotAllowed)
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
+	if r.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
 		return
 	}
+	if r.Method != http.MethodPost {
+		http.Error(w, help, http.StatusMethodNotAllowed)
+		return
+	}
+	r.Body = http.MaxBytesReader(w, r.Body, 64<<10)
 	var req struct {
 		ID     json.RawMessage `json:"id"`
 		Method string          `json:"method"`
@@ -162,5 +173,7 @@ func main() {
 		_ = json.NewEncoder(w).Encode(list)
 	})
 	log.Printf("%d ledgers in %d ranges; / serves %d-%d; endpoints: %s", len(ledgers), len(ranges), longest.First, longest.Last, strings.Join(list, " "))
-	log.Fatal(http.ListenAndServe(*addr, mux))
+	srv := &http.Server{Addr: *addr, Handler: mux, ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 15 * time.Second,
+		WriteTimeout: 60 * time.Second, IdleTimeout: 60 * time.Second, MaxHeaderBytes: 16 << 10}
+	log.Fatal(srv.ListenAndServe())
 }
