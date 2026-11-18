@@ -179,3 +179,5 @@ Indexer replay covers wallet-backend only (four indexer entries, seven commits, 
 ```
 
 Needs docker (images `rust:1.93-slim`, `golang:1.25-alpine`, `stellar/stellar-core:latest`), Node 24 and Python 3.12 or later. No keys, accounts or funds.
+
+The corpus entries in `corpus/` are released under CC0 1.0 (`corpus/LICENSE`); the code is Apache-2.0 (`LICENSE`).
