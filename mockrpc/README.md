@@ -1,6 +1,6 @@
 # Mock Stellar RPC and Galexie datastore
 
-**Hosted:** `https://rpc.nonceworks.com` serves the same sample (POST JSON-RPC; `GET /ranges` lists the endpoints). Limits there: 20 ledgers per `getLedgers` page, 240 requests a minute per client, three page requests at a time. It holds only the 380 ledgers below, so it is a test fixture, not a general RPC.
+**Hosted:** `https://rpc.nonceworks.com` serves the same sample (POST JSON-RPC; opening it in a browser shows a short page with an example, and `GET /ranges` lists the endpoints). Limits there: 20 ledgers per `getLedgers` page, 240 requests a minute per client, three page requests at a time. It holds only the 380 ledgers below, so it is a test fixture, not a general RPC.
 
 ```
 curl -s -X POST https://rpc.nonceworks.com/ -H 'Content-Type: application/json' \
