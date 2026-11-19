@@ -1,0 +1,9 @@
+stellar_base 0.17.0, elixir_xdr 0.3.11
+A. Memo with discriminant 5:
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}
+B. TransactionEnvelope with discriminant 1 (SCP):
+  {:error, :invalid_arm}
+C. OptionalMuxedAccount with flag 2:
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}
+D. TransactionEnvelope, 3 bytes:
+  {:raised, FunctionClauseError, "no function clause matching in XDR.Int.decode_xdr/2"}

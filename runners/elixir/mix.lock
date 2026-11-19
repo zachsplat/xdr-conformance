@@ -1,0 +1,8 @@
+%{
+  "castore": {:hex, :castore, "1.0.22", "a01978e6a5d42fa3a34143630588f92036e7d90e2309ecdd466722d1279a2213", [:mix], [], "hexpm", "c2a4d42723b4affbc1c3e15d8f6df3f7d8f1f627c84de643383634cce58493d5"},
+  "crc": {:hex, :crc, "0.10.6", "a52243715da06265399ade929b12e6807a82ddbd04231d8bd3069480aa890f01", [:mix, :rebar3], [{:elixir_make, "~> 0.6", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm", "9e832833d48a5fff03cb7488f8aa5c08adda0a5fa8188bbe124cb17c4e39a00d"},
+  "elixir_make": {:hex, :elixir_make, "0.10.1", "f5a44ab6b48421de1c4fd33c147e22cd2f82fd86e8a9a4d24809d466cad63c5e", [:mix], [], "hexpm", "ce1eaa234bc87f0279718e793fd6f8ad35b4e8ee8d412329e3879eee8d40adba"},
+  "elixir_xdr": {:hex, :elixir_xdr, "0.3.11", "baa3c21753232ee8547c5e96502cecd80b63c0f06694e51c43f3ed5b8d5b5b5a", [:mix], [], "hexpm", "d24de398aa75ed8c5fb6f2121a322e6e91f5bce72d791be47dd4197a11e79b51"},
+  "jason": {:hex, :jason, "1.4.5", "2e3a008590b0b8d7388c20293e9dcc9cf3e5d642fd2a114e4cbbb52e595d940a", [:mix], [{:decimal, "~> 1.0 or ~> 2.0 or ~> 3.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "b0c823996102bcd0239b3c2444eb00409b72f6a140c1950bc8b457d836b30684"},
+  "stellar_base": {:hex, :stellar_base, "0.17.0", "12647613e96e341f59a071e4abc2b9b4b0ba0fadb3e4a9e85dc1d1945fbf89a1", [:mix], [{:castore, "~> 1.0", [hex: :castore, repo: "hexpm", optional: false]}, {:crc, "~> 0.10.0", [hex: :crc, repo: "hexpm", optional: false]}, {:elixir_xdr, "~> 0.3", [hex: :elixir_xdr, repo: "hexpm", optional: false]}], "hexpm", "64ca2ab5aac2c52bc1884be91d513a38d032f2fe8bf3eb8916f1d153812be01a"},
+}

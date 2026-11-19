@@ -1,0 +1,4 @@
+stellar_base 0.17.0, elixir_xdr 0.3.11
+A. memo text with padding 01 00 00 decodes: "10498"
+  same value as the zero-padded memo: true
+  re-encodes to the input bytes: false (re-encoded 00000001000000053130343938000000)

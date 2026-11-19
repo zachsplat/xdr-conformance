@@ -1,0 +1,173 @@
+{
+ "input": "replay/req_env.jsonl (112,278 envelopes)",
+ "paths": [
+  {
+   "path": "$.tx_fee_bump.signatures[len]",
+   "occurrences": 25373,
+   "envelopes": 25373,
+   "example_ids": [
+    "50460000:151",
+    "50460000:62",
+    "50460000:68",
+    "50460001:56",
+    "50460001:7"
+   ]
+  },
+  {
+   "path": "$.tx.tx.operations[i].body.manage_sell_offer.price.n",
+   "occurrences": 3407,
+   "envelopes": 2994,
+   "example_ids": [
+    "40000000:106",
+    "40000000:121",
+    "40000000:144",
+    "40000000:198",
+    "40000000:222"
+   ]
+  },
+  {
+   "path": "$.tx.tx.operations[i].body.manage_sell_offer.price.d",
+   "occurrences": 3407,
+   "envelopes": 2994,
+   "example_ids": [
+    "40000000:106",
+    "40000000:121",
+    "40000000:144",
+    "40000000:198",
+    "40000000:222"
+   ]
+  },
+  {
+   "path": "$.tx.tx.operations[i].body.manage_buy_offer.price.n",
+   "occurrences": 1862,
+   "envelopes": 1401,
+   "example_ids": [
+    "40000000:144",
+    "40000000:222",
+    "40000001:218",
+    "40000002:134",
+    "40000002:146"
+   ]
+  },
+  {
+   "path": "$.tx.tx.operations[i].body.manage_buy_offer.price.d",
+   "occurrences": 1862,
+   "envelopes": 1401,
+   "example_ids": [
+    "40000000:144",
+    "40000000:222",
+    "40000001:218",
+    "40000002:134",
+    "40000002:146"
+   ]
+  },
+  {
+   "path": "$.tx_v0",
+   "occurrences": 1222,
+   "envelopes": 1222,
+   "example_ids": [
+    "28000000:0",
+    "28000000:1",
+    "28000000:10",
+    "28000000:11",
+    "28000000:12"
+   ]
+  },
+  {
+   "path": "$.tx",
+   "occurrences": 1222,
+   "envelopes": 1222,
+   "example_ids": [
+    "28000000:0",
+    "28000000:1",
+    "28000000:10",
+    "28000000:11",
+    "28000000:12"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.cond.v2",
+   "occurrences": 165,
+   "envelopes": 165,
+   "example_ids": [
+    "65486054:181",
+    "65486054:182",
+    "65486054:183",
+    "65486054:184",
+    "65486054:185"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.cond.time",
+   "occurrences": 165,
+   "envelopes": 165,
+   "example_ids": [
+    "65486054:181",
+    "65486054:182",
+    "65486054:183",
+    "65486054:184",
+    "65486054:185"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.operations[i].body.manage_buy_offer.price.n",
+   "occurrences": 11,
+   "envelopes": 5,
+   "example_ids": [
+    "65486009:272",
+    "65486109:91",
+    "65486156:283",
+    "65486167:80",
+    "65486251:143"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.operations[i].body.manage_buy_offer.price.d",
+   "occurrences": 11,
+   "envelopes": 5,
+   "example_ids": [
+    "65486009:272",
+    "65486109:91",
+    "65486156:283",
+    "65486167:80",
+    "65486251:143"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.operations[i].body.manage_sell_offer.price.n",
+   "occurrences": 7,
+   "envelopes": 3,
+   "example_ids": [
+    "65486009:272",
+    "65486156:283",
+    "65486292:147"
+   ]
+  },
+  {
+   "path": "$.tx_fee_bump.tx.inner_tx.tx.tx.operations[i].body.manage_sell_offer.price.d",
+   "occurrences": 7,
+   "envelopes": 3,
+   "example_ids": [
+    "65486009:272",
+    "65486156:283",
+    "65486292:147"
+   ]
+  },
+  {
+   "path": "$.tx.tx.cond.v2",
+   "occurrences": 1,
+   "envelopes": 1,
+   "example_ids": [
+    "65486207:193"
+   ]
+  },
+  {
+   "path": "$.tx.tx.cond.time",
+   "occurrences": 1,
+   "envelopes": 1,
+   "example_ids": [
+    "65486207:193"
+   ]
+  }
+ ]
+}

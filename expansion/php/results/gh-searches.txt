@@ -1,0 +1,73 @@
+## gh search issues --repo Soneso/stellar-php-sdk "transaction_hash"
+#241 [open] Inner transaction hashes and config upgrade content hashes render as the hex of their hex in XDR-JSON
+## gh search issues --repo Soneso/stellar-php-sdk "InnerTransactionResultPair"
+#241 [open] Inner transaction hashes and config upgrade content hashes render as the hex of their hex in XDR-JSON
+## gh search issues --repo Soneso/stellar-php-sdk "hex of their hex"
+#241 [open] Inner transaction hashes and config upgrade content hashes render as the hex of their hex in XDR-JSON
+## gh search issues --repo Soneso/stellar-php-sdk "claimable_balance ledger key"
+## gh search issues --repo Soneso/stellar-php-sdk "balance_id"
+#240 [open] A claimable balance ledger key renders without its balance_id member in XDR-JSON
+## gh search issues --repo Soneso/stellar-php-sdk "config_setting_id"
+## gh search issues --repo Soneso/stellar-php-sdk "LedgerKey"
+#240 [open] A claimable balance ledger key renders without its balance_id member in XDR-JSON
+#202 [closed] LedgerEntry::getKeyXdr() decodes the ledger key as an SCVal
+## gh search issues --repo Soneso/stellar-php-sdk "padding"
+#239 [open] XDR decoders accept values past their schema maximum, nonzero padding, and nesting past stellar-core's limit
+## gh search issues --repo Soneso/stellar-php-sdk "Maximum stack depth"
+#243 [open] XDR-JSON of a ledger with a deep authorization tree fails at 512 JSON levels
+## gh search issues --repo Soneso/stellar-php-sdk "512"
+#243 [open] XDR-JSON of a ledger with a deep authorization tree fails at 512 JSON levels
+#196 [closed] Deeply nested XDR overflows the decoder's stack for every recursive type except delegate signatures
+## gh search issues --repo Soneso/stellar-php-sdk "memo id"
+#230 [closed] SEP-10 WebAuth cannot request a memo id from 2^63 up
+#228 [closed] XDR 64-bit values outside [0, 2^63-1] are read or written wrong
+#194 [closed] TxRep parsing truncates out-of-range integers, accepts negative lengths and writes uint64 values signed
+## gh search issues --repo Soneso/stellar-php-sdk "uint64"
+#247 [open] Run the shapekit XDR corpus against the SDK in CI
+#194 [closed] TxRep parsing truncates out-of-range integers, accepts negative lengths and writes uint64 values signed
+#147 [closed] Update XDR definitions from upstream stellar-xdr
+#175 [closed] SDK Updates for Protocol 30 Compatibility
+#157 [closed] Update XDR definitions from upstream stellar-xdr
+#48 [closed] Protocol 23 SDK Upgrades
+## gh search prs --repo Soneso/stellar-php-sdk "transaction_hash"
+## gh search prs --repo Soneso/stellar-php-sdk "InnerTransactionResultPair"
+## gh search prs --repo Soneso/stellar-php-sdk "hex of their hex"
+## gh search prs --repo Soneso/stellar-php-sdk "claimable_balance ledger key"
+## gh search prs --repo Soneso/stellar-php-sdk "balance_id"
+## gh search prs --repo Soneso/stellar-php-sdk "config_setting_id"
+## gh search prs --repo Soneso/stellar-php-sdk "LedgerKey"
+#203 [merged] Expose the ledger entry key as an XdrLedgerKey
+## gh search prs --repo Soneso/stellar-php-sdk "padding"
+#206 [merged] Re-simulate the custom account test in enforcing auth mode
+#114 [merged] Harden strkey handling per SEP-23
+#156 [closed] build(deps): bump the composer group with 4 updates
+#151 [closed] build(deps): bump the composer group with 4 updates
+#192 [closed] build(deps): bump the composer group with 5 updates
+#111 [merged] Align SEP-51 XDR-JSON emission with the rs-stellar-xdr reference implementation
+## gh search prs --repo Soneso/stellar-php-sdk "Maximum stack depth"
+## gh search prs --repo Soneso/stellar-php-sdk "512"
+## gh search prs --repo Soneso/stellar-php-sdk "memo id"
+#231 [merged] Accept SEP-10 memo ids across the full 64-bit range
+#229 [merged] Read and write 64-bit XDR values across their full range
+#195 [merged] Validate TxRep integer widths and write uint64 values unsigned
+#226 [merged] Add unsigned decimal getters for muxed ids
+#121 [merged] Fix silent value loss and wire format defects
+#92 [merged] SDK review improvements: fixes, hardening, performance and test coverage
+## gh search prs --repo Soneso/stellar-php-sdk "uint64"
+#195 [merged] Validate TxRep integer widths and write uint64 values unsigned
+#229 [merged] Read and write 64-bit XDR values across their full range
+#72 [merged] Auto-generate XDR types from canonical .x definitions
+## gh search issues --repo Soneso/stellar-php-sdk "config_setting"
+#240 [open] A claimable balance ledger key renders without its balance_id member in XDR-JSON
+## gh search issues --repo Soneso/stellar-php-sdk "XdrConfigSettingID"
+## gh search issues --repo Soneso/stellar-php-sdk "XdrLedgerKeyBase"
+#240 [open] A claimable balance ledger key renders without its balance_id member in XDR-JSON
+## gh search prs --repo Soneso/stellar-php-sdk "config_setting"
+## gh search prs --repo Soneso/stellar-php-sdk "XdrConfigSettingID"
+## gh search prs --repo Soneso/stellar-php-sdk "XdrLedgerKeyBase"
+## gh search issues "stellar-php-sdk config_setting_id" (all repos)
+## gh search issues "stellar-php-sdk LedgerKey XDR-JSON" (all repos)
+## gh search issues "stellar-php-sdk inner transaction hash" (all repos)
+## gh search issues "stellar-php-sdk padding" (all repos)
+Soneso/stellar_flutter_sdk#291 [open] XDR decoders accept arrays, strings and opaques longer than the schema allows
+## gh search issues "stellar-php-sdk Maximum stack depth" (all repos)

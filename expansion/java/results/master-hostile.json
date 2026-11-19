@@ -1,0 +1,44 @@
+{
+ "compared": 21,
+ "kinds": {
+  "decode_ok_differs": {
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/sor/scval_bool_2",
+     "rust": "ok",
+     "java": "IOException: Invalid boolean value: 2, must be 0 or 1 per RFC 4506"
+    }
+   ]
+  },
+  "java_json_error": {
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/ext/signed_payload_len_0",
+     "error": "IllegalArgumentException: SignerKeyEd25519SignedPayload with an empty payload has no SEP-51 representation"
+    }
+   ]
+  },
+  "model_error": {
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/ext/signed_payload_len_0",
+     "error": "IllegalArgumentException: Invalid payload length, must be between 1 and 64, got 0"
+    }
+   ]
+  },
+  "model_hash_differs": {
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/ext/signed_payload_len_0",
+     "rust": "30cea34fa081468a3fc083a8f65b9891588a119e1dfb0875d68a8bfb301c425c",
+     "java": "error: IllegalArgumentException: Invalid payload length, must be between 1 and 64, got 0"
+    }
+   ]
+  }
+ },
+ "json_paths": {}
+}

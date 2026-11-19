@@ -1,0 +1,4 @@
+{"error":"decoding TransactionV1Envelope: decoding DecoratedSignature: data size (2147483648) exceeds size limit (20)","id":"probe/signatures_count_80000000","ok":false}
+{"error":"decoding TransactionV1Envelope: decoding DecoratedSignature: data size (4294967295) exceeds size limit (20)","id":"probe/signatures_count_ffffffff","ok":false}
+{"error":"decoding TransactionV1Envelope: decoding Transaction: decoding Operation: data size (2147483648) exceeds size limit (100)","id":"probe/operations_count_80000000","ok":false}
+{"error":"decoding TransactionV1Envelope: decoding Transaction: decoding Operation: data size (4294967295) exceeds size limit (100)","id":"probe/operations_count_ffffffff","ok":false}

@@ -1,0 +1,7 @@
+name: xdrconf_dart_repro
+description: Minimal reproductions against the published stellar_flutter_sdk 3.12.0.
+publish_to: none
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+dependencies:
+  stellar_flutter_sdk: 3.12.0

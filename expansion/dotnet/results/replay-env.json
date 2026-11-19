@@ -1,0 +1,116 @@
+{
+ "reference": "rust",
+ "compared": [
+  "dotnet"
+ ],
+ "total_requests": 112278,
+ "divergences": [
+  {
+   "adapter": "dotnet",
+   "kind": "hash_differs",
+   "count": 4167,
+   "examples": [
+    {
+     "id": "28000002:40",
+     "rust": "2ba50612e86ddad7995776f2f5e67e3be185aed2e9b1200b230a950c081f5292",
+     "dotnet": "1be70e852d80b5b814d4bd00b76128310450ca2aa84a1cffb9d6a4ec6058da5c"
+    },
+    {
+     "id": "40000000:106",
+     "rust": "80951a06138e6446426300e9f519baa73133f6c93f2ab3cd8666ebd384eccf51",
+     "dotnet": "e4c79d41fd5a959ff2de5cc3ac1b4f5831f3f9cfbb9c5b8d0a0b52610222f89e"
+    },
+    {
+     "id": "40000000:121",
+     "rust": "57941871b4b7a8623e1592d6675455ac80b0f8746720ea7c8fc35ca56d1a8733",
+     "dotnet": "3fd1916d340df5f9273e782337eec5b97fc7d265a55318f5c060d1817b9daf28"
+    },
+    {
+     "id": "40000000:144",
+     "rust": "46bedc14ba1db96ec730ce574a3c2e1db628b46be48937bbc2bf18812e1d398b",
+     "dotnet": "0dfa80229d2e0d5c8ff88f12ca20e1ead7324e286a56f4b0b749b2a8c115ae15"
+    },
+    {
+     "id": "40000000:198",
+     "rust": "8115b4ce1ee187721a4d24e3cf17b8e417af974387463ee1792fe891012d97aa",
+     "dotnet": "8615101b5294c93785b6accc8b5bd1fe743571c95d2a365c71f1a647ca201d4d"
+    },
+    {
+     "id": "40000000:222",
+     "rust": "56cbd633ec80940a3e0c6cd0585cdf6814ee9f75b6b4a15da60a4e044ef71813",
+     "dotnet": "254f7aa08fd4109042028791208876d8fa5aeb296e0ac55277d7d4e079a574a1"
+    },
+    {
+     "id": "40000000:252",
+     "rust": "364291044fbb6fb15b809f5605a46705b4a983cd3aff0792cc2836b8427a77b6",
+     "dotnet": "af136638bd5add8a040d957d8598bdf4d644c68b933ec8d91d137d2ab03301cb"
+    },
+    {
+     "id": "40000001:132",
+     "rust": "9c10bb23eb43be075d2167a2d6f0ca2ad109815f2737c4dccd7c30ac0eef54ad",
+     "dotnet": "79e405bd3fbd2e32d2f41e1db4ee4750c2059b84814c0bdfc55c6b2c1661d919"
+    },
+    {
+     "id": "40000001:218",
+     "rust": "482b15585d8dc2219a20783611aeabc594d8707064edf8f38625db952bfdb917",
+     "dotnet": "ae95be09b348340652450015012005f70d237dd3570052c5373f70cb7c911a58"
+    },
+    {
+     "id": "40000001:263",
+     "rust": "d30f9c91c70b3390221980cfcf8944d8c5cbd7cb643b90ea12cb6cd81de3503c",
+     "dotnet": "050926debae98faa327803f32277a74013e977c1227d3c4ffcfcf2b8b788c46d"
+    },
+    {
+     "id": "40000002:79",
+     "rust": "e1c7ccc39b40f9d08d35ab375a131d7e2989d4aeb0e73812938d9f502f401153",
+     "dotnet": "31861b6d2b8f5816293ebe76e0c66282c2a4cc4fce7cb713ec0efb7c1fb288ff"
+    },
+    {
+     "id": "40000002:134",
+     "rust": "ad914ef6f539ce06d861e1afe6491875238cd9a3925fdc93a85f53936c31354e",
+     "dotnet": "971fecca49ebd1768c8079bd6f13aa3e2c8b7e670073e0efe29005bc362b35f7"
+    },
+    {
+     "id": "40000002:135",
+     "rust": "3b5c123cea542ea792e1c369fc30d3ad1b3f672f6416b498afccf461cb65b266",
+     "dotnet": "f77a882ef07293c88e72d4507f0e1aacbda473f1ef865330622c719ebbb72a5e"
+    },
+    {
+     "id": "40000002:146",
+     "rust": "2e662e64fc80660fc138a8031dd387df9c000a7733d0b74237745a031d63323a",
+     "dotnet": "77b6a6b69c642e19ece8b951bd0e300359f7cf939ed0a7b4a599648a293806a5"
+    },
+    {
+     "id": "40000002:169",
+     "rust": "585acd491c01082224e0041b329e0c91053ff19f6cff59e517b5a3445162894f",
+     "dotnet": "ed74628914a703ee584465d5db192ab2c8e2956c3b335f31a6c87ad40708de1c"
+    },
+    {
+     "id": "40000002:185",
+     "rust": "fe515210ac69fccde2a8a5e23d85a0be83476b59897f40a732350f403ce4a3e9",
+     "dotnet": "22df25809f09787434b844038436363fe33a871ecb7983ea18a0dcf9926d056d"
+    },
+    {
+     "id": "40000002:217",
+     "rust": "9a361ac77186daa602c4a9d39660664ac7b4609df7b8da56fa16cb920800efef",
+     "dotnet": "36f9c43f80ea12118758db0455a69bf68ebd03aaa87695d39606b9cbe12e9f67"
+    },
+    {
+     "id": "40000002:234",
+     "rust": "baf0b737cf8b827a54d68531384cf2d7656c45b6722acf3e8aa9f39caeafc11d",
+     "dotnet": "c4d4addcd783d00f638a3261ca7bac836b3480065aee4703a87487592a2a4fe8"
+    },
+    {
+     "id": "40000002:244",
+     "rust": "b29b71d7cfee93ce4380efe34fa343f23459c6ace7a4d8962eea3ed52808db77",
+     "dotnet": "f6e5931dec4ed75241ef17498ffd52c8cd7b1b00921159e6f336c2e6ca87050c"
+    },
+    {
+     "id": "40000002:316",
+     "rust": "73da72929dfbaa3b24a939dffc5dd59a61e4551792e555be8d841f5bef00128a",
+     "dotnet": "6946502e25dfef28bdb3cfe97524fcf9d4c4cbdb0d3de811b44f8f88ae945f32"
+    }
+   ]
+  }
+ ]
+}

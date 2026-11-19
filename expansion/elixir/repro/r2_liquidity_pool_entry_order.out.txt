@@ -1,0 +1,4 @@
+stellar_base 0.17.0, elixir_xdr 0.3.11
+A. real LiquidityPoolEntry:
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}
+B. fields swapped by hand: decoded OK, pool id = 0a42443706d4193b...

@@ -1,0 +1,6 @@
+{
+  "require": {
+    "soneso/stellar-php-sdk": "1.18.0"
+  },
+  "config": {"vendor-dir": "vendor"}
+}

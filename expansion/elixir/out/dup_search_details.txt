@@ -1,0 +1,205 @@
+### kommitters/stellar_base#147
+ClaimableBalanceEntry [CLOSED] closed 2022-03-21T18:27:36Z
+
+### kommitters/stellar_base#150
+Add ClaimableBalanceEntry asset [MERGED] closed 2022-03-21T17:58:26Z
+#issue
+#147 
+
+**Changes**
+Was added the modules for XDR type ClaimableBalanceEntry and ClaimableBalanceEntryExt with the respective tests files.
+
+**Screenshot**
+<img width="1291" alt="Screen Shot 2022-03-13 at 9 29 26 PM" src="https://user-images.githubusercontent.com/2568221/158094666-e51ecf54-7865-4091-9df7-649ddba4bdeb.png">
+
+
+### kommitters/stellar_base#59
+AccountMerge, AllowTrust, BumpSquence, ManageData operations [MERGED] closed 2021-09-28T13:48:09Z
+This is part of #49 
+### kommitters/stellar_base#53
+Ensure AssetCodes are encoded as expected by Stellar [MERGED] closed 2021-09-16T19:35:51Z
+This PR complements the #51 
+### kommitters/stellar_base#226
+Add new Ledger Entries XDR types [CLOSED] closed 2023-03-21T17:00:25Z
+ℹ️ This issue is part of the Epic #223 
+
+## Objective
+
+To implement the XDR types specified in https://github.com/stellar/stellar-xdr/blob/df18148747e807618acf4639db41c4fd6f0be9fc/Stellar-ledger-entries.x
+
+## Checklist
+
+### Create
+- [x] ContractDataEntry
+- [x] ContractCodeEntry
+- [x] ContractCode
+- [x] ContractData
+- [x] ConfigSettingType
+- [x] ConfigSetting
+- [x] ConfigSettingID
+- [x] ConfigSettingEntry
+- [x] ConstantProduct
+- [x] ConfigSettingLedgerKey
+- [x] LedgerEntryData
+- [x] LedgerEntryExt
+- [x] LedgerEntry
+- [x] LedgerEntryExt
+- [x] LiquidityPoolEntry
+### kommitters/stellar_base#236
+Add new Ledger Entries XDR types - Part 2 [MERGED] closed 2023-03-21T14:36:26Z
+Contributing to https://github.com/kommitters/stellar_base/issues/226
+
+In this PR, the following types were added:
+
+-  ContractCode
+-  ContractData
+-  ConstantProduct
+-  ConfigSettingLedgerKey
+-  LedgerEntryData
+-  LedgerEntryExt
+-  LedgerEntry
+-  LedgerEntryExt
+-  LiquidityPoolEntry
+-  LiquidityPoolEntryBody
+-  LedgerEntryType
+-  LedgerKey
+### open issues and PRs in kommitters/stellar_base
+314	Update	renovate/lock-file-maintenance	OPEN	2026-03-01T01:34:58Z
+313	Update all dependencies	renovate/all	OPEN	2024-08-01T01:35:00Z
+301	Add stale issues policy in CONTRIBUTING.md.	MarioRodriguezS:update-stale-issues-policy	OPEN	2024-04-19T16:18:14Z
+### issues/PRs updated since 2026-01-01
+316 [merged] Release v0.17.1
+315 [merged] Prepare Release v0.17.1
+314 [open] Update
+313 [open] Update all dependencies
+### kommitters/stellar_sdk#379
+Protocol 23 SDK Upgrades [OPEN] created 2025-07-01T17:01:58Z
+# Protocol 23: SDK Changes
+
+## XDR Changes
+* XDR should be upgraded to [stellar-xdr@`4b7a2e`](https://github.com/stellar/stellar-xdr/commit/4b7a2ef7931ab2ca2499be68d849f38190b443ca). This includes, but is not limited to:
+  - Handling `LedgerCloseMetaV2` and `TransactionMetaV4`
+  - Handling the new variants of `ScAddress` which can include muxed accounts, claimable balances, and liquidity pools
+  - Adding support for `StrKey`s to encode claimable balances and liquidity pools, per [SEP-23](https://stellar.org/protocol/sep-23)
+  - Several fields have been renamed, though their semantic meaning is identical.
+
+## Horizon
+* `/assets` will no longer include `num_archived_contracts` and `archived_contracts_amount`
+* `/async_transaction` drops the previously-deprecated field `errorResultXdr`
+* `/operations` and `/payments`, when returning an `InvokeHostFunction` operation involving a SAC transfer, will now include a new field under the `asset_balance_changes` list to convey muxed account information (when present): 
+```typescript
+destination_muxed_id: string; // a uint64
+```
+
+## RPC
+
+### API Changes
+* `getTransaction` and `getTransactions` have changed in how they display events for the transaction:
+  - The top-level `diagnosticEvents[Xdr|Json]` field is now deprecated.
+  - There is instead a new top-level object for found transactions. Note that each of these can also have a `Json` suffix variation if `"xdrFormat": "json"` is passed to the request, if your SDK supports that mode of operation.
+```diff
++"events": {
++  "diagnosticEventsXdr": [], // base64-encoded list of `xdr.DiagnosticEvent`s
++  "transactionEventsXdr": [], // base64-encoded list of `xdr.TransactionEvent`s
++  // base64-encoded list of lists of `xdr.ContractEvent`s, where each element of
++  // the list corresponds to the events for that operation in the transaction
++  "contractEventsXdr": [[]], 
++}
+```
+
+* `getEvents` will now:
+  - drop the previously deprecated `pagingToken` field entirely in lieu of `cursor`
+  - requests can include a `**` for a topic filter as its last element to allow 0+ trailing topics matching the filter
+  - no longer return events with `"type" == "diagnostic"`
+  - return events for failed transactions
+  - deprecate the field `inSuccessfulContractCall`
+  - include a field `opIndex: uint32` representing the operation at which an event occurred
+  - include details about the RPC's ledger range at the top level of its response:
+```diff
++ "oldestLedger": 0, // uint32
++ "latestLedgerCloseTime": "0", // uint64 as a string
++ "oldestLedgerCloseTime": "0" // uint64 as a string
+```
+ * `simulateTransaction` has a new, optional `authMode` parameter:
+```typescript
+authMode?: "" | "enforce" | "record" | "record_allow_nonroot"
+```
+
+You can refer to the [release notes](https://github.com/stellar/stellar-rpc/releases/tag/v23.0.0-rc.1) for more details.
+### kommitters/stellar_sdk#388
+SDK Updates for Protocol 28 Compatibility [OPEN] created 2026-08-19T16:35:57Z
+# Protocol 28: SDK Changes
+
+## XDR Changes
+
+The XDR specification requires upgrading to [stellar-xdr@`9c9c145`](https://github.com/stellar/stellar-xdr/commit/9c9c145953e80990d6ff1ae3a6a973a0ce6d0694) (Protocol 28 XDR). Both new CAPs are ungated at that commit, so no preprocessing feature flags are needed. Two CAPs add new types:
+
+- [CAP-85: Externally Managed Contract Executables](https://github.com/stellar/stellar-protocol/blob/master/core/cap-0085.md)
+- [CAP-83: Empty Transaction Set Votes](https://github.com/stellar/stellar-protocol/blob/master/core/cap-0083.md)
+
+CAP-83 is consensus-internal; regenerating from the new XDR is the only change SDKs need. CAP-85 requires the handling below.
+
+## CAP-85: External Contract Executables
+
+A contract instance can now hold a `CONTRACT_EXECUTABLE_EXTERNAL_REF` executable (an `executable_owner` address plus a `tag`) instead of its own Wasm hash. Things to keep in mind when updating:
+
+- **Resolving a reference**: any path that maps an instance to its code (Wasm fetchers, spec loaders, contract-client constructors, binding generators) must handle the new arm. The Wasm hash lives in the owner's *persistent* contract data entry keyed by `SCV_EXECUTABLE_TAG(tag)`; read it with one extra `getLedgerEntries` call, then proceed as for `CONTRACT_EXECUTABLE_WASM`.
+- **Tag handling**: a tag is an unbounded `SCString` and may not be valid UTF-8, and it identifies the code being deployed, so never decode it leniently. Show it as a string only when valid UTF-8 (raw bytes otherwise), and build the ledger key from the original bytes.
+- **Rendering invocation trees**: `CREATE_CONTRACT` / `CREATE_CONTRACT_V2` invocations can now carry an external-ref executable, so auth-display code must render the new creation type (owner, tag, constructor args for V2) instead of failing. Contract ID derives from deployer plus salt, same as Wasm.
+- **Building deploy operations**: deploy helpers should accept an external reference (owner address plus tag) as an alternative to a Wasm hash. Reject a non-contract owner early and pass binary tags through undecoded.
+
+## CAP-71 Default Flip
+
+Unrelated to Protocol 28 itself: js-stellar-sdk v17 has flipped its CAP-71 defaults to `SOROBAN_CREDENTIALS_ADDRESS_V2`, on both ends of the auth flow (`authorizeInvocation` builds V2 entries and `simulateTransaction` sends `useUpgradedAuth: true`, each with a legacy opt-out). See the Protocol 27 announcement for the auth changes themselves.
+
+## Reference Implementations
+
+- **js-stellar-sdk** (v17.0.0): CAP-85 resolution and rendering in [#1577](https://github.com/stellar/js-stellar-sdk/pull/1577) (`rpc.Server.getExternalRefWasmHash`, `contract.Client.from`, `buildInvocationTree`, `scValToNative`, binding generation), deploying from an external ref via `Operation.createCustomContract` in [#1665](https://github.com/stellar/js-stellar-sdk/pull/1665), and the CAP-71 default flip in [#1562](https://github.com/stellar/js-stellar-sdk/issues/1562).
+- **go-stellar-sdk** ([v0.7.0](https://github.com/stellar/go-stellar-sdk/releases/tag/v0.7.0)+): regenerated Protocol 28 XDR.
+- **stellar-rpc** ([v28.0.0](https://github.com/stellar/stellar-rpc/releases/tag/v28.0.0)): Protocol 28 XDR and preflight hosts ([#913](https://github.com/stellar/stellar-rpc/pull/913)); `useUpgradedAuth` handling in `internal/methods/simulate_transaction.go`.
+- **stellar-horizon** (v28.0.0, in release): CAP-85 ingestion support ([#207](https://github.com/stellar/stellar-horizon/pull/207), [#213](https://github.com/stellar/stellar-horizon/pull/213)).
+
+### kommitters/stellar_sdk#390
+SDK Updates for Protocol 30 Compatibility [OPEN] created 2026-10-21T16:45:10Z
+# Protocol 30: SDK Changes
+
+## XDR Changes
+
+Upgrade to the [stellar-xdr v30.0 release](https://github.com/stellar/stellar-xdr/releases/tag/v30.0) ([`4f524bb`](https://github.com/stellar/stellar-xdr/commit/4f524bbac80c781c06e4fb5fc93a2d0d331d6705)), the Protocol 30 XDR. All CAPs are ungated, so no preprocessing feature flags are needed. It covers:
+
+- [CAP-84: Muxed Contract Addresses](https://github.com/stellar/stellar-protocol/blob/master/core/cap-0084.md): needs the changes below.
+- [CAP-88: Millisecond-Resolution Close Times](https://github.com/stellar/stellar-protocol/blob/master/core/cap-0088.md): needs the changes below.
+- [CAP-87: ML-DSA Signature Verification](https://github.com/stellar/stellar-protocol/blob/master/core/cap-0087.md): regenerate only. It adds `ContractCostType` values 86 to 94.
+
+This range also includes [stellar-xdr#312](https://github.com/stellar/stellar-xdr/pull/312): contract spec UDT names go from `string<60>` to `string<1024>`, and `SCSpecEventV0.name` goes from `SCSymbol` to `string<1024>`. If a binding generator checks those limits, remove the checks.
+
+## CAP-88: Millisecond Close Times
+
+`StellarValue.ext` gains `STELLAR_VALUE_SIGNED_MS = 3` and `STELLAR_VALUE_EMPTY_TX_SET_MS = 4`, each adding a `TimePointMs closeTimeMs` field. Every ledger after the upgrade uses one of them, so **without the new XDR you cannot decode ledger headers or `LedgerCloseMeta`** (RPC `getLedgers`, Horizon `header_xdr`).
+
+Treat the `_MS` arms like `STELLAR_VALUE_SIGNED` and `STELLAR_VALUE_EMPTY_TX_SET`. `closeTime` is unchanged (whole seconds, `closeTimeMs / 1000`), and all transaction time bounds stay in seconds, so nothing else changes.
+
+## CAP-84: Muxed Contract Addresses
+
+`SCAddress` gains `SC_ADDRESS_TYPE_MUXED_CONTRACT = 5` (`MuxedContract { uint64 id; ContractID contractId; }`), with a new `W...` strkey.
+
+- **Strkey**: version byte `22 << 3` (`0xb0`); payload is the 32-byte contract ID followed by the 8-byte big-endian ID. Follow [SEP-23](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0023.md) and use its `W...` test vectors.
+- **Address type**: convert arm 5 to and from `W...` (including equality and SCVal-to-native). Without this, any return value or event holding a muxed contract fails to decode.
+- **Where `W` is allowed**: only where `M` is, meaning `MuxedAddress` params such as the SAC `transfer` `to`. Reject `W...` as a contract to invoke, as an auth signer, in storage keys, and in balance lookups.
+- **Events**: SAC `transfer`/`mint` to a `W...` use the CAP-67 format: the `to` topic is the base `C...` and the data is `{ amount, to_muxed_id }`. If you already handle `M...` destinations, nothing changes.
+
+## RPC API Changes
+
+`getEvents` no longer returns `inSuccessfulContractCall` ([stellar-rpc#1050](https://github.com/stellar/stellar-rpc/pull/1050)). The removal ships in the same RPC release but is not part of a Protocol 30 CAP. **Make the field optional or remove it from your event model**, or parsing will fail.
+
+## Horizon API Changes
+
+The `contract_credited` effect gains optional `contract_muxed` (the `W...` address) and `contract_muxed_id` (a decimal string, like `account_muxed_id`) fields when a SAC `transfer` or `mint` goes to a muxed contract ([stellar-horizon#237](https://github.com/stellar/stellar-horizon/pull/237)). Add both as optional fields in your effect model.
+
+## Reference Implementations
+
+- **js-stellar-sdk** (unreleased): XDR in [#1795](https://github.com/stellar/js-stellar-sdk/pull/1795)/[#1796](https://github.com/stellar/js-stellar-sdk/pull/1796)/[#1797](https://github.com/stellar/js-stellar-sdk/pull/1797); CAP-84 in [#1811](https://github.com/stellar/js-stellar-sdk/pull/1811).
+- **go-stellar-sdk** ([v0.8.0](https://github.com/stellar/go-stellar-sdk/releases/tag/v0.8.0)): [#6015](https://github.com/stellar/go-stellar-sdk/pull/6015).
+- **stellar-rpc** (unreleased): [#1050](https://github.com/stellar/stellar-rpc/pull/1050).
+- **stellar-horizon** (unreleased): [#237](https://github.com/stellar/stellar-horizon/pull/237).
+

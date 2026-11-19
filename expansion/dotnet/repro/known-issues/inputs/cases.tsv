@@ -1,0 +1,9 @@
+price-not-lowest-terms	Public Global Stellar Network ; September 2015	2ba50612e86ddad7995776f2f5e67e3be185aed2e9b1200b230a950c081f5292
+allow-trust	Public Global Stellar Network ; September 2015	c27ee075895e9b682862aadd0a5abb6200a6e08e63dada5c988943aaf0bdf9a4
+lp-issuer-order	Test SDF Network ; September 2015	b79f02ec4c354f48528fe6213405ede999d4139124c332266c56c30c96b8eb2e
+depth-depth-100		core-admits
+depth-auth-198		core-admits
+memo-non-utf8	Public Global Stellar Network ; September 2015	632d29c9e4f5cd873f0d61f04f44f0e3eeeea8fa32d7a65e5afbf0a510bb6054
+hostile-optional-flag-2	Public Global Stellar Network ; September 2015	core-rejects: xdr::pointer size must be 0 or 1
+hostile-trailing-bytes	Public Global Stellar Network ; September 2015	core-rejects: unmarshaling did not consume whole message
+hostile-memo-text-len-29	Public Global Stellar Network ; September 2015	core-rejects: xstring overflow

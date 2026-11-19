@@ -122,6 +122,27 @@ js-stellar-sdk#1766: JS ordered liquidity-pool assets by issuer strkey text inst
 
 The 22 pubnet corpus entries and three whole pubnet ledgers pass at all seven commits. `expected.tsv` pins all 231 results (33 inputs at 7 commits) and `run.sh replay` fails on any change.
 
+## More SDKs (2026-11-19)
+
+Adapters for six more SDKs now run the same corpus, hostile and depth sets and the full 380-ledger replay: stellar_flutter_sdk 3.12.0 (Dart), dotnet-stellar-sdk 17.0.0 (.NET), stellar_base 0.17.0 (Elixir), stellar-base 0.32.0 with the xdr gem (Ruby), java-stellar-sdk 6.0.0 and stellar-php-sdk 1.18.0 (`runners/<language>/`). Every divergence was reduced to a standalone reproduction against the published package and checked by a second, independent pass before anything was filed. Reports and reproductions: `expansion/`.
+
+Filed upstream the same day:
+
+| SDK | Issue | What breaks |
+|---|---|---|
+| Dart | [Soneso/stellar_flutter_sdk#299](https://github.com/Soneso/stellar_flutter_sdk/issues/299) | a PRECOND_V2 holding only time bounds is re-encoded as PRECOND_TIME, so the hash is wrong (166 sampled pubnet transactions) |
+| Dart | [#300](https://github.com/Soneso/stellar_flutter_sdk/issues/300) | a parsed fee bump loses its fee-bump signatures (25,373 of 25,377 sampled fee bumps) |
+| Dart | [#301](https://github.com/Soneso/stellar_flutter_sdk/issues/301) | the decoder accepts an optional flag of 2, trailing bytes and missing end padding |
+| .NET | [Beans-BV/dotnet-stellar-sdk#280](https://github.com/Beans-BV/dotnet-stellar-sdk/issues/280) | NullReferenceException on a ledger entry with ext v1 and no sponsor |
+| Elixir | [kommitters/stellar_base#317](https://github.com/kommitters/stellar_base/issues/317) | AllowTrust reads its asset as an Asset with an issuer |
+| Elixir | [#318](https://github.com/kommitters/stellar_base/issues/318) | LiquidityPoolEntry fields in the wrong order |
+| Elixir | [#319](https://github.com/kommitters/stellar_base/issues/319) | ClaimableBalanceEntry reads claimants<10> as one Claimant |
+| Elixir | [#320](https://github.com/kommitters/stellar_base/issues/320) | protocol 23 XDR (LEDGER_ENTRY_RESTORED, SorobanTransactionData ext v1) missing |
+| Elixir | [kommitters/elixir_xdr#93](https://github.com/kommitters/elixir_xdr/issues/93), [#94](https://github.com/kommitters/elixir_xdr/issues/94) | non-zero padding accepted and dropped; decode_xdr raises instead of returning an error |
+| Ruby | [astroband/ruby-xdr#52](https://github.com/astroband/ruby-xdr/issues/52) | an array count of 2^31 or more decodes as an empty array |
+
+Other divergences the adapters found in Dart, .NET, Java and PHP had already been reported by others; `expansion/<sdk>/` lists each with the existing issue.
+
 ## Mock Stellar RPC and Galexie datastore
 
 `./run.sh mockrpc` serves the 380 sample ledgers over Stellar RPC (`getHealth`, `getLatestLedger`, `getNetwork`, `getLedgers` with cursor paging), one endpoint per run of consecutive ledgers, optionally paced like a live network (`PACE=2s`). The same run also writes the ledgers in Galexie's datastore layout, so an indexer pointed at either an RPC URL or a datastore path ingests real pubnet ledgers with no code changes. `./run.sh mockrpc-check` reads every ledger back through go-stellar-sdk's `RPCLedgerBackend`, a raw `getLedgers` cursor walk and `BufferedStorageBackend`, and compares each `LedgerCloseMeta` byte for byte with the stored file: 380 of 380 on each path, 0 failures (`reports/mockrpc-check.txt`). The same server is hosted at `https://rpc.nonceworks.com` (380 of 380 read back through it, 0 failures). Details and limits: [`mockrpc/README.md`](mockrpc/README.md).

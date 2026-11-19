@@ -1,0 +1,10 @@
+name: xdrconf_dart
+description: Conformance adapter for stellar_flutter_sdk (Dart). JSONL protocol, see docs/ARCHITECTURE.md.
+publish_to: none
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+dependencies:
+  # Exact pin. The package declares a Flutter SDK dependency, so `flutter pub get`
+  # resolves it; the adapter itself imports only the XDR and transaction
+  # libraries, which do not reach dart:ui, and runs on the plain Dart VM.
+  stellar_flutter_sdk: 3.12.0

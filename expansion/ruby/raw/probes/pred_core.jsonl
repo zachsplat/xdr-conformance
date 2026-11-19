@@ -1,0 +1,9 @@
+{"id": "predicate/4", "ok": true}
+{"id": "predicate/50", "ok": true}
+{"id": "predicate/100", "ok": true}
+{"id": "predicate/200", "ok": true}
+{"id": "predicate/300", "ok": true}
+{"id": "predicate/500", "ok": true}
+{"id": "predicate/1000", "ok": false, "error": "Could not decode with type 'tx' : stack overflow in xdr_generic_get"}
+{"id": "predicate/2000", "ok": false, "error": "Could not decode with type 'tx' : stack overflow in xdr_generic_get"}
+{"id": "predicate/5000", "ok": false, "error": "Could not decode with type 'tx' : stack overflow in xdr_generic_get"}

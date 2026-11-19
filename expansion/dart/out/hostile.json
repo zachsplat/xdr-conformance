@@ -1,0 +1,76 @@
+{
+ "reference": "rust",
+ "compared": [
+  "dart"
+ ],
+ "total_requests": 21,
+ "divergences": [
+  {
+   "adapter": "dart",
+   "kind": "decode_ok_differs",
+   "count": 7,
+   "examples": [
+    {
+     "id": "hostile/cls/optional_flag_2",
+     "rust": "xdr value invalid",
+     "dart": "ok"
+    },
+    {
+     "id": "hostile/cls/trailing_bytes",
+     "rust": "xdr value invalid",
+     "dart": "ok"
+    },
+    {
+     "id": "hostile/cls/memo_text_len_29",
+     "rust": "xdr value max length exceeded",
+     "dart": "ok"
+    },
+    {
+     "id": "hostile/cls/operations_101",
+     "rust": "xdr value max length exceeded",
+     "dart": "ok"
+    },
+    {
+     "id": "hostile/cls/memo_text_non_utf8_nul",
+     "rust": "ok",
+     "dart": "FormatException: FormatException: Invalid UTF-8 byte (at offset 0)"
+    },
+    {
+     "id": "hostile/sor/scval_nested_vec_200",
+     "rust": "depth limit exceeded",
+     "dart": "ok"
+    },
+    {
+     "id": "hostile/ext/signed_payload_len_65",
+     "rust": "xdr value max length exceeded",
+     "dart": "ok"
+    }
+   ]
+  },
+  {
+   "adapter": "dart",
+   "kind": "hash_differs",
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/sor/scval_bool_2",
+     "rust": "342b635e489408b176fab1883ab0ad257822ff17d426aef049bcccfaf13725ff",
+     "dart": "865bfcd023cb0e22d004407bbbfd96e559f8da214d704cfc8df29ff8876a00f8"
+    }
+   ]
+  },
+  {
+   "adapter": "dart",
+   "kind": "sep51_json_differs",
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/sor/scval_bool_2",
+     "path": "$.tx.tx.operations[0].body.invoke_host_function.host_function.invoke_contract.args[0].bool",
+     "rust": "false",
+     "dart": "true"
+    }
+   ]
+  }
+ ]
+}

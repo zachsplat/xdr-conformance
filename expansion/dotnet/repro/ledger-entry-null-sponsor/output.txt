@@ -1,0 +1,7 @@
+XDR layer: decodes, ext = v1, sponsoringID (AccountID*) absent: True, re-encodes to the same bytes: True
+LedgerEntryChange.FromXdrBase64(change) -> System.NullReferenceException: Object reference not set to an instance of an object.
+    at StellarDotnetSdk.LedgerEntries.LedgerEntryExtensionV1.FromXdr(LedgerEntryExtensionV1 xdrEntryExtensionV1)
+Soroban.TransactionMeta.FromXdrBase64(meta) -> System.NullReferenceException: Object reference not set to an instance of an object.
+    at StellarDotnetSdk.LedgerEntries.LedgerEntryExtensionV1.FromXdr(LedgerEntryExtensionV1 xdrEntryExtensionV1)
+new GetTransactionResponse { ResultMetaXdr = meta }.TransactionMeta -> System.NullReferenceException: Object reference not set to an instance of an object.
+    at StellarDotnetSdk.LedgerEntries.LedgerEntryExtensionV1.FromXdr(LedgerEntryExtensionV1 xdrEntryExtensionV1)

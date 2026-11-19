@@ -1,0 +1,108 @@
+### gh search issues --repo lightsail-network/java-stellar-sdk "lexicographic order"
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A2A2:26449:986E1E:1E4424E:6AFF305B and timestamp 2026-11-19 17:22:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=10&q=%22lexicographic+order%22+repo%3Alightsail-network%2Fjava-stellar-sdk+type%3Aissue)
+### gh search prs --repo lightsail-network/java-stellar-sdk "lexicographic order"
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A2AE:156ED8:A0E643:1FE1E6F:6AFF3062 and timestamp 2026-11-19 17:22:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=10&q=%22lexicographic+order%22+repo%3Alightsail-network%2Fjava-stellar-sdk+type%3Apr)
+### gh search issues --repo lightsail-network/java-stellar-sdk "liquidity pool order"
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID 91A0:156ED8:A118B9:1FEBD32:6AFF306A and timestamp 2026-11-19 17:22:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=10&q=%22liquidity+pool+order%22+repo%3Alightsail-network%2Fjava-stellar-sdk+type%3Aissue)
+### gh search prs --repo lightsail-network/java-stellar-sdk "liquidity pool order"
+### gh search issues --repo lightsail-network/java-stellar-sdk "raw key bytes"
+  lightsail-network/java-stellar-sdk#814 [closed] SDK Updates for Protocol 28 Compatibility
+### gh search prs --repo lightsail-network/java-stellar-sdk "raw key bytes"
+  lightsail-network/java-stellar-sdk#832 [merged] fix: order same-code assets by the issuers' raw key bytes.
+  lightsail-network/java-stellar-sdk#703 [merged] feat: add muxed account, liquidity pool and claimable balance support…
+### gh search issues --repo lightsail-network/java-stellar-sdk "strkey order"
+### gh search prs --repo lightsail-network/java-stellar-sdk "strkey order"
+### gh search issues --repo lightsail-network/java-stellar-sdk "tx_success"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+### gh search prs --repo lightsail-network/java-stellar-sdk "tx_success"
+  lightsail-network/java-stellar-sdk#841 [merged] fix: write and read XDR-JSON in the SEP-51 forms.
+### gh search issues --repo lightsail-network/java-stellar-sdk "txsuccess"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+### gh search prs --repo lightsail-network/java-stellar-sdk "txsuccess"
+### gh search issues --repo lightsail-network/java-stellar-sdk "SEP-51"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+  lightsail-network/java-stellar-sdk#476 [closed] CRASH when handling 429s
+### gh search prs --repo lightsail-network/java-stellar-sdk "SEP-51"
+  lightsail-network/java-stellar-sdk#841 [merged] fix: write and read XDR-JSON in the SEP-51 forms.
+  lightsail-network/java-stellar-sdk#797 [merged] docs: add agent skill for java-stellar-sdk
+### gh search issues --repo lightsail-network/java-stellar-sdk "AssetCode json"
+### gh search prs --repo lightsail-network/java-stellar-sdk "AssetCode json"
+### gh search issues --repo lightsail-network/java-stellar-sdk "toJson"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+  lightsail-network/java-stellar-sdk#845 [open] Run the shapekit XDR corpus against java-stellar-sdk in CI
+### gh search prs --repo lightsail-network/java-stellar-sdk "toJson"
+### gh search issues --repo lightsail-network/java-stellar-sdk "XDR-JSON"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+  lightsail-network/java-stellar-sdk#845 [open] Run the shapekit XDR corpus against java-stellar-sdk in CI
+  lightsail-network/java-stellar-sdk#838 [open] `Scv.fromMap` silently drops entries with duplicate keys
+  lightsail-network/java-stellar-sdk#697 [closed] Protocol 23 SDK Upgrades
+  lightsail-network/java-stellar-sdk#651 [closed] Protocol 22: Smoothing out breaking changes
+  lightsail-network/java-stellar-sdk#592 [closed] Protocol 21 SDK Support
+  lightsail-network/java-stellar-sdk#472 [closed] Support for new InvokeHostFunctionOperation
+  lightsail-network/java-stellar-sdk#261 [closed] Horizon v1.0.0 Compatibility
+  lightsail-network/java-stellar-sdk#494 [closed] Uint32 should not be represented using Integer.
+  lightsail-network/java-stellar-sdk#345 [closed] Add support for additional `_muxed` and `_muxed_id` optional fields in Horizon's JSON responses
+### gh search prs --repo lightsail-network/java-stellar-sdk "XDR-JSON"
+  lightsail-network/java-stellar-sdk#841 [merged] fix: write and read XDR-JSON in the SEP-51 forms.
+  lightsail-network/java-stellar-sdk#797 [merged] docs: add agent skill for java-stellar-sdk
+  lightsail-network/java-stellar-sdk#784 [merged] docs: improve xdr generator javadocs
+  lightsail-network/java-stellar-sdk#778 [merged] test: add unit test for SEP-0051 XDR JSON
+  lightsail-network/java-stellar-sdk#777 [merged] test: add test to verify XDR-JSON output against Rust stellar CLI
+  lightsail-network/java-stellar-sdk#706 [merged] feat!: add `events` field to `GetTransactionsResponse.Transaction` an…
+  lightsail-network/java-stellar-sdk#415 [merged] CAP 21, Transaction Preconditions and Account sequence fields
+  lightsail-network/java-stellar-sdk#492 [merged] Added support for calling Soroban RPC server.
+  lightsail-network/java-stellar-sdk#491 [merged] Add support for BumpFootprintExpirationOperation and RestoreFootprintOperation
+  lightsail-network/java-stellar-sdk#378 [merged] #374: fix npe on liquidity pool trustline in changetrustresponse
+### gh search issues --repo lightsail-network/java-stellar-sdk "depth"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+### gh search prs --repo lightsail-network/java-stellar-sdk "depth"
+### gh search issues --repo lightsail-network/java-stellar-sdk "Maximum decoding depth"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+### gh search prs --repo lightsail-network/java-stellar-sdk "Maximum decoding depth"
+### gh search issues --repo lightsail-network/java-stellar-sdk "DEFAULT_MAX_DEPTH"
+### gh search prs --repo lightsail-network/java-stellar-sdk "DEFAULT_MAX_DEPTH"
+### gh search issues --repo lightsail-network/java-stellar-sdk "nested"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+  lightsail-network/java-stellar-sdk#803 [closed] SDK Updates for Protocol 27 Compatibility
+  lightsail-network/java-stellar-sdk#404 [closed] GSON parse error when fetching accounts by trustline
+### gh search prs --repo lightsail-network/java-stellar-sdk "nested"
+  lightsail-network/java-stellar-sdk#783 [merged] docs: add missing Javadoc comments for various classes and methods
+  lightsail-network/java-stellar-sdk#528 [merged] Refactor build script.
+### gh search issues --repo lightsail-network/java-stellar-sdk "trailing bytes"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+  lightsail-network/java-stellar-sdk#833 [closed] XDR decoding accepts trailing bytes: `fromXdrBase64` / `fromXdrByteArray` do not check that the input is fully consumed
+### gh search prs --repo lightsail-network/java-stellar-sdk "trailing bytes"
+  lightsail-network/java-stellar-sdk#842 [merged] fix: reject trailing bytes in fromXdrBase64 and fromXdrByteArray.
+### gh search issues --repo lightsail-network/java-stellar-sdk "fully consumed"
+  lightsail-network/java-stellar-sdk#833 [closed] XDR decoding accepts trailing bytes: `fromXdrBase64` / `fromXdrByteArray` do not check that the input is fully consumed
+### gh search prs --repo lightsail-network/java-stellar-sdk "fully consumed"
+### gh search issues --repo lightsail-network/java-stellar-sdk "auth tree"
+  lightsail-network/java-stellar-sdk#835 [open] XDR: trailing bytes and non-canonical base64 are accepted, the depth limit rejects valid values, and XDR-JSON doesn't validate its input
+### gh search prs --repo lightsail-network/java-stellar-sdk "auth tree"
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID ECE0:2696D:95C627:1DB1086:6AFF3159 and timestamp 2026-11-19 17:26:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=10&q=%22auth+tree%22+repo%3Alightsail-network%2Fjava-stellar-sdk+type%3Apr)
+### gh search issues --repo lightsail-network/java-stellar-sdk "sub_invocations"
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID D128:30CCB5:8B38B1:1BA05F9:6AFF3160 and timestamp 2026-11-19 17:26:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=10&q=sub_invocations+repo%3Alightsail-network%2Fjava-stellar-sdk+type%3Aissue)
+### gh search prs --repo lightsail-network/java-stellar-sdk "sub_invocations"
+### gh search issues  "Assets are not in lexicographic order"
+  StellarCN/py-stellar-base#1246 [closed] LiquidityPoolAsset rejects valid asset order: issuers compared as strkey text instead of key bytes
+  stellar/js-stellar-base#580 [closed] TransactionBuilder.fromXDR cannot parse transaction processed earlier by StellarCore with "Assets are not in lexicographic order" error
+  stellar/js-stellar-base#593 [closed] Lexicographical sorting is not in pair with what the network expects
+  stellar-expert/albedo#73 [closed] "Assets are not in lexicographic order" adding liquidity to tokens with Alphanumeric 12 and 4 (mixed)
+  stellar-expert/albedo#67 [closed] Assets are not in lexicographic order
+  stellar/stellar-core#3265 [closed] Some assets cannot pair for liquidity pool create trust.
+### gh search issues  "java-stellar-sdk depth limit"
+### gh search issues  "java-stellar-sdk XDR-JSON"
+  SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io#53 [closed] PG Award Proposal: Java Stellar SDK
+### gh search issues  "java-stellar-sdk trailing bytes"
+### gh search issues  "java-stellar-sdk liquidity pool issuer order"
+
+### Earlier unpaced run (17:22 UTC) of the queries that hit the rate limit above:
+### gh search issues --repo lightsail-network/java-stellar-sdk "lexicographic order"
+  lightsail-network/java-stellar-sdk#356 [closed] CAP-38 AMM Changes
+### gh search prs --repo lightsail-network/java-stellar-sdk "lexicographic order"
+  (no hits)
+### gh search issues --repo lightsail-network/java-stellar-sdk "liquidity pool order"
+  lightsail-network/java-stellar-sdk#356 [closed] CAP-38 AMM Changes
+### Also read in full: gh issue list / gh pr list --state all (issues back to #483, PRs back to #789), and the bodies of #832 #833 #835 #837 #841 #842 #843 #844 #845.
+### retry: gh search prs --repo lightsail-network/java-stellar-sdk "auth tree"
+### retry: gh search issues --repo lightsail-network/java-stellar-sdk "sub_invocations"

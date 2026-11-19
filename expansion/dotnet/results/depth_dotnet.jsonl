@@ -1,0 +1,37 @@
+{"id":"depth/10","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"depth/50","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"depth/90","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"depth/100","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/120","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/150","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/170","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/199","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/200","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/246","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/247","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/250","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/300","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/334","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/400","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/450","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/496","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/497","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/500","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/600","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/800","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"depth/1000","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding SCVal"}
+{"id":"auth/50","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"auth/100","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"auth/150","ok":true,"roundtrip_equal":true,"model_roundtrip_equal":true,"strkeys":["CAJJZSGMMM3PD7N33TAPHGBUGTB43OC73HVIK2L2G6BNGGGYOSSYBXBD","CBUKYTAUPRPWZ76AENDIGCAYF2FUFKV37YZEPYJSYICMBPBPJBPKKZCR","CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GBVKUUKHIGDD366672DCM44RLHNL35GNQBTF7KCFCZQMSSHZJE4S7TQT","GDTCHLM35QLD5PTDHM6UQQ4IGPPFRVBROUAI3PZMRYYMFRNSZULR4YVP"]}
+{"id":"auth/198","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/199","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/200","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/250","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/300","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/400","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/490","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/491","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/493","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/494","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/500","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}
+{"id":"auth/600","ok":false,"error":"InvalidDataException: Maximum decoding depth reached while decoding Uint256"}

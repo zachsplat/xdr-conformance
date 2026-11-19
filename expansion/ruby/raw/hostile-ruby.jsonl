@@ -1,0 +1,21 @@
+{"id":"hostile/cls/baseline","ok":true,"roundtrip_equal":true,"hash":"4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204","strkeys":["GBJE4HJYC6OIMRXMYOY7Q43G2QKIM4W2DYDDQBP7I5SXQUGD5ESE7UUE","GBQSO7OA2MKIFIEI5W42R47WDBIMB7COBN4QCY76FRBTWSJYJAD3SCC7","GDS4HKW74QFQ2JEFTT5W5OXQBEPP3C6I6VNZSMSVSKI7DXYS332U5H2W"]}
+{"id":"hostile/cls/memo_text_nonzero_padding","ok":false,"error":"XDR::ReadError: XDR::ReadError"}
+{"id":"hostile/cls/optional_flag_2","ok":false,"error":"XDR::ReadError: Invalid bool value: 2"}
+{"id":"hostile/cls/trailing_bytes","ok":false,"error":"ArgumentError: Input string not fully consumed! are you decoding the right xdr type?"}
+{"id":"hostile/cls/memo_text_len_29","ok":false,"error":"XDR::ReadError: String length 29 is greater than max"}
+{"id":"hostile/cls/memo_type_unknown","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::MemoType member: 5"}
+{"id":"hostile/cls/envelope_type_scp","ok":false,"error":"XDR::InvalidSwitchError: Bad switch: Stellar::EnvelopeType.envelope_type_scp(1)"}
+{"id":"hostile/cls/asset_type_unknown","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::AssetType member: 4"}
+{"id":"hostile/cls/operations_101","ok":false,"error":"XDR::ReadError: VarArray length 101 is greater than max 100"}
+{"id":"hostile/cls/operations_count_huge_truncated","ok":false,"error":"EOFError: EOFError"}
+{"id":"hostile/cls/memo_text_non_utf8_nul","ok":true,"roundtrip_equal":true,"hash":"632d29c9e4f5cd873f0d61f04f44f0e3eeeea8fa32d7a65e5afbf0a510bb6054","strkeys":["GBJE4HJYC6OIMRXMYOY7Q43G2QKIM4W2DYDDQBP7I5SXQUGD5ESE7UUE","GBQSO7OA2MKIFIEI5W42R47WDBIMB7COBN4QCY76FRBTWSJYJAD3SCC7","GDS4HKW74QFQ2JEFTT5W5OXQBEPP3C6I6VNZSMSVSKI7DXYS332U5H2W"]}
+{"id":"hostile/sor/baseline","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scval_bool_2","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scval_nested_vec_90","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scval_nested_vec_200","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scval_nested_vec_1000","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scmap_unsorted_keys","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/sor/scsymbol_invalid_chars","ok":false,"error":"XDR::EnumValueError: Unknown Stellar::OperationType member: 24"}
+{"id":"hostile/ext/baseline","ok":true,"roundtrip_equal":true,"hash":"7018fca10754729a4705c524e803d31a6972e90c0eb85ee6e357644acf9f2898","strkeys":["GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55","GBCB4WO6J4ET55RWK2SVX76LUQ4PQ7TCDHG2YFILQML7D6XR3HACLXAU","GBGRBCUB6L7LH4JQ6EPDP7REH2DDACMCUQI76M3P6DM52QWU2Z5LIEVW","GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M","GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M","GCFFF5KMMQDHRSM5EX4B4VUXYZFKRE64VCVXQ4BKDZ3GSLY36HI4VUGW","PABSQ37P6FNTA4VKJIO54BR4BKXXMRKU6EFO7RVQD6Y4ACKBH2ZBUAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYAALMA","PANKAXT5ZIGT35PS2POIKXW35GYJNMRYTYOPW3ZESGL6RWR5WJ2JGAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYBX2CA"]}
+{"id":"hostile/ext/signed_payload_len_65","ok":false,"error":"XDR::ReadError: VarOpaque length 65"}
+{"id":"hostile/ext/signed_payload_len_0","ok":true,"roundtrip_equal":true,"hash":"30cea34fa081468a3fc083a8f65b9891588a119e1dfb0875d68a8bfb301c425c","strkeys":["GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN","GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55","GBCB4WO6J4ET55RWK2SVX76LUQ4PQ7TCDHG2YFILQML7D6XR3HACLXAU","GBGRBCUB6L7LH4JQ6EPDP7REH2DDACMCUQI76M3P6DM52QWU2Z5LIEVW","GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M","GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M","GCFFF5KMMQDHRSM5EX4B4VUXYZFKRE64VCVXQ4BKDZ3GSLY36HI4VUGW","PABSQ37P6FNTA4VKJIO54BR4BKXXMRKU6EFO7RVQD6Y4ACKBH2ZBUAAAAAAJXEY","PANKAXT5ZIGT35PS2POIKXW35GYJNMRYTYOPW3ZESGL6RWR5WJ2JGAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYBX2CA"]}

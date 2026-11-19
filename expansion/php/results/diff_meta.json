@@ -1,0 +1,136 @@
+{
+ "reference": "rust",
+ "compared": [
+  "php"
+ ],
+ "total_requests": 44057,
+ "divergences": [
+  {
+   "adapter": "php",
+   "kind": "sep51_json_differs",
+   "count": 25794,
+   "examples": [
+    {
+     "id": "40000000:59",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAPTKTPT3KLQSRBXQD5S3ATIVWXHW2WXRFSKQIHUJQT5RWYE5PMBMXHZY\"}",
+     "php": "\"BAAPTKTPT3KLQSRBXQD5S3ATIVWXHW2WXRFSKQIHUJQT5RWYE5PMBMXHZY\""
+    },
+    {
+     "id": "40000000:69",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAHNZGT2L443KPPIAXZFS5QIAOUVRAYCK2LBVLZ2PNUARY6JSDWV2DCJY\"}",
+     "php": "\"BAAHNZGT2L443KPPIAXZFS5QIAOUVRAYCK2LBVLZ2PNUARY6JSDWV2DCJY\""
+    },
+    {
+     "id": "40000000:71",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAM5KJAA2FTD5FG7YWXIPFCGN2NDDHZXVG5W5ZZIGHLWILGGDNB3I6KCU\"}",
+     "php": "\"BAAM5KJAA2FTD5FG7YWXIPFCGN2NDDHZXVG5W5ZZIGHLWILGGDNB3I6KCU\""
+    },
+    {
+     "id": "40000000:75",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAAQCDUDPNIFLQ6NBIY6HQS7CC43EJRRZUYZRBN3WN3H3JD5ITKL4E35Q\"}",
+     "php": "\"BAAAQCDUDPNIFLQ6NBIY6HQS7CC43EJRRZUYZRBN3WN3H3JD5ITKL4E35Q\""
+    },
+    {
+     "id": "40000000:88",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAFBGGKINULLEI2AYRFVU2VI3AWOXAKQNLFV33M6BZKMVZFU42IOFTQCU\"}",
+     "php": "\"BAAFBGGKINULLEI2AYRFVU2VI3AWOXAKQNLFV33M6BZKMVZFU42IOFTQCU\""
+    },
+    {
+     "id": "40000000:127",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAANPJZREWVPHRGQNXBV22CQZ3PKRUI27RGRWVRNHTYOA2TX6E2GLLAZGY\"}",
+     "php": "\"BAANPJZREWVPHRGQNXBV22CQZ3PKRUI27RGRWVRNHTYOA2TX6E2GLLAZGY\""
+    },
+    {
+     "id": "40000000:140",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[5].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAALRAVHU3H6LPN2V3O42KQAEIQTPSF2W7X24Z76IPQTVYMIOBRVOG4EIA\"}",
+     "php": "\"BAALRAVHU3H6LPN2V3O42KQAEIQTPSF2W7X24Z76IPQTVYMIOBRVOG4EIA\""
+    },
+    {
+     "id": "40000000:168",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAABUGEM4LIW4TTYRC5WUWGQWEG3Q4A5ECXLJCW6DM5K2MJKA6TG4FQ2AY\"}",
+     "php": "\"BAABUGEM4LIW4TTYRC5WUWGQWEG3Q4A5ECXLJCW6DM5K2MJKA6TG4FQ2AY\""
+    },
+    {
+     "id": "40000000:179",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAFYK5D7RC562LSRSZ6E5QL3COBKCSACJCORJYD2A5YZFOGCH27MIE5QM\"}",
+     "php": "\"BAAFYK5D7RC562LSRSZ6E5QL3COBKCSACJCORJYD2A5YZFOGCH27MIE5QM\""
+    },
+    {
+     "id": "40000000:190",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[5].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAALGVXMBPWV7FXPK3L2DS44FPPEO4WYVK22Y7BTJZEFVMIGXTRFXYTEZI\"}",
+     "php": "\"BAALGVXMBPWV7FXPK3L2DS44FPPEO4WYVK22Y7BTJZEFVMIGXTRFXYTEZI\""
+    },
+    {
+     "id": "40000000:194",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAIXVSRML6CVJGT4I5VLJIUGFFIVTV34PNYMY5O6DIVEGJBMX4SFFNNZ4\"}",
+     "php": "\"BAAIXVSRML6CVJGT4I5VLJIUGFFIVTV34PNYMY5O6DIVEGJBMX4SFFNNZ4\""
+    },
+    {
+     "id": "40000000:202",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[5].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAB77Y3TXEOIZMB22CEWMDQPE77NOEMK4HP3PV23JUHPRUW62TJ25RMJQ\"}",
+     "php": "\"BAAB77Y3TXEOIZMB22CEWMDQPE77NOEMK4HP3PV23JUHPRUW62TJ25RMJQ\""
+    },
+    {
+     "id": "40000000:261",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAKVXLLTLYMGO3IRUUNTIOTIVVHKKZJHXAWOG3NMJD33RGMVTI2N7EXIY\"}",
+     "php": "\"BAAKVXLLTLYMGO3IRUUNTIOTIVVHKKZJHXAWOG3NMJD33RGMVTI2N7EXIY\""
+    },
+    {
+     "id": "40000000:284",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAMORXFMM5KMVWDCSTQ3QAJCH6YB5N4VQG3LJ3MT7MRUKFFVVTLD2DT24\"}",
+     "php": "\"BAAMORXFMM5KMVWDCSTQ3QAJCH6YB5N4VQG3LJ3MT7MRUKFFVVTLD2DT24\""
+    },
+    {
+     "id": "40000000:294",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAADGUV2HC2H7HDOINWHK6CSJMHEWTEAB5ZORN6LGYGDOYEU76LSU4SCHY\"}",
+     "php": "\"BAADGUV2HC2H7HDOINWHK6CSJMHEWTEAB5ZORN6LGYGDOYEU76LSU4SCHY\""
+    },
+    {
+     "id": "40000001:23",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAK5JNAIWWLZJKRUBFCXV6RENUCT5WLPABC5HJZMXHBNKJO66R22PHQOQ\"}",
+     "php": "\"BAAK5JNAIWWLZJKRUBFCXV6RENUCT5WLPABC5HJZMXHBNKJO66R22PHQOQ\""
+    },
+    {
+     "id": "40000001:24",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[5].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAADKCAQTXXXMDDF2MZJ5362IKJSGORNYWSSA3NCPUUUAZBUND6PSUHYCU\"}",
+     "php": "\"BAADKCAQTXXXMDDF2MZJ5362IKJSGORNYWSSA3NCPUUUAZBUND6PSUHYCU\""
+    },
+    {
+     "id": "40000001:39",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAEE55YYMLLRQPO3MPPEBASBA4FEXIRUNOXDA7JA3VMECLZCM27CILY7M\"}",
+     "php": "\"BAAEE55YYMLLRQPO3MPPEBASBA4FEXIRUNOXDA7JA3VMECLZCM27CILY7M\""
+    },
+    {
+     "id": "40000001:68",
+     "path": "$.tx_apply_processing.v4.operations[1].changes[7].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAALQRDKSQFJ6SMRQJG6SGRNC2OLPN54MPZ3ERDU6PSA4JXNZLJVOUXSEI\"}",
+     "php": "\"BAALQRDKSQFJ6SMRQJG6SGRNC2OLPN54MPZ3ERDU6PSA4JXNZLJVOUXSEI\""
+    },
+    {
+     "id": "40000001:90",
+     "path": "$.tx_apply_processing.v4.operations[0].changes[5].removed.claimable_balance",
+     "rust": "{\"balance_id\": \"BAAGJCFEO33MCEUZZG5OHXCZ2TAIYKSCTIMUTMISG5N77F54L3OZNNCVKE\"}",
+     "php": "\"BAAGJCFEO33MCEUZZG5OHXCZ2TAIYKSCTIMUTMISG5N77F54L3OZNNCVKE\""
+    }
+   ]
+  }
+ ]
+}

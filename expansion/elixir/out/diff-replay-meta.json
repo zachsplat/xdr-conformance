@@ -1,0 +1,116 @@
+{
+ "reference": "rust",
+ "compared": [
+  "stellar_base"
+ ],
+ "total_requests": 44057,
+ "divergences": [
+  {
+   "adapter": "stellar_base",
+   "kind": "decode_ok_differs",
+   "count": 5162,
+   "examples": [
+    {
+     "id": "40000000:19",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:21",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:59",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:69",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:71",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:75",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:88",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:120",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:126",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:127",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:140",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:168",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:179",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:190",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:194",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:197",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:202",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:238",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:247",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    },
+    {
+     "id": "40000000:256",
+     "rust": "ok",
+     "stellar_base": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    }
+   ]
+  }
+ ]
+}

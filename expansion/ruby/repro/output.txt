@@ -1,0 +1,10 @@
+== c1_vararray_negative_count.rb
+stellar-base 0.32.0, xdr 3.0.3
+[]
+decoded: operations=0 signatures=1
+re-encodes to the same bytes: false
+re-encoded: AAAAAgAAAABSTh04F5yGRuzDsfhzZtQUhnLaHgY4Bf9HZXhQw+kkTwADDUABIfX+AAmFkwAAAAAAAAABAAAABTEwNDk4AAAAAAAAAAAAAAAAAAABw+kkTwAAAEB3D1mhdKqqIGQQTvIQLolGTKX5RVwtvTGas+ajdcSq230TY3Qde0xkeTz2iJ1poGBx5wcayK5i3lOqdEfMB28A
+tx hash: 27728efb0c727bf89f5367d5f5dd8e962ced2df67faf3cc553c2219c999f7d53
+decoded: operations=1 signatures=0
+re-encodes to the same bytes: false
+tx hash: 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204

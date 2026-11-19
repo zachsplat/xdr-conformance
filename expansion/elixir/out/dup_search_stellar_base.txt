@@ -1,0 +1,43 @@
+### issues kommitters/stellar_base: AllowTrust
+59 [merged] pr=true AccountMerge, AllowTrust, BumpSquence, ManageData operations
+### issues kommitters/stellar_base: allow trust
+49 [closed] pr=false XDR Operations types
+### issues kommitters/stellar_base: asset_code
+### issues kommitters/stellar_base: AssetCode
+53 [merged] pr=true Ensure AssetCodes are encoded as expected by Stellar
+51 [closed] pr=false XDR Assets types
+52 [merged] pr=true Add XDR types for Assets
+### issues kommitters/stellar_base: LiquidityPoolEntry
+236 [merged] pr=true Add new Ledger Entries XDR types - Part 2
+226 [closed] pr=false Add new Ledger Entries XDR types
+### issues kommitters/stellar_base: liquidity pool
+49 [closed] pr=false XDR Operations types
+### issues kommitters/stellar_base: ClaimableBalanceEntry
+147 [closed] pr=false ClaimableBalanceEntry
+150 [merged] pr=true Add ClaimableBalanceEntry asset
+### issues kommitters/stellar_base: claimable balance
+171 [closed] pr=false Add tests for claimable_balance_flags ledger entry
+173 [merged] pr=true Add tests for claimable_balance_flags ledger entry
+49 [closed] pr=false XDR Operations types
+### issues kommitters/stellar_base: claimants
+65 [closed] pr=false CreateClaimableBalance operation
+### issues kommitters/stellar_base: LEDGER_ENTRY_RESTORED
+### issues kommitters/stellar_base: restored
+### issues kommitters/stellar_base: SorobanTransactionData
+295 [closed] pr=false Support stable Protocol 20 release
+### issues kommitters/stellar_base: SorobanTransactionDataExt
+### issues kommitters/stellar_base: archived
+### issues kommitters/stellar_base: ExtensionPoint
+### issues kommitters/stellar_base: padding
+### issues kommitters/stellar_base: decode_xdr raise
+### issues kommitters/stellar_base: FunctionClauseError
+284 [merged] pr=true Add missing operation results and rename inner_result to result_tr
+### issues kommitters/stellar_base: protocol 23
+23 [closed] pr=false Accounts XDR types
+### issues kommitters/stellar_base: protocol 27
+27 [closed] pr=false Split nested XDR types into their own files
+### issues kommitters/stellar_base: decode error
+172 [closed] pr=false SponsorshipDescriptor with OptionalAccountID anb SponsorshipDescriptorList
+198 [merged] pr=true Wrong binary encoding in the AssetCode12 module
+52 [merged] pr=true Add XDR types for Assets
+### issues kommitters/stellar_base: EnumError

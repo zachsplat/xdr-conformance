@@ -1,0 +1,36 @@
+== price-not-lowest-terms
+   expected: 2ba50612e86ddad7995776f2f5e67e3be185aed2e9b1200b230a950c081f5292
+   XDR layer: decodes, re-encodes to the same bytes: True
+   TransactionBuilder.FromEnvelopeXdr: ok, hash 1be70e852d80b5b814d4bd00b76128310450ca2aa84a1cffb9d6a4ec6058da5c  (WRONG)
+== allow-trust
+   expected: c27ee075895e9b682862aadd0a5abb6200a6e08e63dada5c988943aaf0bdf9a4
+   XDR layer: decodes, re-encodes to the same bytes: True
+   TransactionBuilder.FromEnvelopeXdr: NotSupportedException: AllowTrustOperation is no longer supported.
+== lp-issuer-order
+   expected: b79f02ec4c354f48528fe6213405ede999d4139124c332266c56c30c96b8eb2e
+   XDR layer: decodes, re-encodes to the same bytes: True
+   TransactionBuilder.FromEnvelopeXdr: ArgumentException: Asset A must be < Asset B (Lexicographic Order).
+== depth-depth-100
+   expected: core-admits
+   XDR layer: InvalidDataException: Maximum decoding depth reached while decoding SCVal
+   TransactionBuilder.FromEnvelopeXdr: InvalidDataException: Maximum decoding depth reached while decoding SCVal
+== depth-auth-198
+   expected: core-admits
+   XDR layer: InvalidDataException: Maximum decoding depth reached while decoding Uint256
+   TransactionBuilder.FromEnvelopeXdr: InvalidDataException: Maximum decoding depth reached while decoding Uint256
+== memo-non-utf8
+   expected: 632d29c9e4f5cd873f0d61f04f44f0e3eeeea8fa32d7a65e5afbf0a510bb6054
+   XDR layer: decodes, re-encodes to the same bytes: False
+   TransactionBuilder.FromEnvelopeXdr: ok, hash 693959eb55547ab7733f652db4029c78bee8452204a493b0d66eb3e55f6b9cae  (WRONG)
+== hostile-optional-flag-2
+   expected: core-rejects: xdr::pointer size must be 0 or 1
+   XDR layer: decodes, re-encodes to the same bytes: False
+   TransactionBuilder.FromEnvelopeXdr: ok, hash 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204
+== hostile-trailing-bytes
+   expected: core-rejects: unmarshaling did not consume whole message
+   XDR layer: decodes, re-encodes to the same bytes: False
+   TransactionBuilder.FromEnvelopeXdr: ok, hash 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204
+== hostile-memo-text-len-29
+   expected: core-rejects: xstring overflow
+   XDR layer: decodes, re-encodes to the same bytes: True
+   TransactionBuilder.FromEnvelopeXdr: MemoTooLongException: text must be <= 28 bytes. length=29

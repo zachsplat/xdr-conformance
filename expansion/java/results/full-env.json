@@ -1,0 +1,36 @@
+{
+ "compared": 112278,
+ "kinds": {},
+ "json_paths": {
+  "$.tx.tx.operations[*].body.allow_trust.asset": {
+   "inputs": 16,
+   "examples": [
+    {
+     "id": "50460006:157",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460007:167",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460008:162",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460009:5",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460010:210",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    }
+   ]
+  }
+ }
+}

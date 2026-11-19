@@ -1,0 +1,116 @@
+{
+ "reference": "rust",
+ "compared": [
+  "ruby"
+ ],
+ "total_requests": 282611,
+ "divergences": [
+  {
+   "adapter": "ruby",
+   "kind": "decode_ok_differs",
+   "count": 40939,
+   "examples": [
+    {
+     "id": "59000000:225/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:225/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:226/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:226/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:227/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:227/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:228/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:228/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:229/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:229/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:230/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:230/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:231/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:231/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:232/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:232/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:233/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:233/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    },
+    {
+     "id": "59000000:234/result",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::OperationType member: 24"
+    },
+    {
+     "id": "59000000:234/op0",
+     "rust": "ok",
+     "ruby": "XDR::EnumValueError: Unknown Stellar::LedgerEntryType member: 6"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+== r01_price_hash.dart
+SDK hash : 9feae40d6cd3b4772b6d8792759633e5735d8408f4cb7549c561c09b23c78c2c
+expected : 8467c5a77620dd9f0c1f7252213aa515105feebca1b2e114bcad4f7905ec8bee (TransactionResultPair.transactionHash in the ledger)
+XDR hash : 8467c5a77620dd9f0c1f7252213aa515105feebca1b2e114bcad4f7905ec8bee
+price in envelope : 390602/1000000
+price after model : 195301/500000
+model re-encodes the same envelope: false
+== r02_precond_v2_hash.dart
+SDK hash : 67700f6b85d19c72db1401921cdf165d5fef5bb2af8f42b1ca854339e33db76a
+expected : b48ed2676e987cd2a258e0d1cd0c03e1819c881d51d6959d67c7f78cfc8ddf43 (TransactionResultPair.transactionHash in the ledger)
+cond in envelope : 2 (2 = PRECOND_V2), minSeqNum=0
+cond after model : 1 (1 = PRECOND_TIME)
+== r03_non_utf8_string_rejected.dart
+XdrMemo: FormatException: Invalid UTF-8 byte (at offset 0)
+XdrSCVal: FormatException: Invalid UTF-8 byte (at offset 0)
+XdrTransactionEnvelope: FormatException: Invalid UTF-8 byte (at offset 0)
+AbstractTransaction: FormatException: Invalid UTF-8 byte (at offset 0)
+== r04_utf8_bom_dropped.dart
+XdrMemo  in : AAAAAQAAAAXvu79hYgAAAA==
+XdrMemo out : AAAAAQAAAAJhYgAA
+XdrSCVal in : AAAADgAAAAXvu79hYgAAAA==
+XdrSCVal out: AAAADgAAAAJhYgAA
+SDK hash : a96ba173cb81759e68eee3c52fbc816e556b54829d9fe84cef2dafc8d3754b01
+expected : 6f974d516bad6884082b4780a75a915a4b07a77400b6622681fabe56af869771 (rs-stellar-xdr 30.0.0)
+envelope re-encodes the same: false
+== r05_fee_bump_signatures_dropped.dart
+fee-bump signatures in envelope : 1
+FeeBumpTransaction.signatures   : 0
+re-encoded fee-bump signatures  : 0
+same envelope: false
+== r06_max_length_not_enforced.dart
+XdrMemo(29-byte text) decodes; re-encodes the same: true
+  SEP-51 JSON: FormatException: XDR-JSON XdrMemo key "text" is 29 bytes, longer than the declared maximum of 28
+XdrSignerKey(65-byte payload) decodes; re-encodes the same: true
+  SEP-51 JSON: FormatException: XDR-JSON XdrSignedPayload carries a 65-byte payload, more than the declared maximum of 64
+== r07_optional_flag_2.dart
+in : AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk=
+out: AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk=
+== r08_trailing_bytes.dart
+XdrMemo in : AAAAAAAAAAA=  out: AAAAAA==
+hash of the padded envelope: 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204
+(same as the unmodified transaction 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204)
+== r09_missing_padding_at_eof.dart
+in : AAAAAQAAAANhYmM= -> text "abc"
+out: AAAAAQAAAANhYmMA
+== r10_bool_2.dart
+in : AAAAAAAAAAI= -> b=true
+out: AAAAAAAAAAE=
+== probe_price_value.dart
+checked 200008, value changed in 0

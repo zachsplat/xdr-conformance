@@ -1,0 +1,20 @@
+== J1 LpOrder
+XDR layer decodes: true
+model hash b79f02ec4c354f48528fe6213405ede999d4139124c332266c56c30c96b8eb2e
+a.compareTo(b) = -1 (the network orders a before b)
+pool id 7188b01c6e68948cf613b2c5673297da301fe4e10bb4200c3b7036cfec97ec3b
+== J2 ResultJson
+TransactionResult.toJson: {"fee_charged":"100","result":{"tx_success":[{"op_inner":{"payment":"success"}}]},"ext":"v0"}
+fromJson(SEP-51) -> AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA=
+OperationResultCode.opTOO_MANY_SUBENTRIES.toJson: "op_too_many_subentries"
+AssetCode.toJson: "FIL"
+fromJson("FIL") -> AAAAAUZJTAA=
+== J3 DepthLimit
+scval-vec-95.b64: decodes
+scval-vec-96.b64: java.io.IOException: Maximum decoding depth reached
+auth-tree-185.b64: decodes
+auth-tree-186.b64: java.io.IOException: Maximum decoding depth reached
+auth-tree-490.b64: java.io.IOException: Maximum decoding depth reached
+== J4 TrailingBytes
+original accepted, hash 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204, re-encodes to original: true
++4 bytes rejected: java.lang.IllegalArgumentException: java.io.IOException: Input has 4 bytes left after the value

@@ -1,0 +1,80 @@
+### kommitters/elixir_xdr (issues+PRs, open+closed): liquidity pool
+### kommitters/elixir_xdr (issues+PRs, open+closed): claimable
+### kommitters/elixir_xdr (issues+PRs, open+closed): EnumError
+### kommitters/elixir_xdr (issues+PRs, open+closed): decode
+21 [closed] pr=false Issues encoding/decoding discriminated unions
+22 [merged] pr=true Fix issues encoding/decoding discriminated unions
+25 [merged] pr=true v0.1.5
+13 [merged] pr=true Improve void and union types
+9 [merged] pr=true improve test coverage to 100%
+### kommitters/elixir_xdr (issues+PRs, open+closed): padding bytes
+### kommitters/elixir_xdr (issues+PRs, open+closed): exception
+14 [merged] pr=true Improve elixir xdr modules
+### kommitters/stellar_sdk (issues+PRs, open+closed): padding
+### kommitters/stellar_sdk (issues+PRs, open+closed): raise
+179 [closed] pr=false Documentation examples need to be fixed
+### kommitters/stellar_sdk (issues+PRs, open+closed): FunctionClauseError
+### kommitters/stellar_sdk (issues+PRs, open+closed): UnionError
+### kommitters/stellar_sdk (issues+PRs, open+closed): AllowTrust
+### kommitters/stellar_sdk (issues+PRs, open+closed): liquidity pool
+62 [closed] pr=false Liquidity Pool Deposit operation
+63 [closed] pr=false Liquidity Pool Withdraw operation
+114 [closed] pr=false LiquidityPool endpoints
+147 [closed] pr=false Operations for LiquidityPools are not properly hashing the pool_id
+11 [closed] pr=false Resource endpoints
+### kommitters/stellar_sdk (issues+PRs, open+closed): claimable balance
+379 [open] pr=false Protocol 23 SDK Upgrades
+64 [closed] pr=false Create Claimable Balance operation
+175 [merged] pr=true Create Claimable Balance operation
+55 [closed] pr=false Claim Claimable Balance operation
+122 [merged] pr=true Horizon endpoints for Claimable Balances
+113 [closed] pr=false ClaimableBalances endpoints
+60 [closed] pr=false Clawback Claimable Balance operation
+72 [merged] pr=true Clawback and ClawbackClaimableBalance operations
+### kommitters/stellar_sdk (issues+PRs, open+closed): claimants
+175 [merged] pr=true Create Claimable Balance operation
+### kommitters/stellar_sdk (issues+PRs, open+closed): restored
+325 [merged] pr=true RestoreFootprint operation
+151 [closed] pr=false Base fee value is always being restored to its default value
+### kommitters/stellar_sdk (issues+PRs, open+closed): SorobanTransactionData
+341 [closed] pr=false Updating the SDKs to the stable Protocol 20 release
+323 [merged] pr=true BumpFootprintExpiration operation
+337 [closed] pr=false Support for Protocol 20: Soroban
+### kommitters/stellar_sdk (issues+PRs, open+closed): protocol 23
+23 [closed] pr=false Submit transactions
+379 [open] pr=false Protocol 23 SDK Upgrades
+385 [merged] pr=true V0.23
+384 [merged] pr=true Stellar Protocol 26 Upgrade
+383 [closed] pr=true Feat/sync transactions
+382 [closed] pr=true feat: upgrade stellar_sdk to support Protocol 26 and bump version to …
+### kommitters/stellar_sdk (issues+PRs, open+closed): EnumError
+305 [closed] pr=false Fix SCAddress contract type 
+306 [merged] pr=true Fix SCAddress contract type
+### kommitters/stellar_sdk (issues+PRs, open+closed): decode
+390 [open] pr=false SDK Updates for Protocol 30 Compatibility
+388 [open] pr=false SDK Updates for Protocol 28 Compatibility
+350 [closed] pr=false Add support for new fields in Soroban RPC's `sendTransaction` endpoint
+337 [closed] pr=false Support for Protocol 20: Soroban
+305 [closed] pr=false Fix SCAddress contract type 
+291 [closed] pr=false Update SCAdress implementation base on the contract strkey version_byte
+204 [merged] pr=true [TxBuild] Transaction Builder change
+168 [closed] pr=false [TxBuild] Transaction Builder changes
+21 [closed] pr=false KeyPair functions for signing transactions
+9 [closed] pr=false Key pairs and signatures
+### generic issues: stellar_base AllowTrust
+### generic issues: stellar_base LiquidityPoolEntry
+### generic issues: stellar_base ClaimableBalanceEntry
+### generic issues: stellar_base decode_xdr
+### generic issues: elixir stellar xdr decode
+### generic issues: elixir_xdr padding
+### generic issues: stellar_base protocol 23
+lisitsyn/tapkee#23 [closed] Implement plain C interface
+pfps/yoga-laptop#23 [closed] Hinge detection on Yoga 13
+openmv/openmv#23 [closed] gitmodules
+fishin/gills#23 [closed] fix for loop coverage issue
+Rhetos/Rhetos#23 [closed] Polymorphic entity
+DerelictOrg/DerelictGL3#23 [closed] OpenGL 4.5 support
+ianderse/dinner_dash#23 [closed] Create Session model/controller
+Gandi/gandi.cli#23 [closed] Allow setting the size of the system disk
+eltados/mpm-magic#23 [open]  death touch with trample bugs? 
+SamK/check_iftraffic_nrpe.py#23 [closed] Create nice unittests

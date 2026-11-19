@@ -2,3 +2,14 @@ target/
 node_modules/
 __pycache__/
 *.pyc
+
+# expansion runs
+.dart_tool/
+expansion/*/out/*.jsonl
+expansion/**/*.exe
+runners/dart/bin/*.exe
+_build/
+deps/
+obj/
+vendor/
+expansion/*/out/locate_meta.txt

@@ -1,0 +1,112 @@
+{
+ "reference": "rust",
+ "compared": [
+  "java"
+ ],
+ "total_requests": 112278,
+ "divergences": [
+  {
+   "adapter": "java",
+   "kind": "sep51_json_differs",
+   "count": 16,
+   "examples": [
+    {
+     "id": "50460006:157",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460007:167",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460008:162",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460009:5",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460010:210",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460011:89",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460012:7",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460013:70",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460014:207",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460015:230",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460016:138",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460017:188",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460018:172",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "50460019:103",
+     "path": "$.tx.tx.operations[0].body.allow_trust.asset",
+     "rust": "\"FIL\"",
+     "java": "{\"credit_alphanum4\": \"FIL\"}"
+    },
+    {
+     "id": "59000001:61",
+     "path": "$.tx.tx.operations[1].body.allow_trust.asset",
+     "rust": "\"AVAX\"",
+     "java": "{\"credit_alphanum4\": \"AVAX\"}"
+    },
+    {
+     "id": "59000012:40",
+     "path": "$.tx.tx.operations[1].body.allow_trust.asset",
+     "rust": "\"AVAX\"",
+     "java": "{\"credit_alphanum4\": \"AVAX\"}"
+    }
+   ]
+  }
+ ]
+}

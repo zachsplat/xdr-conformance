@@ -1,0 +1,36 @@
+{
+ "compared": 44057,
+ "kinds": {},
+ "json_paths": {
+  "$.result.result.result.tx_failed[*]": {
+   "inputs": 8,
+   "examples": [
+    {
+     "id": "28000002:13",
+     "rust": "\"op_too_many_subentries\"",
+     "java": "\"optoo_many_subentries\""
+    },
+    {
+     "id": "28000013:60",
+     "rust": "\"op_too_many_subentries\"",
+     "java": "\"optoo_many_subentries\""
+    },
+    {
+     "id": "65486073:34",
+     "rust": "\"op_no_account\"",
+     "java": "\"opno_account\""
+    },
+    {
+     "id": "65486074:97",
+     "rust": "\"op_no_account\"",
+     "java": "\"opno_account\""
+    },
+    {
+     "id": "65486075:30",
+     "rust": "\"op_no_account\"",
+     "java": "\"opno_account\""
+    }
+   ]
+  }
+ }
+}

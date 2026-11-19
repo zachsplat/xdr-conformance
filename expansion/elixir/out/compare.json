@@ -1,0 +1,639 @@
+{
+ "replay_env": {
+  "counts": {
+   "total": 112278,
+   "both_ok": 112181,
+   "hash_checked": 112181,
+   "strkeys_checked": 361094,
+   "refused_rust_ok": 97,
+   "muxed_strkeys_equal": 198
+  },
+  "examples": {
+   "refused_rust_ok": [
+    [
+     "50460006:157",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460007:167",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460008:162",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460009:5",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460010:210",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460011:89",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460012:7",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460013:70",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460014:207",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460015:230",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460016:138",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460017:188",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460018:172",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "50460019:103",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "59000001:61",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "59000012:40",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "65486036:224",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "65486037:259",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "65486053:349",
+     "FunctionClauseError: no function clause matching in XDR.UnionError.exception/1"
+    ],
+    [
+     "65486087:340",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ]
+   ]
+  }
+ },
+ "replay_meta": {
+  "counts": {
+   "total": 44057,
+   "both_ok": 38895,
+   "refused_rust_ok": 5162
+  },
+  "examples": {
+   "refused_rust_ok": [
+    [
+     "40000000:19",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:21",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:59",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:69",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:71",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:75",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:88",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:120",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:126",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:127",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:140",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:168",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:179",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:190",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:194",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:197",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:202",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:238",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:247",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ],
+    [
+     "40000000:256",
+     "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations"
+    ]
+   ]
+  }
+ },
+ "hostile": [
+  {
+   "id": "hostile/cls/baseline",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/memo_text_nonzero_padding",
+   "stellar_core": "REJ",
+   "core_error": "Non-zero padding bytes encountered",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "ok*",
+   "stellar_base_error": null,
+   "agrees_with_core": false
+  },
+  {
+   "id": "hostile/cls/optional_flag_2",
+   "stellar_core": "REJ",
+   "core_error": "xdr::pointer size must be 0 or 1",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/trailing_bytes",
+   "stellar_core": "REJ",
+   "core_error": "unmarshaling did not consume whole message",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "trailing bytes: 4 left after decode",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/memo_text_len_29",
+   "stellar_core": "REJ",
+   "core_error": "xstring overflow",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.StringError: The length of the string exceeds the max length allowed",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/memo_type_unknown",
+   "stellar_core": "REJ",
+   "core_error": "bad value of type in Memo",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/envelope_type_scp",
+   "stellar_core": "REJ",
+   "core_error": "bad value of type in TransactionEnvelope",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": ":invalid_arm",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/asset_type_unknown",
+   "stellar_core": "REJ",
+   "core_error": "bad value of type in Asset",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/operations_101",
+   "stellar_core": "REJ",
+   "core_error": "xvector overflow",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.VariableArrayError: The length of the binary exceeds the max_length of the type",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/operations_count_huge_truncated",
+   "stellar_core": "REJ",
+   "core_error": "xvector overflow",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.VariableArrayError: The length of the binary exceeds the max_length of the type",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/cls/memo_text_non_utf8_nul",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/sor/baseline",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/sor/scval_bool_2",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.EnumError: The key which you try to encode doesn't belong to the current declarations",
+   "agrees_with_core": false
+  },
+  {
+   "id": "hostile/sor/scval_nested_vec_90",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/sor/scval_nested_vec_200",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/sor/scval_nested_vec_1000",
+   "stellar_core": "REJ",
+   "core_error": "stack overflow in xdr_generic_get",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": false
+  },
+  {
+   "id": "hostile/sor/scmap_unsorted_keys",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/sor/scsymbol_invalid_chars",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/ext/baseline",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/ext/signed_payload_len_65",
+   "stellar_core": "REJ",
+   "core_error": "xvector overflow",
+   "rs_stellar_xdr": "REJ",
+   "stellar_base": "REJ",
+   "stellar_base_error": "XDR.VariableOpaqueError: The number which represents the length from decode the opaque as UInt is bigger than the defined max (max by default is 4_294_967_295)",
+   "agrees_with_core": true
+  },
+  {
+   "id": "hostile/ext/signed_payload_len_0",
+   "stellar_core": "ok",
+   "core_error": null,
+   "rs_stellar_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null,
+   "agrees_with_core": true
+  }
+ ],
+ "depth": [
+  {
+   "id": "depth/10",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/50",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/90",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/100",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/120",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/150",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/170",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/199",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/200",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/246",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/247",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/250",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/300",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/334",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/400",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/450",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/496",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/497",
+   "core_admission": "REJ",
+   "core_print_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/500",
+   "core_admission": "REJ",
+   "core_print_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/600",
+   "core_admission": "REJ",
+   "core_print_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/800",
+   "core_admission": "REJ",
+   "core_print_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "depth/1000",
+   "core_admission": "REJ",
+   "core_print_xdr": "REJ",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/50",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/100",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/150",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/198",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/199",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/200",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/250",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/300",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/400",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/490",
+   "core_admission": "ok",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/491",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/493",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/494",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/500",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  },
+  {
+   "id": "auth/600",
+   "core_admission": "REJ",
+   "core_print_xdr": "ok",
+   "stellar_base": "ok",
+   "stellar_base_error": null
+  }
+ ]
+}

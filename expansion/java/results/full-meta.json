@@ -1,0 +1,246 @@
+{
+ "compared": 44057,
+ "kinds": {},
+ "json_paths": {
+  "$.result.result.result.tx_fee_bump_inner_success": {
+   "inputs": 20814,
+   "examples": [
+    {
+     "id": "50460000:62",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"0\", \"result\": {\"tx_success\": [{\"op_inner\": {\"payment\": \"success\"}}]}}, \"transaction_hash\": \"a2dc...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "50460000:68",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"100\", \"result\": {\"tx_success\": [{\"op_inner\": {\"payment\": \"success\"}}]}}, \"transaction_hash\": \"77...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "50460000:151",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"0\", \"result\": {\"tx_success\": [{\"op_inner\": {\"payment\": \"success\"}}]}}, \"transaction_hash\": \"5d25...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "50460001:7",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"400\", \"result\": {\"tx_success\": [{\"op_inner\": {\"change_trust\": \"success\"}}, {\"op_inner\": {\"set_op...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "50460001:56",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"0\", \"result\": {\"tx_success\": [{\"op_inner\": {\"payment\": \"success\"}}]}}, \"transaction_hash\": \"64e8...",
+     "java": "\"<missing>\""
+    }
+   ]
+  },
+  "$.result.result.result.txfee_bump_inner_success": {
+   "inputs": 20814,
+   "examples": [
+    {
+     "id": "50460000:62",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"a2dc709ffd42799bb442ab0c0be55b7d7d98cdccf1cbb43e228dc6eceeaed103\", \"result\": {\"fee_charged\": \"0\", \"result\": {\"txsuc..."
+    },
+    {
+     "id": "50460000:68",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"770024690b650a374598261e61d21ef70da8292cfeee8dba2bf3ed8c60da5d28\", \"result\": {\"fee_charged\": \"100\", \"result\": {\"txs..."
+    },
+    {
+     "id": "50460000:151",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"5d2581e512dfe8e8e5a3e1300f64a3e1217b4970f087d1d97e4b70dc37460989\", \"result\": {\"fee_charged\": \"0\", \"result\": {\"txsuc..."
+    },
+    {
+     "id": "50460001:7",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"3fcb81dd103e1fcf362c123fd411aa5f3017db61df7ba3f42b7b2af01ad0fd77\", \"result\": {\"fee_charged\": \"400\", \"result\": {\"txs..."
+    },
+    {
+     "id": "50460001:56",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"64e8d9984e9a3b0d36022c3c991eaaaf5c4277caa31a08d939ab9cd9f7a08bb8\", \"result\": {\"fee_charged\": \"0\", \"result\": {\"txsuc..."
+    }
+   ]
+  },
+  "$.result.result.result.tx_failed": {
+   "inputs": 10475,
+   "examples": [
+    {
+     "id": "28000000:27",
+     "rust": "[{\"op_inner\": {\"payment\": \"line_full\"}}]",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000001:14",
+     "rust": "[{\"op_inner\": {\"path_payment_strict_receive\": \"too_few_offers\"}}]",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000001:20",
+     "rust": "[{\"op_inner\": {\"path_payment_strict_receive\": \"over_sendmax\"}}]",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000001:22",
+     "rust": "[{\"op_inner\": {\"payment\": \"line_full\"}}]",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000001:29",
+     "rust": "[{\"op_inner\": {\"path_payment_strict_receive\": \"over_sendmax\"}}]",
+     "java": "\"<missing>\""
+    }
+   ]
+  },
+  "$.result.result.result.txfailed": {
+   "inputs": 10475,
+   "examples": [
+    {
+     "id": "28000000:27",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"payment\": \"line_full\"}}]"
+    },
+    {
+     "id": "28000001:14",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"path_payment_strict_receive\": \"too_few_offers\"}}]"
+    },
+    {
+     "id": "28000001:20",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"path_payment_strict_receive\": \"over_sendmax\"}}]"
+    },
+    {
+     "id": "28000001:22",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"payment\": \"line_full\"}}]"
+    },
+    {
+     "id": "28000001:29",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"path_payment_strict_receive\": \"over_sendmax\"}}]"
+    }
+   ]
+  },
+  "$.result.result.result.tx_success": {
+   "inputs": 8205,
+   "examples": [
+    {
+     "id": "28000000:0",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000000:1",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_buy_offer\": {\"success...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000000:2",
+     "rust": "[{\"op_inner\": {\"manage_sell_offer\": {\"success\": {\"offer\": {\"updated\": {\"amount\": \"363\", \"buying\": \"native\", \"ext\": \"v0\", \"flags\": 0, \"off...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000000:3",
+     "rust": "[{\"op_inner\": {\"manage_buy_offer\": {\"success\": {\"offer\": \"deleted\", \"offers_claimed\": []}}}}, {\"op_inner\": {\"manage_sell_offer\": {\"succes...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "28000000:4",
+     "rust": "[{\"op_inner\": {\"payment\": \"success\"}}]",
+     "java": "\"<missing>\""
+    }
+   ]
+  },
+  "$.result.result.result.txsuccess": {
+   "inputs": 8205,
+   "examples": [
+    {
+     "id": "28000000:0",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"payment\": \"success\"}}]"
+    },
+    {
+     "id": "28000000:1",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"manage_buy_offer\": {\"success\": {\"offers_claimed\": [], \"offer\": \"deleted\"}}}}, {\"opinner\": {\"manage_buy_offer\": {\"success\":..."
+    },
+    {
+     "id": "28000000:2",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"manage_sell_offer\": {\"success\": {\"offers_claimed\": [], \"offer\": {\"updated\": {\"seller_id\": \"GBMXO2J6ETD2Y424IHCCIT66MMXN4CO..."
+    },
+    {
+     "id": "28000000:3",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"manage_buy_offer\": {\"success\": {\"offers_claimed\": [], \"offer\": \"deleted\"}}}}, {\"opinner\": {\"manage_sell_offer\": {\"success\"..."
+    },
+    {
+     "id": "28000000:4",
+     "rust": "\"<missing>\"",
+     "java": "[{\"opinner\": {\"payment\": \"success\"}}]"
+    }
+   ]
+  },
+  "$.result.result.result.tx_fee_bump_inner_failed": {
+   "inputs": 4563,
+   "examples": [
+    {
+     "id": "59000000:10",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"100\", \"result\": {\"tx_failed\": [{\"op_inner\": {\"path_payment_strict_receive\": \"over_sendmax\"}}]}},...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "59000000:313",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"55442\", \"result\": {\"tx_failed\": [{\"op_inner\": {\"invoke_host_function\": \"trapped\"}}]}}, \"transact...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "59000001:207",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"55442\", \"result\": {\"tx_failed\": [{\"op_inner\": {\"invoke_host_function\": \"trapped\"}}]}}, \"transact...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "59000001:217",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"55442\", \"result\": {\"tx_failed\": [{\"op_inner\": {\"invoke_host_function\": \"trapped\"}}]}}, \"transact...",
+     "java": "\"<missing>\""
+    },
+    {
+     "id": "59000001:229",
+     "rust": "{\"result\": {\"ext\": \"v0\", \"fee_charged\": \"55442\", \"result\": {\"tx_failed\": [{\"op_inner\": {\"invoke_host_function\": \"trapped\"}}]}}, \"transact...",
+     "java": "\"<missing>\""
+    }
+   ]
+  },
+  "$.result.result.result.txfee_bump_inner_failed": {
+   "inputs": 4563,
+   "examples": [
+    {
+     "id": "59000000:10",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"521cee58e872fa67e2df113a64c4a47a9402101921dd8513d84d75a39259846f\", \"result\": {\"fee_charged\": \"100\", \"result\": {\"txf..."
+    },
+    {
+     "id": "59000000:313",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"295350faafb23059e86fdc784ec6dfb9f8f9f721ba39883cc5686ad14bc9cde1\", \"result\": {\"fee_charged\": \"55442\", \"result\": {\"t..."
+    },
+    {
+     "id": "59000001:207",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"60a10ef978f934b588327bd1f50a93433b58a20c0d05e657caa085be0cfff704\", \"result\": {\"fee_charged\": \"55442\", \"result\": {\"t..."
+    },
+    {
+     "id": "59000001:217",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"a42e782b09a1a0aff02d54cdf91b999b8d5642250718327de1430b7c99130b77\", \"result\": {\"fee_charged\": \"55442\", \"result\": {\"t..."
+    },
+    {
+     "id": "59000001:229",
+     "rust": "\"<missing>\"",
+     "java": "{\"transaction_hash\": \"f3bacc6a3a05346908d8947317c306abd842069a589cd68061811dc415efd27f\", \"result\": {\"fee_charged\": \"55442\", \"result\": {\"t..."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "reference": "rust",
+ "compared": [
+  "ruby"
+ ],
+ "total_requests": 44057,
+ "divergences": [
+  {
+   "adapter": "ruby",
+   "kind": "decode_ok_differs",
+   "count": 44057,
+   "examples": [
+    {
+     "id": "28000000:0",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:1",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:2",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:3",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:4",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:5",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:6",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:7",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:8",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:9",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:10",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:11",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:12",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:13",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:14",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:15",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:16",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:17",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:18",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    },
+    {
+     "id": "28000000:19",
+     "rust": "ok",
+     "ruby": "XDR::InvalidSwitchError: Bad switch: 4"
+    }
+   ]
+  }
+ ]
+}

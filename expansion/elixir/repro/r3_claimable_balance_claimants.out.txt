@@ -1,0 +1,4 @@
+stellar_base 0.17.0, elixir_xdr 0.3.11
+A. real ClaimableBalanceEntry (2 claimants):
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}
+  the 4 bytes the SDK reads as ClaimantType are the claimants array length: 2

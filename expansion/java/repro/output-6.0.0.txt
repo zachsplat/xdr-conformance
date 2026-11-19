@@ -1,0 +1,20 @@
+== J1 LpOrder
+XDR layer decodes: true
+fromEnvelopeXdr: java.lang.IllegalArgumentException: Assets are not in lexicographic order
+a.compareTo(b) = 18 (the network orders a before b)
+new LiquidityPool(a, b): java.lang.IllegalArgumentException: Assets are not in lexicographic order
+== J2 ResultJson
+TransactionResult.toJson: {"fee_charged":"100","result":{"txsuccess":[{"opinner":{"payment":"success"}}]},"ext":"v0"}
+TransactionResult.fromJson(SEP-51 form): java.lang.IllegalArgumentException: Unknown JSON value: tx_success
+OperationResultCode.opTOO_MANY_SUBENTRIES.toJson: "optoo_many_subentries"
+AssetCode.toJson: {"credit_alphanum4":"FIL"}
+AssetCode.fromJson("FIL"): java.lang.ClassCastException: class java.lang.String cannot be cast to class java.util.Map (java.lang.String and java.util.Map are in module java.base of loader 'bootstrap')
+== J3 DepthLimit
+scval-vec-95.b64: decodes
+scval-vec-96.b64: java.io.IOException: Maximum decoding depth reached
+auth-tree-185.b64: decodes
+auth-tree-186.b64: java.io.IOException: Maximum decoding depth reached
+auth-tree-490.b64: java.io.IOException: Maximum decoding depth reached
+== J4 TrailingBytes
+original accepted, hash 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204, re-encodes to original: true
++4 bytes accepted, hash 4adfa3a9189ba0c41c9407be284cb84cc7aa8f7844aea4e238f317627bb5b204, re-encodes to original: true

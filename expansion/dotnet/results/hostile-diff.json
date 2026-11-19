@@ -1,0 +1,55 @@
+{
+ "reference": "rust",
+ "compared": [
+  "dotnet"
+ ],
+ "total_requests": 21,
+ "divergences": [
+  {
+   "adapter": "dotnet",
+   "kind": "decode_ok_differs",
+   "count": 3,
+   "examples": [
+    {
+     "id": "hostile/cls/optional_flag_2",
+     "rust": "xdr value invalid",
+     "dotnet": "ok"
+    },
+    {
+     "id": "hostile/cls/trailing_bytes",
+     "rust": "xdr value invalid",
+     "dotnet": "ok"
+    },
+    {
+     "id": "hostile/cls/memo_text_len_29",
+     "rust": "xdr value max length exceeded",
+     "dotnet": "ok"
+    }
+   ]
+  },
+  {
+   "adapter": "dotnet",
+   "kind": "hash_differs",
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/cls/memo_text_non_utf8_nul",
+     "rust": "632d29c9e4f5cd873f0d61f04f44f0e3eeeea8fa32d7a65e5afbf0a510bb6054",
+     "dotnet": "693959eb55547ab7733f652db4029c78bee8452204a493b0d66eb3e55f6b9cae"
+    }
+   ]
+  },
+  {
+   "adapter": "dotnet",
+   "kind": "roundtrip_differs",
+   "count": 1,
+   "examples": [
+    {
+     "id": "hostile/cls/memo_text_non_utf8_nul",
+     "rust": true,
+     "dotnet": false
+    }
+   ]
+  }
+ ]
+}

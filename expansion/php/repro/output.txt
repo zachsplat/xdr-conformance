@@ -1,0 +1,46 @@
+=== r1_inner_tx_hash_json.php  SDK=release
+observed inner transaction_hash: 61326463373039666664343237393962623434326162306330626535356237643764393863646363663163626234336532323864633665636565616564313033 (128 chars)
+expected (rs-stellar-xdr 30.0.0): a2dc709ffd42799bb442ab0c0be55b7d7d98cdccf1cbb43e228dc6eceeaed103 (64 chars)
+canonical JSON -> XDR: InvalidArgumentException: Unexpected length for value. Has length 16, expected 32
+PHP warnings raised: 30 (first: pack(): Type H: illegal hex digit ?)
+=== r1_inner_tx_hash_json.php  SDK=main
+observed inner transaction_hash: 61326463373039666664343237393962623434326162306330626535356237643764393863646363663163626234336532323864633665636565616564313033 (128 chars)
+expected (rs-stellar-xdr 30.0.0): a2dc709ffd42799bb442ab0c0be55b7d7d98cdccf1cbb43e228dc6eceeaed103 (64 chars)
+canonical JSON -> XDR: InvalidArgumentException: Unexpected length for value. Has length 16, expected 32
+PHP warnings raised: 30 (first: pack(): Type H: illegal hex digit ?)
+=== r2_ledgerkey_claimable_balance_json.php  SDK=release
+observed: {"claimable_balance":"BAAAAAICAMCAKBQHBAEQUCYMBUHA6EARCIJRIFIWC4MBSGQ3DQOR4H2TOM"}
+expected (rs-stellar-xdr 30.0.0): {"claimable_balance":{"balance_id":"BAAAAAICAMCAKBQHBAEQUCYMBUHA6EARCIJRIFIWC4MBSGQ3DQOR4H2TOM"}}
+canonical JSON -> XDR: InvalidArgumentException: Expected string for XdrClaimableBalanceID JSON value, got array
+=== r2_ledgerkey_claimable_balance_json.php  SDK=main
+observed: {"claimable_balance":"BAAAAAICAMCAKBQHBAEQUCYMBUHA6EARCIJRIFIWC4MBSGQ3DQOR4H2TOM"}
+expected (rs-stellar-xdr 30.0.0): {"claimable_balance":{"balance_id":"BAAAAAICAMCAKBQHBAEQUCYMBUHA6EARCIJRIFIWC4MBSGQ3DQOR4H2TOM"}}
+canonical JSON -> XDR: InvalidArgumentException: Expected string for XdrClaimableBalanceID JSON value, got array
+=== r3_ledgerkey_config_setting_json.php  SDK=release
+observed: {"config_setting":"contract_max_size_bytes"}
+expected (rs-stellar-xdr 30.0.0): {"config_setting":{"config_setting_id":"contract_max_size_bytes"}}
+canonical JSON -> XDR: InvalidArgumentException: Expected string for XdrConfigSettingID JSON value, got array
+=== r3_ledgerkey_config_setting_json.php  SDK=main
+observed: {"config_setting":"contract_max_size_bytes"}
+expected (rs-stellar-xdr 30.0.0): {"config_setting":{"config_setting_id":"contract_max_size_bytes"}}
+canonical JSON -> XDR: InvalidArgumentException: Expected string for XdrConfigSettingID JSON value, got array
+=== r4_json_depth_auth_tree.php  SDK=release
+binary decode ok, re-encodes to the same bytes: true
+toJson: JsonException: Maximum stack depth exceeded
+expected: SEP-51 JSON (rs-stellar-xdr 30.0.0 writes it: 90,632 chars, 514 JSON levels)
+=== r4_json_depth_auth_tree.php  SDK=main
+binary decode ok, re-encodes to the same bytes: true
+toJson: JsonException: Maximum stack depth exceeded
+expected: SEP-51 JSON (rs-stellar-xdr 30.0.0 writes it: 90,632 chars, 514 JSON levels)
+=== r5_nonzero_padding.php  SDK=release
+observed: accepted, text="a", re-encodes as AAAAAQAAAAFhAAAA (input AAAAAQAAAAFhAQAA)
+expected: rejected (rs-stellar-xdr: "xdr padding contains non-zero bytes"; stellar-core print-xdr: "Non-zero padding bytes encountered")
+=== r5_nonzero_padding.php  SDK=main
+observed: accepted, text="a", re-encodes as AAAAAQAAAAFhAAAA (input AAAAAQAAAAFhAQAA)
+expected: rejected (rs-stellar-xdr: "xdr padding contains non-zero bytes"; stellar-core print-xdr: "Non-zero padding bytes encountered")
+=== r6_memo_id_uint64_json.php  SDK=release
+observed: InvalidArgumentException: uint64ToString accepts only non-negative values; got -3880419363282485248. For uint64 values above PHP_INT_MAX, pass the value as a string to stringToUint64().
+expected (rs-stellar-xdr 30.0.0): {"id":"14566324710427066368"}
+=== r6_memo_id_uint64_json.php  SDK=main
+observed: {"id":"14566324710427066368"}
+expected (rs-stellar-xdr 30.0.0): {"id":"14566324710427066368"}

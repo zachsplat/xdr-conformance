@@ -1,0 +1,8 @@
+{"id": "LiquidityPoolEntry@40000000:21", "ok": true, "roundtrip_equal": true}
+{"id": "ClaimableBalanceEntry@40000000:19", "ok": true, "roundtrip_equal": true}
+{"id": "LedgerEntryChange@65486053:349", "ok": true, "roundtrip_equal": true}
+{"id": "AllowTrustOp@50460006:157", "ok": true, "roundtrip_equal": true}
+{"id": "SorobanTransactionData@65486053:349", "ok": true, "roundtrip_equal": true}
+{"id": "AllowTrustOp authorize=1", "ok": true, "roundtrip_equal": true}
+{"id": "Memo zero padding", "ok": true, "roundtrip_equal": true}
+{"error": "xdr padding contains non-zero bytes", "id": "Memo padding 01", "ok": false}

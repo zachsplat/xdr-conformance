@@ -1,0 +1,10 @@
+stellar_base 0.17.0, elixir_xdr 0.3.11
+A. real AllowTrustOp, 48 bytes:
+  {:raised, XDR.FixedOpaqueError, "The length is bigger than the byte size of the XDR"}
+B. same op, authorize = 1:
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}
+C. 48 + 36 bytes: decoded OK, 0 bytes left
+  issuer the SDK invented: GAAAAAAAAAAAAEYAAAAACRSJJQAAAAAAAAMQXNIL2IV7YV3GIBQG42L3 (00000000000000130000000146494c0000000000190bb50bd22bfc576640606e)
+  authorize the SDK reports: 4196550669 (the real value is 0)
+D. real envelope 50460006:157:
+  {:raised, XDR.EnumError, "The key which you try to encode doesn't belong to the current de" <> ...}

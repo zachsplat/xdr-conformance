@@ -1,0 +1,194 @@
+### issues: price
+#296 [open] A transaction whose offer price is not in lowest terms gets the wrong hash
+#294 [open] setOfferId takes hex, signed, padded and out-of-range text as an offer id
+#295 [open] Question: offer ids are generated as XdrUint64, so a negative offer id has another XDR-JSON value
+#132 [closed] Update XDR definitions from upstream stellar-xdr
+#94 [closed] Operations and Effects for Transactions Missing essential fields
+#28 [closed] CAP-38 AMM Changes
+### prs: price
+#196 [merged] Render and parse operation prices exactly
+#266 [merged] Keep secret seeds out of errors and Horizon URLs
+#177 [merged] Validate amount and price input, fix negative-price fractions and fee rendering, and carry the executable tag as bytes
+#187 [merged] Refuse amounts and prices no int64 or int32 fraction can carry
+#123 [merged] feat(web): add full Flutter web platform support
+#117 [merged] Extend SDK dartdoc documentation with bug fixes
+### issues: price fraction
+#296 [open] A transaction whose offer price is not in lowest terms gets the wrong hash
+### prs: price fraction
+#177 [merged] Validate amount and price input, fix negative-price fractions and fee rendering, and carry the executable tag as bytes
+#196 [merged] Render and parse operation prices exactly
+#187 [merged] Refuse amounts and prices no int64 or int32 fraction can carry
+#117 [merged] Extend SDK dartdoc documentation with bug fixes
+### issues: price hash
+#296 [open] A transaction whose offer price is not in lowest terms gets the wrong hash
+#94 [closed] Operations and Effects for Transactions Missing essential fields
+### prs: price hash
+#266 [merged] Keep secret seeds out of errors and Horizon URLs
+### issues: hash
+#293 [open] A transaction with max_time 2^64-1 gets the wrong hash
+#296 [open] A transaction whose offer price is not in lowest terms gets the wrong hash
+#292 [open] fromEnvelopeXdrString refuses an envelope with an inflation operation
+#297 [open] A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable
+#298 [open] Run the shapekit XDR corpus against the SDK in CI
+#291 [open] XDR decoders accept arrays, strings and opaques longer than the schema allows
+#265 [closed] A secret seed passed as an address appears in errors and Horizon URLs
+#203 [closed] Update XDR definitions from upstream stellar-xdr
+#176 [closed] SDK Updates for Protocol 28 Compatibility
+#166 [closed] Update XDR definitions from upstream stellar-xdr
+#160 [closed] Update XDR definitions from upstream stellar-xdr
+#172 [closed] SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials
+### prs: hash
+#266 [merged] Keep secret seeds out of errors and Horizon URLs
+#288 [merged] Prepare release 3.12.0
+#283 [merged] Support OpenZeppelin stellar-accounts 0.8
+#279 [merged] Prepare release 3.11.0
+#174 [merged] Support CAP-85 external reference executables and their create operations
+#223 [merged] Update XDR definitions to stellar-xdr 579a90b
+#173 [merged] Harden strkey and claimable balance id handling per SEP-23
+#167 [merged] Update XDR definitions to stellar-xdr 911c935 (CAP-0083, CAP-0085)
+#175 [merged] P28: Add deployFromExternalRef and contract id derivation
+#178 [merged] Protocol 28 preparation: ADDRESS_V2 defaults, external-ref hardening, and fee amounts
+#150 [merged] Add Protocol 27 (CAP-71) Soroban authorization support
+#141 [merged] Bump SCF-Public-Goods-Maintenance/pg-atlas-sbom-action from f2f44ed8cec916dd412c86ebcab796655656329f to e732fb836ead361371a7a7aad3c992ceb50c757d
+### issues: transaction hash wrong
+#293 [open] A transaction with max_time 2^64-1 gets the wrong hash
+### prs: transaction hash wrong
+### issues: preconditions
+#291 [open] XDR decoders accept arrays, strings and opaques longer than the schema allows
+#132 [closed] Update XDR definitions from upstream stellar-xdr
+#108 [closed] Protocol 22: Smoothing out breaking changes
+#42 [closed] Protocol 19 SDK Support
+### prs: preconditions
+#131 [merged] Auto-generate XDR types from canonical .x definitions
+#117 [merged] Extend SDK dartdoc documentation with bug fixes
+### issues: PRECOND_V2
+#42 [closed] Protocol 19 SDK Support
+### prs: PRECOND_V2
+#131 [merged] Auto-generate XDR types from canonical .x definitions
+### issues: min_seq_num
+### prs: min_seq_num
+### issues: minSeqNumber
+### prs: minSeqNumber
+### issues: utf8
+#297 [open] A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable
+### prs: utf8
+### issues: UTF-8
+#297 [open] A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable
+#176 [closed] SDK Updates for Protocol 28 Compatibility
+#125 [closed] Add SEP-53 message signing support
+#37 [closed] Unable to obtain JWT token from nTokens staging server
+### prs: UTF-8
+#177 [merged] Validate amount and price input, fix negative-price fractions and fee rendering, and carry the executable tag as bytes
+#162 [merged] Smart account hardening and constructor-time policies
+#140 [merged] Fix SEP-0011 MEMO_TEXT escaping to use C-style \xNN UTF-8 byte format
+### issues: memo text
+#291 [open] XDR decoders accept arrays, strings and opaques longer than the schema allows
+#297 [open] A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable
+### prs: memo text
+#140 [merged] Fix SEP-0011 MEMO_TEXT escaping to use C-style \xNN UTF-8 byte format
+#134 [merged] Rewrite SEP-0011 TxRep to use generated XDR serialization
+### issues: FormatException
+#295 [open] Question: offer ids are generated as XdrUint64, so a negative offer id has another XDR-JSON value
+#297 [open] A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable
+#262 [closed] StellarToml throws a TypeError without the field name for a stellar.toml field of the wrong type
+#273 [closed] SEP-29 check skipped for an envelope string with a line break
+#258 [closed] TxRep parsing truncates out-of-range integers and accepts negative lengths
+### prs: FormatException
+#263 [merged] Report a mistyped stellar.toml field as a FormatException
+#274 [merged] Run the SEP-29 check on envelopes with line breaks
+#279 [merged] Prepare release 3.11.0
+#276 [merged] Forward an envelope string the SEP-29 check cannot decode
+#259 [merged] Reject malformed and out-of-range integers in TxRep parsing
+#229 [merged] Adopt SEP-51 reference 30.0.0 and reject short asset codes
+#255 [merged] Prepare release 3.10.0
+#173 [merged] Harden strkey and claimable balance id handling per SEP-23
+#140 [merged] Fix SEP-0011 MEMO_TEXT escaping to use C-style \xNN UTF-8 byte format
+### issues: BOM
+### prs: BOM
+### issues: fee bump signatures
+### prs: fee bump signatures
+### issues: FeeBumpTransaction signatures
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A940:156ED8:ACB75D:223A1C2:6AFF320F and timestamp 2026-11-19 17:29:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22FeeBumpTransaction+signatures%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: FeeBumpTransaction signatures
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A94A:33F30:A68778:2105B51:6AFF320F and timestamp 2026-11-19 17:29:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22FeeBumpTransaction+signatures%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: fromFeeBumpTransactionEnvelope
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A94E:8E715:AA2571:2200A9A:6AFF320F and timestamp 2026-11-19 17:29:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=fromFeeBumpTransactionEnvelope+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: fromFeeBumpTransactionEnvelope
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A960:33F30:A68B21:21066D7:6AFF320F and timestamp 2026-11-19 17:29:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=fromFeeBumpTransactionEnvelope+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: trailing bytes
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A96A:33F30:A68CD0:2106BFE:6AFF3210 and timestamp 2026-11-19 17:29:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22trailing+bytes%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: trailing bytes
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A97C:2B934C:A5881B:20CEABE:6AFF3210 and timestamp 2026-11-19 17:29:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22trailing+bytes%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: padding
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A988:293149:A3107C:20AE9DE:6AFF3210 and timestamp 2026-11-19 17:29:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=padding+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: padding
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID A99A:118BF4:ADF00E:226D9F4:6AFF3211 and timestamp 2026-11-19 17:29:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=padding+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: bool
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE24:169EA1:A593B9:20D6740:6AFF3211 and timestamp 2026-11-19 17:29:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=bool+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: bool
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE34:9B15B:B02BB0:22EDFBE:6AFF3211 and timestamp 2026-11-19 17:29:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=bool+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: max length
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE40:9B15B:B02D99:22EE574:6AFF3211 and timestamp 2026-11-19 17:29:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22max+length%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: max length
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE4E:728CF:A92A16:2190DE8:6AFF3212 and timestamp 2026-11-19 17:29:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22max+length%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: optional
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE5E:14B3BB:9ED9E4:1F7D0F2:6AFF3212 and timestamp 2026-11-19 17:29:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=optional+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: optional
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE62:156ED8:ACD004:223F0FA:6AFF3212 and timestamp 2026-11-19 17:29:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=optional+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: decode
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE68:2E1404:AA66FE:21D7D7E:6AFF3212 and timestamp 2026-11-19 17:29:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=decode+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: decode
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE6E:118BF4:ADFFFD:2270D34:6AFF3213 and timestamp 2026-11-19 17:29:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=decode+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: xdr decode
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE70:1AC469:A47A0F:20A2C1D:6AFF3213 and timestamp 2026-11-19 17:29:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22xdr+decode%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: xdr decode
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE7E:838B3:A670B5:210B81D:6AFF3213 and timestamp 2026-11-19 17:29:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22xdr+decode%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: ScString
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE82:2CE9F:B1DAB2:2329E49:6AFF3214 and timestamp 2026-11-19 17:29:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=ScString+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: ScString
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE84:2E21C4:A91D09:216DD73:6AFF3214 and timestamp 2026-11-19 17:29:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=ScString+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues: invalid utf
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE92:156ED8:ACDD60:2241CCB:6AFF3214 and timestamp 2026-11-19 17:29:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22invalid+utf%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Aissue)
+### prs: invalid utf
+HTTP 403: API rate limit exceeded for user ID 86435089. If you reach out to GitHub Support for help, please include the request ID CE94:70FEB:AA82B2:21C4646:6AFF3214 and timestamp 2026-11-19 17:29:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/search/issues?page=1&per_page=30&q=%22invalid+utf%22+repo%3ASoneso%2Fstellar_flutter_sdk+type%3Apr)
+### issues+prs: fee bump signatures
+### issues+prs: FeeBumpTransaction
+#123 [merged] pr=true feat(web): add full Flutter web platform support
+#122 [closed] pr=false Add full Flutter web platform support
+#39 [closed] pr=false Muxed accounts should now be enabled by default.
+### issues+prs: fromFeeBumpTransactionEnvelope
+### issues+prs: signatures dropped
+### issues+prs: trailing bytes
+### issues+prs: trailing
+#221 [merged] pr=true chore(deps): bump toml from 0.17.0 to 0.18.0 in the pub group
+#212 [closed] pr=true chore(deps): bump the pub group across 2 directories with 2 updates
+#112 [closed] pr=false Protocol 23 SDK Upgrades
+#62 [merged] pr=true Fix url endpoint append
+### issues+prs: padding
+#291 [open] pr=false XDR decoders accept arrays, strings and opaques longer than the schema allows
+#276 [merged] pr=true Forward an envelope string the SEP-29 check cannot decode
+#274 [merged] pr=true Run the SEP-29 check on envelopes with line breaks
+#173 [merged] pr=true Harden strkey and claimable balance id handling per SEP-23
+#131 [merged] pr=true Auto-generate XDR types from canonical .x definitions
+#116 [merged] pr=true Replace Magic Numbers with Named Constants
+### issues+prs: bool
+#252 [closed] pr=false LedgerEntry reads the extension from a key RPC does not send and decodes the ledger key as an SCVal
+#6 [closed] pr=false Protocol 14 support
+### issues+prs: optional flag
+#159 [merged] pr=true P27: Add the simulateTransaction useUpgradedAuth flag
+#172 [closed] pr=false SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials
+### issues+prs: pointer
+#230 [merged] pr=true Align the documentation strategy with the release process
+#170 [merged] pr=true chore(deps): bump SCF-Public-Goods-Maintenance/pg-atlas-sbom-action from e732fb836ead361371a7a7aad3c992ceb50c757d to b876c74c601e8e6b5fdad7e4b9161be86b35dfcf
+### issues+prs: byte order mark
+### issues+prs: TransactionPreconditions
+### issues+prs: timeBounds
+#293 [open] pr=false A transaction with max_time 2^64-1 gets the wrong hash
+#161 [merged] pr=true Maintenance: builder deduplication, Soroban server refactor, HTTP client injection, validation fixes
+#134 [merged] pr=true Rewrite SEP-0011 TxRep to use generated XDR serialization
+#124 [merged] pr=true test: expand unit test coverage and add CI/CD pipelineTest improvements
+#123 [merged] pr=true feat(web): add full Flutter web platform support
+#122 [closed] pr=false Add full Flutter web platform support
+#42 [closed] pr=false Protocol 19 SDK Support
+#36 [closed] pr=false SEP-10 timebounds are checked incorrectly
+### issues+prs: hasV2
